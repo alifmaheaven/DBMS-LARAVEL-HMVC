@@ -1,13 +1,19 @@
 <?php
-
 namespace App;
+
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+
+    
+
+    protected $table='p_user';
+    protected $primaryKey='id_user';
 
     /**
      * The attributes that are mass assignable.
@@ -15,15 +21,31 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_email', 'user_nik',
+        'user_name','user_password', 
+        'user_phone','id_profile',
+        'modify_date','user_modify',
+        'created_date','user_created',
+        'last_login','is_active'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+    public $timestamps = false;
+
     protected $hidden = [
-        'password', 'remember_token',
+        'user_password',
     ];
+
+    public function getAuthPassword() {
+        return $this->user_password;
+      }
+
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }

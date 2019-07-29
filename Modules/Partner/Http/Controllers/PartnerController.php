@@ -2,6 +2,7 @@
 
 namespace Modules\Partner\Http\Controllers;
 
+use Modules\Partner\Entities\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -21,9 +22,58 @@ class PartnerController extends Controller
      * Show the form for creating a new resource.
      * @return Response
      */
-    public function create()
+    public function add_res_partner(Request $request)
     {
-        return view('partner::create');
+
+        $id = $request['id'];
+        if (!$id) {
+            return response()->json([
+                "status" => false,
+                "message" => "id mu mana",
+                "data" => null
+            ]);
+        }
+
+        $getData= Partner::where('id',$id)->first();
+
+        if (count($getData) > 0) {
+           
+            if($getData->update($request->all())){
+                return response()->json([
+                    "status" => true,
+                    "message" => "berhasil update",
+                    "data" => $getData
+                ]);
+              }
+              else{
+                return response()->json([
+                    "status" => false,
+                    "message" => "gagal update",
+                    "data" => $getData
+                ]);
+              }
+            
+        } else {
+
+            $input = $request->all(); 
+            $user = Partner::create($input); 
+            if ($user) {
+            return response()->json([
+                "status" => true,
+                "message" => "berhasil input",
+                "data" => $input
+            ]);
+            }  else {
+                return response()->json([
+                    "status" => false,
+                    "message" => "gagal input",
+                    "data" => $input
+                ]);
+            }
+           
+        }
+
+        
     }
 
     /**

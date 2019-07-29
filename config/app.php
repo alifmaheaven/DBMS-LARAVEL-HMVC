@@ -171,6 +171,9 @@ return [
           //HMVC
         Nwidart\Modules\LaravelModulesServiceProvider::class,
 
+        //JWT
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -231,6 +234,10 @@ return [
 
         // HMVC
         'Module' => Nwidart\Modules\Facades\Module::class,
+
+        //JWT
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, 
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 

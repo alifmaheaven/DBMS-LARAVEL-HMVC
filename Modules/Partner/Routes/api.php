@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/partner', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => ['jwt.verify']], function() {
+    
+    Route::prefix('partner')->group(function() {
+
+        Route::post('add', 'PartnerController@add_res_partner');
+    });
+});
