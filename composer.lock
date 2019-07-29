@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a21eac843aad245d940a461c690f995",
+    "content-hash": "22991b74b6a65b3faa9681843b3682ef",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -417,25 +417,25 @@
         },
         {
             "name": "kylekatarnls/update-helper",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kylekatarnls/update-helper.git",
-                "reference": "b34a46d7f5ec1795b4a15ac9d46b884377262df9"
+                "reference": "5786fa188e0361b9adf9e8199d7280d1b2db165e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kylekatarnls/update-helper/zipball/b34a46d7f5ec1795b4a15ac9d46b884377262df9",
-                "reference": "b34a46d7f5ec1795b4a15ac9d46b884377262df9",
+                "url": "https://api.github.com/repos/kylekatarnls/update-helper/zipball/5786fa188e0361b9adf9e8199d7280d1b2db165e",
+                "reference": "5786fa188e0361b9adf9e8199d7280d1b2db165e",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.1.0",
+                "composer-plugin-api": "^1.1.0 || ^2.0.0",
                 "php": ">=5.3.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
-                "composer/composer": "^2.0.x-dev",
+                "composer/composer": "2.0.x-dev || ^2.0.0-dev",
                 "phpunit/phpunit": ">=4.8.35 <6.0"
             },
             "type": "composer-plugin",
@@ -458,7 +458,7 @@
                 }
             ],
             "description": "Update helper",
-            "time": "2019-06-05T08:34:23+00:00"
+            "time": "2019-07-29T11:03:54+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1095,28 +1095,27 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "4.1.0",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "0efd81aef05419a9d032e5bbd7859dd8a67cb7e3"
+                "reference": "30c1475f99ef8b439a1cf7d8a9c55787c80bbf71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/0efd81aef05419a9d032e5bbd7859dd8a67cb7e3",
-                "reference": "0efd81aef05419a9d032e5bbd7859dd8a67cb7e3",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/30c1475f99ef8b439a1cf7d8a9c55787c80bbf71",
+                "reference": "30c1475f99ef8b439a1cf7d8a9c55787c80bbf71",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.7",
-                "laravel/framework": "5.7.*",
+                "laravel/framework": "5.5.*",
                 "mockery/mockery": "~1.0",
-                "orchestra/testbench": "^3.7",
-                "phpstan/phpstan": "^0.9.2",
-                "phpunit/phpunit": "~7.3",
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "~6.0",
                 "spatie/phpunit-snapshot-assertions": "^1.0"
             },
             "type": "library",
@@ -1130,7 +1129,7 @@
                     }
                 },
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -1161,7 +1160,7 @@
                 "nwidart",
                 "rad"
             ],
-            "time": "2019-03-04T09:50:46+00:00"
+            "time": "2018-01-13T20:11:46+00:00"
         },
         {
             "name": "paragonie/random_compat",
