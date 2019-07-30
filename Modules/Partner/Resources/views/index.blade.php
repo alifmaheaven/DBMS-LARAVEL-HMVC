@@ -1,4 +1,4 @@
-@extends('partner::layouts.master')
+@extends('partner::layouts.template')
 
 @section('content')
     <h1>Hello World</h1>

@@ -1,0 +1,306 @@
+#headerku {
+	height: 250px;
+	background-image: linear-gradient(90deg, #7F47AA, #9784FF);
+}
+
+#headerku .logoku {
+	width: 100px;
+	margin: 15px 0 0 40px;
+}
+
+#headerku .text-right {
+	float: right;
+	margin: 20px 40px;
+	line-height: 1rem;
+}
+
+#headerku .text-right img {
+	width: 40px;
+	float: right;
+}
+
+#headerku .text-right .ic-logout {
+	margin: 10px 0 0 40px;
+	width: 30px;
+}
+
+#headerku .text-right .isine {
+	float: right;
+	margin: 7px 0 0 10px;
+	color: #fff;
+}
+
+#headerku .text-right .isine .small {
+	font-weight: lighter;
+}
+
+.containerku {
+	width: 85%;
+	margin: auto;
+	margin-top: -165px;
+}
+
+.bar-1 {
+	background-color: #590D7A;
+	height: 50px;
+	color: #fff;
+	padding: 12px 0 0 20px;
+}
+
+.bar-1 img {
+	width: 17px;
+	margin-right: 10px;
+}
+
+.bar-2 {
+	height: 60px;
+	background-color: transparent;
+	color: #fff;
+	font-size: 18px;
+	padding: 20px 0 0 20px;
+}
+
+.bar-3 {
+	height: 100px;
+	padding-right: 45px;
+}
+
+.bar-3 button {
+	float: right;
+	text-transform: uppercase;
+	margin: 30px 10px 10px 0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.sectionku {
+	background-color: #fff;
+}
+
+.sectionku .mbku {
+	margin-bottom: 50px;
+}
+
+.sectionku .foto-profil {
+	width: 120px;
+	margin-top: 25px;
+}
+
+.sectionku .toolsku {
+	width: 22px;
+	margin: 30px 10px 0 0;
+}
+
+.sectionku .isi-section h4 {
+	font-weight: bold;
+	font-size: 21px;
+	color: #000;
+	margin-top: 30px;
+}
+
+.sectionku p {
+	margin: 3px 0 43px 0;
+}
+
+.isi-section input[type=text], input[type=number], input[type=email], select {
+	width: 100%;
+	padding: 4px 12px;
+	box-sizing: border-box;
+	font-size: 13px;
+	margin-bottom: 30px;
+}
+
+footer {
+	padding: 10px 30px 10px 30px;
+	background-color: #fff;
+}
+
+/* CUSTOMERS */
+.container__customer {
+	padding-top: 60px;
+}
+
+table button {
+	float: right;
+	font-size: 10px!important;
+	text-transform: uppercase;
+	margin-left: 3px!important;
+	width: 60px!important;
+	padding: 7px 0 7px 0!important;
+}
+
+table th, td {
+	text-align: center!important;
+}
+
+.footer__customer {
+	height: 100px;
+	margin-bottom: 78px;
+}
+
+.footer__customer__container {
+	width: 90%;
+	margin: auto;
+	font-size: 12px;
+	padding-top: 30px;
+}
+
+.footer__customer__container select {
+	width: 40px;
+	padding: 0 0 0 10px;
+	margin-left: 10px;
+}
+
+.footer__customer__container button {
+	padding: 7px 0 7px 0!important;
+	width: 100px!important;
+}
+
+.footer__customer__container span {
+	margin: 5px;
+}
+
+/* CUSTOMERS EDIT */
+.container__customer__edit {
+	width: 90%;
+	margin: auto;
+	padding-top: 30px;
+}
+
+.container__customer__edit h4 {
+	font-weight: bolder;
+}
+
+.container__customer__edit hr {
+	width: 30%;
+	margin-top: 5px;
+	float: left;
+}
+
+.form__customer {
+	width: 70%;
+	margin: auto;
+	padding: 30px 0 30px 0;
+	color: #000;
+}
+
+.form__customer img {
+	width: 20px;
+	margin: -2px 20px 0 0;
+}
+
+.form__customer input, textarea {
+	width: 80%;
+	padding: 3px 0 3px 10px!important;
+	border: 1px #D3D3D3 solid;
+}
+
+.form__customer td {
+	padding-bottom: 30px;
+}
+
+.section-2 {
+	background-color: #fff;
+	margin-top: 40px;
+}
+
+/* CUSTOMER DETAIL */
+.container__customer__detil {
+	width: 90%;
+	margin: auto;
+	padding-top: 30px;
+}
+
+.container__customer__detil h4 {
+	font-weight: bolder;
+}
+
+.container__customer__detil hr {
+	width: 30%;
+	margin-top: 5px;
+	float: left;
+}
+
+.container__customer__detil .item-span {
+	float: left;
+	color: #8D8D8D;
+}
+
+/* LOGIN */
+#login {
+	background: url(../img/dyah/bg-login.png);
+	background-color: #cccccc;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.konten-login {
+	padding: 50px 0 0 0;
+	height: 100vh;
+}
+
+.konten-login h1 {
+	font-weight: bold;
+	color: #000;
+	margin-top: 60px;
+	padding-top: 30px;
+}
+
+.konten-login .separator {
+	width: 140px;
+	height: 3px;
+	background-color: #C879D9;
+	margin: auto;
+}
+
+.konten-login h4 {
+	line-height: 1px;
+}
+
+.konten-login input {
+	width: 450px;
+	padding: 8px 20px;
+	font-size: 16px;
+	margin: 40px 0 0 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.konten-login p {
+	margin: 20px 0 0 -170px;
+}
+
+.konten-login button {
+	width: 300px;
+	margin-top: 50px;
+	letter-spacing: 2px;
+	background-image: linear-gradient(90deg, #E672C3, #9784FF);
+}
+
+.cardku {
+	background-color: #fff;
+	text-align: center;
+	width: 550px;
+	padding: 0 0 50px 0;
+	margin: auto;
+}
+
+/* search tambahan */
+.searchku {
+	border-radius: 25px;
+	float: right;
+	border: 0;
+	padding: 3px 35px;
+	width: 200px;
+	font-size: 15px;
+}
+
+.icon-search {
+	float: right;
+	color: #8D8D8D;
+	margin: 6px -27px 0 0;
+}
