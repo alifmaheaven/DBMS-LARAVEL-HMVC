@@ -45,16 +45,16 @@
 	
 							<h4>Change Password</h4>
 							<div class="row" style="margin-top: 20px;">
-								<div class="col-md-3 col-sm-3">
-									<p>Current Password</p>
-									<p>New Password</p>
-									<p>Confirm Password</p>
+								<div class="col-md-3 col-sm-3 col">
+								<p>Current Password</p>
+								<p>New Password</p>
+								<p>Confirm Password</p>
 								</div>
 								<form>
-								<div class="col-md-6 col-sm-6 mbku">
-									<input type="text" name="" placeholder="********">
-									<input type="text" name="" placeholder="********">
-									<input type="text" name="" placeholder="********">
+								<div class="col-md-6 col-sm-6 mbku col">
+								<input type="text" name="" placeholder="********" class="tb-responsive"><br>
+								<input type="text" name="" placeholder="********" class="tb-responsive"><br>
+								<input type="text" name="" placeholder="********" class="tb-responsive"><br>
 								</div>
 								</form>
 							</div>
