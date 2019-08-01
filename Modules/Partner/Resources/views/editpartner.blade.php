@@ -259,9 +259,11 @@
         </div>
         <div class="bar-3" style="padding: 0">
             <button class="btn btn-danger btn-round">Cancel</button>
-            <button class="btn btn-info btn-round">Save</button>
+            <button id="Save" class="btn btn-info btn-round">Save</button>
         </div>
     </div>
+
+   
     
 @stop
 
