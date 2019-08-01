@@ -41,9 +41,12 @@
 					{{ csrf_field() }}
 
 					<div class="form-group">
-					@if(\Session::has('alert'))
-                	<div class="alert alert-danger">
-                    	<div>{{Session::get('alert')}}</div>
+					@if(Session::has('alert'))
+
+					<div class="alert alert-danger alert-dismissible">
+					{{-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> --}}
+					<strong> <div>{{Session::get('alert')}}</div></strong>
+
 					</div>
 					@endif
 					</div>
@@ -288,6 +291,16 @@
 
 	});
 </script>
+
+<script>
+$(document).ready(function() {
+  $(".alert").hide();
+    $(".alert").fadeTo(2000, 500).slideUp(500, function() {
+      $(".alert").slideUp(500);
+    });
+});
+</script>
+
 </body>
 
 </html>
