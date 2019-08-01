@@ -14,7 +14,11 @@
 
     <div class="sectionku" >
 
+<<<<<<< HEAD
         <ul style="align-content: center;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+=======
+        <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+>>>>>>> 9770d272ead2b6dc2d007b08c4ff77c2ca0947b9
             <li><a class="active nav-item nav-link " data-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">General Information</a></li>
             <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">PIC Information</a></li>
             <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Additional Information</a></li>
@@ -102,7 +106,11 @@
                 </div>
             </div>
             <div id="menu1" class="tab-pane fade">
+<<<<<<< HEAD
               <div class="section-2">
+=======
+              
+>>>>>>> 9770d272ead2b6dc2d007b08c4ff77c2ca0947b9
                 <div id="nav-profile" class="container__customer__edit ">
                     <h4>PIC Information</h4>
                     <hr>
@@ -171,10 +179,14 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            
         </div>
         <div id="menu2" class="tab-pane fade">
+<<<<<<< HEAD
           <div class="section-2" >
+=======
+          
+>>>>>>> 9770d272ead2b6dc2d007b08c4ff77c2ca0947b9
             <div id="nav-contact" class="container__customer__edit ">
                 <h4>Additional Information</h4>
                 <hr>
@@ -265,7 +277,11 @@
                     </table>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
+=======
+        
+>>>>>>> 9770d272ead2b6dc2d007b08c4ff77c2ca0947b9
     </div>
 </div>
 

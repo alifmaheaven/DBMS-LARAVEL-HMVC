@@ -6,6 +6,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="{{ URL::asset('img/apple-icon.png') }}">
 	<link rel="icon" type="image/png" href="{{ URL::asset('img/favicon.png') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="_token" content="{{csrf_token()}}" />
 	<title>
 		Material Dashboard by Creative Tim
 	</title>
@@ -13,38 +14,16 @@
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
 	<!-- CSS Files -->
 	<link href="{{ URL::asset('css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="{{ URL::asset('demo/demo.css') }}" rel="stylesheet" />
 	<link href="{{ URL::asset('css/style.css') }}" rel="stylesheet" />
-</head>
-
-<body>
-
-	<div id="headerku">
-				<img src="{{ URL::asset('img/dyah/logo2-white.png') }}" class="logoku">
-				<div class="text-right">
-					<a href="{{ url('/logout') }}" >
-						<img src="{{ URL::asset('img/dyah/ic-logout.png') }}" class="ic-logout">
-					</a>
-
-					<a href="{{ url('/detail') }}">
-							<div class="isine text-left"><span><b>{{Session::get('user_name')}}</b></span><br><span class="small">{{Session::get('user_nik')}}</span></div>
-							<img src="{{ URL::asset('img/dyah/nigga.jpg') }}" class="rounded-circle">
-					</a>
-					
-				</div>
-		</div>
-
-    {{-- content --}}
-	
-        @yield('content')
-
-	<footer>
-		Copyright &copy; 2019
-		<div class="text-right" style="float: right;font-size: 15px">Made with <span style="color: red;">❤</span> by Karet Double</div>
-	</footer>
 
 	<!--   Core JS Files   -->
 	<script src="{{ URL::asset('js/core/jquery.min.js') }}"></script>
@@ -79,8 +58,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 	<!-- Library for adding dinamically elements -->
 	<script src="{{ URL::asset('js/plugins/arrive.min.js') }}"></script>
-	<!--  Google Maps Plugin    -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+	<!--anyaran js e -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+</script>
 	<!-- Chartist JS -->
 	<script src="{{ URL::asset('js/plugins/chartist.min.js') }}"></script>
 	<!--  Notifications Plugin    -->
@@ -89,6 +71,36 @@
 	<script src="{{ URL::asset('js/material-dashboard.js?v=2.1.1') }}" type="text/javascript"></script>
 	<!-- Material Dashboard DEMO methods, don't include it in your project! -->
 	<script src="{{ URL::asset('demo/demo.js') }}"></script>
+
+</head>
+
+<body>
+
+	<div id="headerku">
+				<img src="{{ URL::asset('img/dyah/logo2-white.png') }}" class="logoku">
+				<div class="text-right">
+					<a href="{{ url('/logout') }}" >
+						<img src="{{ URL::asset('img/dyah/ic-logout.png') }}" class="ic-logout">
+					</a>
+
+					<a href="{{ url('/detail') }}">
+							<div class="isine text-left"><span><b>{{Session::get('user_name')}}</b></span><br><span class="small">{{Session::get('user_nik')}}</span></div>
+							<img src="{{ URL::asset('img/dyah/nigga.jpg') }}" class="rounded-circle">
+					</a>
+					
+				</div>
+		</div>
+
+    {{-- content --}}
+	
+        @yield('content')
+
+	<footer>
+		Copyright &copy; 2019
+		<div class="text-right" style="float: right;font-size: 15px">Made with <span style="color: red;">❤</span> by Karet Double</div>
+	</footer>
+
+	
 	<script>
 		$(document).ready(function() {
 			$().ready(function() {
