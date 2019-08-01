@@ -44,7 +44,7 @@
 					@if(Session::has('alert'))
 
 					<div class="alert alert-danger alert-dismissible">
-					{{-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> --}}
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					<strong> <div>{{Session::get('alert')}}</div></strong>
 
 					</div>
