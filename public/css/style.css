@@ -303,6 +303,10 @@ table th {
 	font-size: 15px;
 }
 
+.form_search{
+	margin-top: -30px;
+}
+
 .icon-search {
 	float: right;
 	color: #8D8D8D;
@@ -322,4 +326,15 @@ table th {
 		width: 350px!important;
 		float: left;
 	}
+}
+
+/* showing data */
+.showdata-form-custom{
+	width: 30px;
+	margin-block-start: -25px;
+	margin-inline-start: 40px;
+}
+
+.showdata-custom{
+	width: 30px;
 }

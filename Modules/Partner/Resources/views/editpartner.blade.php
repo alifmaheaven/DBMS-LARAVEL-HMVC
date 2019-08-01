@@ -21,7 +21,11 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <input type="text" name="" disabled placeholder="OAGR">
+                                    @foreach ($partner as $p)
+                                    <input type="text" name="" disabled placeholder="" value="{{$p->id}}">
+                                    @endforeach
+                           
+                                   
                             </td>
                         </tr>
                         <tr>

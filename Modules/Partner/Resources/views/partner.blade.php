@@ -10,7 +10,11 @@
         </div>
         
         <div class="bar-2">
-            <b>Customer List</b> <input class="searchku" placeholder="Search.." type="search" name=""><i class="fa fa-search icon-search"></i>
+            <b>Customer List</b> 
+
+            <form class="form_search" action="{{ url()->current() }}">
+            <input class="searchku" placeholder="Search.." type="search" name="keyword"><i class="fa fa-search icon-search"></i>
+            </form>
         </div>
         <div class="sectionku">
             <div class="container container__customer">
@@ -31,88 +35,44 @@
                             </th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    Dakota Rice
-                                </td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary btn-round">Edit</button>
-                                    <button class="btn btn-danger btn-round">Detail</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    2
-                                </td>
-                                <td>
-                                    Minerva Hooper
-                                </td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary btn-round">Edit</button>
-                                    <button class="btn btn-danger btn-round">Detail</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    3
-                                </td>
-                                <td>
-                                    Sage Rodriguez
-                                </td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary btn-round">Edit</button>
-                                    <button class="btn btn-danger btn-round">Detail</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    4
-                                </td>
-                                <td>
-                                    Philip Chaney
-                                </td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary btn-round">Edit</button>
-                                    <button class="btn btn-danger btn-round">Detail</button>
-                                </td>
-                            </tr>
+                                @foreach($data as $d)
+                                <tr>
+                                    <td>{{ $d->id }}</td>
+                                    <td>{{ $d->name }}</td>
+                                    <td>{{ $d->city }}</td>
+                                    <td>
+                                            <form action="{{ url('/partner/update') }}" method="post">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="id_partner" value="{{$d->id}}">
+                                                <button class="btn btn-danger btn-round" >Edit</button>
+                                            </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
             <div class="footer__customer">
                 <div class="footer__customer__container">
                     <span>Show</span>
-                    <select>
-                        <option>10</option>
-                    </select>
+                    
+                    {{$data->perPage()}}
+                    
                     <center>
                         <div style="margin-top: -40px;">
-                            <button class="btn btn-round">Previous</button>
-                            <span>1</span>
-                            <span>2</span>
-                            <span>3</span>
-                            <span>4</span>
-                            <span>5</span>
-                            <button class="btn btn-round">Next</button>
+                            
+                            {{ $data->links('pagination::sayapunya') }}
+                            
                         </div>
                     </center>
-                    <div style="margin-top: -50px;" class="text-right">Showing 4 of 10</div>
+                  
+                    <div style="margin-top: -50px;" class="text-right">Showing {{ $data->currentPage() }} of {{ $data->lastPage() }}</div>
+                    
+                   
+      
                 </div>
             </div>
         </div>

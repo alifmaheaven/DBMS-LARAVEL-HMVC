@@ -13,15 +13,31 @@ class PartnerController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('partner::partner');
+
+        if (!$request->showdata) {
+            $pagination = 10;
+            # code...
+        } else {
+            $pagination = $request->showdata;
+        }
+        
+        $data = Partner::when($request->keyword, function ($query) use ($request) {
+            $query->where('id', 'like', "%{$request->keyword}%")
+                ->orWhere('name', 'like', "%{$request->keyword}%");
+        })->paginate($pagination);
+
+        $data->appends($request->only('keyword'));
+
+        return view('partner::partner',['data' => $data, 'showdata' => $pagination]);
     }
 
     /**
      * Show the form for creating a new resource.
      * @return Response
      */
+
     public function add_res_partner(Request $request)
     {
 
@@ -76,54 +92,12 @@ class PartnerController extends Controller
         
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('partner::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        return view('partner::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+   
+    public function getres_partner(Request $request){
+        $getpartner=null;
+        $id_partner = $request->id_partner;
+        $getpartner = Partner::where('id',$id_partner)->get();
+          return view('partner::editpartner',['partner' => $getpartner]);
+      }
+  
 }
