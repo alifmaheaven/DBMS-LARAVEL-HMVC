@@ -8,18 +8,19 @@
         <div class="bar-2">
             <b>Customer List > Edit Customer</b>
         </div>
+
         <div class="sectionku">
-             <nav>
+            <nav>
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
                                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">PIC Information</a>
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Additional Information</a>
                             </div>
-                        </nav>
-            <div class="container__customer__edit">
+
+            <div id="nav-home" class="container__customer__edit">
                 <h4>General Information</h4>
                 <hr>
-                <div class="form__customer">
+                <div class="form__customer" class="tab-pane fade in active">
                     <table width="100%;">
                         <tr>
                             <td width="15%">
@@ -96,7 +97,7 @@
             </div>
         </div>
         <div class="section-2">
-            <div class="container__customer__edit">
+            <div id="nav-profile" class="container__customer__edit" class="tab-pane fade">
                 <h4>PIC Information</h4>
                 <hr>
                 <div class="form__customer">
@@ -166,7 +167,7 @@
             </div>
         </div>
         <div class="section-2">
-            <div class="container__customer__edit">
+            <div id="nav-contact" class="container__customer__edit" class="tab-pane fade">
                 <h4>Additional Information</h4>
                 <hr>
                 <div class="form__customer">
@@ -257,6 +258,7 @@
                 </div>
             </div>
         </div>
+        </nav>
         <div class="bar-3" style="padding: 0">
             <button class="btn btn-danger btn-round">Cancel</button>
             <button class="btn btn-info btn-round">Save</button>
