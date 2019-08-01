@@ -1,6 +1,7 @@
 @extends('partner::layouts.template')
 
 @section('content')
+
 <div class="containerku">
     <div class="bar-1">
         <img src="{{ URL::asset('img/dyah/ic-customer.png')}}"><span>Customer</span>
@@ -11,7 +12,7 @@
 
     <div class="sectionku" >
 
-        <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <ul style="align-content: center;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <li><a class="active nav-item nav-link " data-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">General Information</a></li>
             <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">PIC Information</a></li>
             <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Additional Information</a></li>
@@ -99,7 +100,7 @@
                 </div>
             </div>
             <div id="menu1" class="tab-pane fade">
-              
+              <div class="section-2">
                 <div id="nav-profile" class="container__customer__edit ">
                     <h4>PIC Information</h4>
                     <hr>
@@ -171,7 +172,7 @@
             
         </div>
         <div id="menu2" class="tab-pane fade">
-          
+          <div class="section-2" >
             <div id="nav-contact" class="container__customer__edit ">
                 <h4>Additional Information</h4>
                 <hr>
@@ -262,7 +263,7 @@
                     </table>
                 </div>
             </div>
-        
+        </div>
     </div>
 </div>
 
