@@ -13,5 +13,5 @@
 
 Route::prefix('partner')->group(function() {
     Route::get('/', 'PartnerController@index');
-    Route::post('/update', 'PartnerController@getres_partner');
+    Route::get('/update', 'PartnerController@getres_partner');
 });

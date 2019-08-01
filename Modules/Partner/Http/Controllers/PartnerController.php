@@ -94,10 +94,10 @@ class PartnerController extends Controller
 
    
     public function getres_partner(Request $request){
-        $getpartner=null;
+        //$getpartner=null;
         $id_partner = $request->id_partner;
-        $getpartner = Partner::where('id',$id_partner)->get();
-          return view('partner::editpartner',['partner' => $getpartner]);
+        $getpartner = Partner::where('id',$id_partner)->first();
+          return view('partner::editpartner',compact('getpartner'));
       }
   
 }

@@ -41,7 +41,7 @@
                                     <td>{{ $d->name }}</td>
                                     <td>{{ $d->city }}</td>
                                     <td>
-                                            <form action="{{ url('/partner/update') }}" method="post">
+                                            <form action="{{ url('/partner/update') }}" method="get">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="id_partner" value="{{$d->id}}">
                                                 <button class="btn btn-danger btn-round" >Edit</button>

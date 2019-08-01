@@ -21,11 +21,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                    @foreach ($partner as $p)
-                                    <input type="text" name="" disabled placeholder="" value="{{$p->id}}">
-                                    @endforeach
-                           
-                                   
+                                    <input type="text" name="" disabled placeholder="" value="{{$getpartner->id}}">
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +31,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <input type="text" name="" disabled placeholder="Dyah Group">
+                                <input type="text" name="" disabled placeholder="Dyah Group" value="{{$getpartner->name}}">
                             </td>
                         </tr>
                         <tr>
