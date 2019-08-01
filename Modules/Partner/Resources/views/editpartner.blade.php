@@ -9,6 +9,13 @@
             <b>Customer List > Edit Customer</b>
         </div>
         <div class="sectionku">
+             <nav>
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">PIC Information</a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Additional Information</a>
+                            </div>
+                        </nav>
             <div class="container__customer__edit">
                 <h4>General Information</h4>
                 <hr>
