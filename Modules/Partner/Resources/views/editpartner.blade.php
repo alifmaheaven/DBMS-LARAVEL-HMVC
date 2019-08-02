@@ -15,7 +15,7 @@
                   <h4>General Information</h4>
                   <hr>
                     <div class="form__customer">
-                        <table width="100%;">
+                        <table  width="100%;">
                             <tr>
                                 <td width="15%">
                                     <div style="float: left;">
