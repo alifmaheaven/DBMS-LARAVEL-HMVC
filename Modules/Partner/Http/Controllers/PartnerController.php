@@ -7,6 +7,8 @@ use Modules\Partner\Entities\CompanyDetail;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use DB;
+
 
 class PartnerController extends Controller
 {
@@ -100,11 +102,23 @@ class PartnerController extends Controller
         $getData= CompanyDetail::where('id',$id_partner)->first();
 
         if (count($getData) > 0) {
-            $getpartner = CompanyDetail::where('id',$id_partner)->first();
-            return view('partner::editpartner',compact('getpartner'));
+
+            // when data there is
+            $Detail = CompanyDetail::where('id',$id_partner)->first();
+
+
+            return view('partner::editpartner',compact('Detail'));
         } else {
-            $getpartner = Partner::where('id',$id_partner)->first();
-            return view('partner::editpartner',compact('getpartner'));
+
+            // when data is nothing
+            $Detail = Partner::where('id',$id_partner)->first();
+            $Businesstypes = DB::table('p_businesstype')->get();
+            $Positions = DB::table('p_position')->get();
+            $Segments = DB::table('p_segment')->get();
+            $Sigmaproducts = DB::table('p_sigmaproduct')->get();
+            $Socmedtypes = DB::table('p_socmedtype')->get();
+
+            return view('partner::editpartner', compact('Detail','Businesstypes','Positions','Segments','Sigmaproducts','Socmedtypes'));
         }
         
 
