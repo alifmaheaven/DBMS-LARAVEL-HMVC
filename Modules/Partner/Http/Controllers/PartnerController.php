@@ -97,7 +97,7 @@ class PartnerController extends Controller
 
         $id_partner = $request->id_partner;
         
-        $getData= CompanyDetail::where('id',$id_partner)->first();
+        $getData= CompanyDetail::where('id',$id_partner)->get();
 
         if (count($getData) > 0) {
             $getpartner = CompanyDetail::where('id',$id_partner)->first();
