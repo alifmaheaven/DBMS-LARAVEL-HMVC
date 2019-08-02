@@ -10,18 +10,10 @@
     </div>
 
     <div class="sectionku" >
-
-        <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-            <li><a class="active nav-item nav-link " data-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">General Information</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">PIC Information</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Additional Information</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div id="home" class="tab-pane in active">
-                <div id="nav-home" class="container__customer__edit">
-                    <h4>General Information</h4>
-                    <hr>
+        <div class="container__customer__edit row">
+            <div class="col-md-6">
+                  <h4>General Information</h4>
+                  <hr>
                     <div class="form__customer">
                         <table width="100%;">
                             <tr>
@@ -96,14 +88,11 @@
                             </tr>
                         </table>
                     </div>
-                </div>
             </div>
-            <div id="menu1" class="tab-pane fade">
-              
-                <div id="nav-profile" class="container__customer__edit ">
-                    <h4>PIC Information</h4>
-                    <hr>
-                    <div class="form__customer">
+            <div class="col-md-6">
+                  <h4>PIC Information</h4>
+                  <hr>
+                       <div class="form__customer">
                         <table width="100%;">
                             <tr>
                                 <td width="15%">
@@ -167,16 +156,15 @@
                             </tr>
                         </table>
                     </div>
-                </div>
-            
+            </div>
+
         </div>
-        <div id="menu2" class="tab-pane fade">
-          
-            <div id="nav-contact" class="container__customer__edit ">
-                <h4>Additional Information</h4>
-                <hr>
-                <div class="form__customer">
-                    <table width="100%;">
+           
+            <div class="container__customer__edit ">
+                    <h4>Additional Information</h4>
+                    <hr>
+                    <div class="form__customer">
+                        <table width="100%;">
                         <tr>
                             <td width="15%">
                                 <div style="float: left;">
@@ -263,9 +251,348 @@
                 </div>
             </div>
         
-    </div>
-</div>
+    
+ <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <li><a class="active nav-item nav-link " data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Bod</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">Branch</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Division</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu3" role="tab" aria-controls="nav-profile" aria-selected="false">Partner</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu4" role="tab" aria-controls="nav-profile" aria-selected="false">Product</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu5" role="tab" aria-controls="nav-profile" aria-selected="false">Socmed</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu6" role="tab" aria-controls="nav-profile" aria-selected="false">Subsidiary</a></li>
+            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu7" role="tab" aria-controls="nav-profile" aria-selected="false">History</a></li>
 
+        </ul>
+        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Detail</th>
+                                            <th>Company Name</th>
+                                            <th>Position</th>
+                                            <th>Company Birthday</th>
+                                            <th>Company Phone</th>
+                                            <th>Company Email</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td>jfbd</td>
+                                            <td>joerg</td>
+                                            <td>joegrg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td>jfbd</td>
+                                            <td>joerg</td>
+                                            <td>joegrg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td>jfbd</td>
+                                            <td>joerg</td>
+                                            <td>joegrg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu1"role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Branch</th>
+                                            <th>Company Branch</th>
+                                            <th>Address</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu2" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Division</th>
+                                            <th>Division Name</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu3" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Partner</th>
+                                            <th>Partner Name</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu4" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Product</th>
+                                            <th>Product Name</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu5" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Socmed</th>
+                                            <th>Socmed Type</th>
+                                            <th>Socmed Name</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu6" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Subsidiary</th>
+                                            <th>Subsidiary Name</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>Doe</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="menu7" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>History Name</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Work 1</td>
+                                            <td>jgraeg</td>
+                                            <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+          </div>              
+</div>
 </div>
 <div class="bar-3" style="padding: 0">
     <button class="btn btn-danger btn-round">Cancel</button>
