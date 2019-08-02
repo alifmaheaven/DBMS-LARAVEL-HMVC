@@ -57,7 +57,7 @@
                   </div>
 
                   <div class="form-group">
-						<input type="passowrd" name="user_password" placeholder="Password"><br>
+						<input type="passoword" name="user_password" placeholder="Password"><br>
                   </div>
 
 				  <p class="small">did you forget your password? Click <span style="color: red;">here</span></p>
