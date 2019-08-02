@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partner extends Model
 {
-    protected $table='res_partner';
+    protected $table='res_partner_copy';
     // protected $primaryKey='id';
      protected $fillable = ['id', 'name', 'company_id', 
                             'display_name', 'date', 'title', 

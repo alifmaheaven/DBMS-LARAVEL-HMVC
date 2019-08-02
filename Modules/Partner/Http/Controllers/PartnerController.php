@@ -3,6 +3,7 @@
 namespace Modules\Partner\Http\Controllers;
 
 use Modules\Partner\Entities\Partner;
+use Modules\Partner\Entities\CompanyDetail;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -18,7 +19,6 @@ class PartnerController extends Controller
 
         if (!$request->showdata) {
             $pagination = 10;
-            # code...
         } else {
             $pagination = $request->showdata;
         }
@@ -94,10 +94,22 @@ class PartnerController extends Controller
 
    
     public function getres_partner(Request $request){
-        //$getpartner=null;
+
         $id_partner = $request->id_partner;
-        $getpartner = Partner::where('id',$id_partner)->first();
-          return view('partner::editpartner',compact('getpartner'));
+        
+        $getData= CompanyDetail::where('id',$id_partner)->first();
+
+        if (count($getData) > 0) {
+            $getpartner = CompanyDetail::where('id',$id_partner)->first();
+            return view('partner::editpartner',compact('getpartner'));
+        } else {
+            $getpartner = Partner::where('id',$id_partner)->first();
+            return view('partner::editpartner',compact('getpartner'));
+        }
+        
+
+        
+        
       }
   
 }
