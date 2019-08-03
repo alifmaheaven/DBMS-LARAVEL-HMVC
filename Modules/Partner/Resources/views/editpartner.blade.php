@@ -488,6 +488,7 @@
 
                                     <script>
                                         var Bodstable = @JSON($Bods);
+                                        var remBodstable = []
                                         console.log(Bodstable);
 
                                         if (Bodstable.length > 0) {
@@ -522,8 +523,16 @@
 
 
                                         function deleteBodstablerow(data){     
+                                            
+                                            remBodstable.push(Bodstable[$(data).data('array')].id_companybod)
+                                            console.log("akan dihapus :");
+                                            console.log(remBodstable);
+                                            
+                                            
                                             Bodstable.splice($(data).data('array'), 1);     
                                             console.log(Bodstable);
+
+                                            
 
                                             let htmlbods = ''
                                             let nomorbods = 0
