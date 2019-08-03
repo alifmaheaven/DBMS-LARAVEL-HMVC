@@ -23,7 +23,7 @@
                                     </div>
                                 </td>
                                 <td width="40%">
-                                    <input type="text" name="" disabled placeholder="" value="{{$getpartner->id}}">
+                                    <input type="text" name="" disabled placeholder="" value="{{$Detail->id}}">
                                 </td>
                             </tr>
                             <tr>
@@ -33,7 +33,7 @@
                                     </div>
                                 </td>
                                 <td width="40%">
-                                    <input type="text" name="" disabled placeholder="Dyah Group" value="{{$getpartner->name}}">
+                                    <input type="text" name="" disabled placeholder="Dyah Group" value="{{$Detail->name}}">
                                 </td>
                             </tr>
                             <tr>
@@ -161,6 +161,7 @@
         </div>
            
             <div class="container__customer__edit ">
+                    <div class="col-md-6">
                     <h4>Additional Information</h4>
                     <hr>
                     <div class="form__customer">
@@ -250,6 +251,7 @@
                     </table>
                 </div>
             </div>
+            </div>
         
     
  <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -265,7 +267,7 @@
         </ul>
         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <table class="table" cellspacing="0">
+                                <table id="Bodstableid" class="table" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>Detail</th>
@@ -310,7 +312,7 @@
                                             <td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td>
                                         </tr>
                                         <tr>
-                                            <td><button class="btn btn-success btn-round" >Add</button></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -319,9 +321,193 @@
                                             <td></td>
                                             <td></td>
                                         </tr>
+                                        
                                     </tbody>
                                 </table>
+                                <button data-toggle="modal" data-target="#addBod" class="btn btn-success btn-round" >Add</button>
                             </div>
+
+                                {{-- Add Data BOD --}}
+                                <div class="modal" id="addBod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Bod</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body">
+
+
+                                            <form id="form-Bod">
+                                                  <div class="form-group">
+                                                    <label> Bod Name</label>
+                                                    <div class="input-group">
+                                                    
+                                                      <input type="text" class="form-control" id="add_Bodname" placeholder="Masukan Nama" name="add_Bodname">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label>Position</label>
+                                                    <div class="input-group">
+                                                     
+                                                      <div class="select"  style="width:200px;">
+                                                        <select id="add_Bodposition">
+                                                          {{-- dinamic select --}}
+                                                        </select>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  
+                                                  <div class="form-group">
+                                                    <label>Birth Day</label>
+                                                    <div class="input-group">
+                                                      
+                                                        <input type="date" id="add_Bodbirthday" name="bday">
+                                                    </div>
+                                                  </div>
+                                              
+                                                  <div class="form-group">
+                                                    <label>Bod Phone</label>
+                                                    <div class="input-group">
+                                                      <input type="number" class="form-control" id="add_Bodphone" placeholder="Masukan nomor telpon" name="username">
+                                                    </div>
+                                                  </div>
+
+                                                  <div class="form-group">
+                                                    <label>Email</label>
+                                                    <div class="input-group">
+                                                      <input type="email" class="form-control" id="add_Bodemail" placeholder="Masukan Username" name="username">
+                                                    </div>
+                                                  </div>   
+                                                                
+                                                  <div class="form-group">
+                                                    <label>Active</label>
+                                                    <div class="input-group">
+                                                        <div class="select" style="width:200px;">
+                                                            <select id="add_Bodactif">
+                                                              <option value="0">Non Actif</option>
+                                                              <option value="1">Actif</option>
+                                                            </select>
+                                                          </div>
+                                                    </div>
+                                                  </div>   
+                                              
+                                            </form>
+                                        
+                                          </div>
+                                          <div class="modal-footer">
+
+                                            <button id="addBodbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <script>
+                                        var Bodstable = @JSON($Bods);
+                                        console.log(Bodstable);
+
+                                        if (Bodstable.length > 0) {
+                                            
+                                        
+                                        } else {
+
+                                        console.log('halo');    
+                                        }
+
+                                     
+
+                                    $(document).ready(function() {
+	                                   
+	
+	                                    $('#addBodbutton').click(function(e){ //on add input button click
+                                		e.preventDefault();
+                                        
+                                        //Bodname
+                                        var addBodname = document.getElementById('add_Bodname').value
+                                        //posision select
+                                        var addBodposition = document.getElementById('add_Bodposition')
+                                        var optionBodPosition = addBodposition.options[addBodposition.selectedIndex].value;
+                                        //bodbirthday
+                                        var addBodbirthday = document.getElementById('add_Bodbirthday').value
+                                        //bodphone
+                                        var addBodphone = document.getElementById('add_Bodphone').value
+                                        //bodemail
+                                        var addBodemail = document.getElementById('add_Bodemail').value
+                                        //bodactive
+                                        var addBodactif = document.getElementById('add_Bodactif')
+                                        var optionBodactif = addBodactif.options[addBodactif.selectedIndex].value;
+                                        
+                                        
+
+                                        Bodstable.push({
+                                                        companybod_name: addBodname,
+                                                        id_position: optionBodPosition,
+                                                        companybod_birthday: addBodbirthday,
+                                                        companybod_phone: addBodphone,
+                                                        companybod_email: addBodemail,
+                                                        is_active : optionBodactif,
+                                                        })
+                                        
+
+                                        console.log(Bodstable);
+
+                                            let htmlbods = ''
+                                            let nomorbods = 0
+
+                                            Bodstable.forEach(data => {
+                                            console.log(data);
+                                            for (let i = 0; i < position.length; i++) {
+                                                if (position[i].id_position == data.id_position) {
+                                                    var companybodpositionname = position[i].position_name
+                                                }
+                                            }
+
+                                            if (data.is_active == 1) {
+                                                var companybodisactive = "aktif"
+                                            } else{
+                                                var companybodisactive = "non aktif"
+                                            }
+
+                                            
+                                            nomorbods += 1
+                                            htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td>'+companybodisactive+'</td><td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td></tr>'
+                                            $("#Bodstableid").find('tbody').html(htmlbods).show();
+
+                                          
+                                        });
+                                        jQuery.noConflict();
+                                        $("#addBod").removeClass("in");
+                                        $(".modal-backdrop").remove();
+                                        $("#addBod").hide();
+                                        $('#addBod').modal('hide');
+                                        
+                            
+	                                         });
+	
+	                                   
+                                            });
+
+                                        
+
+                                    </script>
+
+                                    <script>
+
+                                    var position = @JSON($Positions);
+                                        position.forEach(data => {
+                                            console.log(data);
+                                            $('<option value="'+data.id_position+'">'+data.position_name+'</option>').appendTo('#add_Bodposition');
+                                        });
+
+                                       
+
+                                    </script>
+
+                                   
+
                             <div class="tab-pane fade" id="menu1"role="tabpanel" aria-labelledby="nav-contact-tab">
                                 <table class="table" cellspacing="0">
                                     <thead>
@@ -599,6 +785,7 @@
     <button class="btn btn-info btn-round">Save</button>
 </div>
 </div>
+
 
 
 @stop

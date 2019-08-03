@@ -4,7 +4,7 @@ namespace Modules\Partner\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Hist_Am extends Model
+class HistAm extends Model
 {
     protected $table='t_hist_am';
     protected $primaryKey='id_hist_am';
