@@ -417,11 +417,38 @@
                                         console.log('halo');    
                                         }
 
-                                     
+
+
+                                        function deleteBodstablerow(data){     
+                                            Bodstable.splice($(data).data('array'), 1);     
+                                            console.log(Bodstable);
+
+                                            let htmlbods = ''
+                                            let nomorbods = 0
+
+                                            Bodstable.forEach(data => {
+                                            console.log(data);
+                                            for (let i = 0; i < position.length; i++) {
+                                                if (position[i].id_position == data.id_position) {
+                                                    var companybodpositionname = position[i].position_name
+                                                }
+                                            }
+                                            if (data.is_active == 1) {
+                                                var companybodisactive = "aktif"
+                                            } else{
+                                                var companybodisactive = "non aktif"
+                                            }
+                                            var arrayBods = nomorbods
+                                            nomorbods += 1
+                                            htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td>'+companybodisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td></tr>'
+                                            $("#Bodstableid").find('tbody').html(htmlbods).show();
+                                        });
+
+                                            
+                                        }
+
 
                                     $(document).ready(function() {
-	                                   
-	
 	                                    $('#addBodbutton').click(function(e){ //on add input button click
                                 		e.preventDefault();
                                         
@@ -439,9 +466,6 @@
                                         //bodactive
                                         var addBodactif = document.getElementById('add_Bodactif')
                                         var optionBodactif = addBodactif.options[addBodactif.selectedIndex].value;
-                                        
-                                        
-
                                         Bodstable.push({
                                                         companybod_name: addBodname,
                                                         id_position: optionBodPosition,
@@ -451,7 +475,6 @@
                                                         is_active : optionBodactif,
                                                         })
                                         
-
                                         console.log(Bodstable);
 
                                             let htmlbods = ''
@@ -464,16 +487,14 @@
                                                     var companybodpositionname = position[i].position_name
                                                 }
                                             }
-
                                             if (data.is_active == 1) {
                                                 var companybodisactive = "aktif"
                                             } else{
                                                 var companybodisactive = "non aktif"
                                             }
-
-                                            
+                                            var arrayBods = nomorbods
                                             nomorbods += 1
-                                            htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td>'+companybodisactive+'</td><td><button class="btn btn-primary btn-round" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td></tr>'
+                                            htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td>'+companybodisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" >Edit</button></td></tr>'
                                             $("#Bodstableid").find('tbody').html(htmlbods).show();
 
                                           
@@ -483,15 +504,8 @@
                                         $(".modal-backdrop").remove();
                                         $("#addBod").hide();
                                         $('#addBod').modal('hide');
-                                        
-                            
 	                                         });
-	
-	                                   
                                             });
-
-                                        
-
                                     </script>
 
                                     <script>
@@ -501,9 +515,6 @@
                                             console.log(data);
                                             $('<option value="'+data.id_position+'">'+data.position_name+'</option>').appendTo('#add_Bodposition');
                                         });
-
-                                       
-
                                     </script>
 
                                    
