@@ -1,6 +1,6 @@
 
 
-console.log(Bodstable);
+//console.log(Bodstable);
 
 if (Bodstable.length > 0) {
 
@@ -8,7 +8,7 @@ if (Bodstable.length > 0) {
     let nomorbods = 0
 
     Bodstable.forEach(data => {
-    console.log(data);
+    //console.log(data);
     for (let i = 0; i < position.length; i++) {
         if (position[i].id_position == data.id_position) {
             var companybodpositionname = position[i].position_name
@@ -28,7 +28,7 @@ if (Bodstable.length > 0) {
 
 } else {
 
-console.log('halo');    
+//console.log('halo');    
 }
 
 
@@ -36,12 +36,12 @@ console.log('halo');
 function deleteBodstablerow(data){     
     
     remBodstable.push(Bodstable[$(data).data('array')].id_companybod)
-    console.log("akan dihapus :");
-    console.log(remBodstable);
+    //console.log("akan dihapus :");
+    //console.log(remBodstable);
     
     
     Bodstable.splice($(data).data('array'), 1);     
-    console.log(Bodstable);
+    //console.log(Bodstable);
 
     
 
@@ -50,7 +50,7 @@ function deleteBodstablerow(data){
 
     if (Bodstable.length > 0) {
         Bodstable.forEach(data => {
-    console.log(data);
+    //console.log(data);
     for (let i = 0; i < position.length; i++) {
         if (position[i].id_position == data.id_position) {
             var companybodpositionname = position[i].position_name
@@ -76,7 +76,7 @@ function deleteBodstablerow(data){
     
     function editBodstablerow(data){     
    // Bodstable.splice($(data).data('array'), 1);     
-    console.log(Bodstable);
+    //console.log(Bodstable);
 
     $('#editBod').find('.modal-body').find("#edit_Bodarray").val($(data).data('array'));
     $('#editBod').find('.modal-body').find("#edit_Bodname").val(Bodstable[$(data).data('array')].companybod_name);
@@ -119,13 +119,13 @@ Bodstable.push({
                 is_active : optionBodactif,
                 })
 
-console.log(Bodstable);
+//console.log(Bodstable);
 
     let htmlbods = ''
     let nomorbods = 0
 
     Bodstable.forEach(data => {
-    console.log(data);
+    //console.log(data);
     for (let i = 0; i < position.length; i++) {
         if (position[i].id_position == data.id_position) {
             var companybodpositionname = position[i].position_name
@@ -180,13 +180,13 @@ Bodstable[editbodarray].companybod_email = editBodemail
 Bodstable[editbodarray].is_active = optionBodactif
 
 
-console.log(Bodstable);
+//console.log(Bodstable);
 
     let htmlbods = ''
     let nomorbods = 0
 
     Bodstable.forEach(data => {
-    console.log(data);
+    //console.log(data);
     for (let i = 0; i < position.length; i++) {
         if (position[i].id_position == data.id_position) {
             var companybodpositionname = position[i].position_name
@@ -218,7 +218,7 @@ $('#editBod').modal('hide');
 
 
 position.forEach(data => {
-    console.log(data);
+    //console.log(data);
     $('<option value="'+data.id_position+'">'+data.position_name+'</option>').appendTo('#add_Bodposition');
     $('<option value="'+data.id_position+'">'+data.position_name+'</option>').appendTo('#edit_Bodposition');
 });
