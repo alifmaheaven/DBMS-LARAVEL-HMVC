@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png')}}">
 	<link rel="icon" type="image/png" href="{{ asset('img/favicon.png')}}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>
-		Material Dashboard by Creative Tim
+		DBMS Login
 	</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 	<!--     Fonts and icons     -->
@@ -34,8 +35,9 @@
 
 				<h1>Login</h1>
 				<div class="separator"></div>
-				<h3>Welcome back!</h3>
-				<h4>Login to access the DBMS</h4>
+				
+				<h4>Welcome back!</h4>
+				<h5>Login to access the DBMS</h5>
 				
 				
 				
@@ -57,21 +59,23 @@
 
 
 					<div class="form-group">
-						<input type="text" name="user_email" placeholder="Email"><br>
+						<input type="text" name="user_email" placeholder="Email" style="width: 320px;height: 35px;">
+						<span>
+							<i id="email" class="fas fa-envelope" style="width: 30px;height: 35px;"></i>
+						</span>
+						<br>
 					</div>
 
 					<div class="form-group">
 						
-						<input type="password" name="user_password" placeholder="Password" id="user_password" style="width: 420px;" >
+						<input type="password" name="user_password" placeholder="Password" id="user_password" style="width: 320px;height: 35px;" >
 						<span>
-							<i id="eye" class="fas fa-eye" onclick="pass()"></i>
+							<i id="eye" class="fas fa-eye" onclick="pass()" style="width: 30px;height: 35px;"></i>
 						</span>
 
-						<!-- <img src="{{ asset('img/dyah/ic-eye.png')}}"> --><br>
 					</div>
-
-					<p class="small">did you forget your password? Click <a href=""><span style="color: red;">here</span></a></p>
-
+					<p class="small" style="margin-left: 10px;">Did you forget your password? Click <a href=""><span style="color: red;">here</span></a></p>
+					
 					<div class="form-group">
 						<button type="submit" class="btn">Login</button>
 					</div>

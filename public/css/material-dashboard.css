@@ -849,8 +849,9 @@ hr {
 
 small,
 .small {
-  font-size: 80%;
+  font-size: 65%;
   font-weight: 400;
+  margin-left: 10px;
 }
 
 mark,
@@ -12936,9 +12937,9 @@ select.form-control {
 }
 
 .form-group {
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   position: relative;
-  margin: 8px 0 0;
+  margin: -2px 0 0;
 }
 
 .form-group .bmd-label-static {
