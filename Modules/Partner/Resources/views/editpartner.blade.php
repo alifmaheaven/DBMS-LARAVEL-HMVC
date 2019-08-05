@@ -21,7 +21,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <input type="text" name="" disabled placeholder="" value="{{$Detail->id}}">
+                                <input type="text" id="inputan_id" name="" disabled placeholder="" value="{{$Detail->id}}">
                             </td>
                         </tr>
                         <tr>
@@ -291,99 +291,9 @@
 
 </div>
 
-            <!-- <div class="container__customer__edit ">
-                    <div class="col-md-6">
-                    <h4>Additional Information</h4>
-                    <hr>
-                    <div class="form__customer">
-                        <table width="100%;">
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-name.png')}}"><span>Name</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-title.png')}}"><span>Title</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-date.png')}}"><span>Date of Birth</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="" style="width: 50%">
-                                <input type="text" name="" style="width: 30%">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>Email</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Mobile</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Phone</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <textarea rows="4"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-period.png')}}"><span>Period</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="" style="width: 40%">
-                                <input type="text" name="" style="width: 40%">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div> -->
-        
+
+
+
 
         <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <li><a class="active nav-item nav-link " data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Bod</a></li>
@@ -1472,9 +1382,16 @@
 </div>
 <div class="bar-3" style="padding: 0">
     <button class="btn btn-danger btn-round">Cancel</button>
-    <button class="btn btn-info btn-round">Save</button>
+    <button onclick="SubmitAll()" class="btn btn-info btn-round">Save</button>
 </div>
 </div>
+
+
+<script> 
+    var segment = @JSON($Segments); 
+    var businesstype = @JSON($Businesstypes);    
+</script>
+<script src="{{ URL::asset('js/function/submitall.js') }}"></script>
 
 
 
