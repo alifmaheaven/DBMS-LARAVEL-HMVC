@@ -15,6 +15,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<!-- CSS Files -->
 	<link href="{{ asset('css/material-dashboard.css?v=2.1.1')}}" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="{{ asset('demo/demo.css')}}" rel="stylesheet" />
 	<link href="{{ asset('css/style.css')}}" rel="stylesheet" />
@@ -36,37 +39,44 @@
 				
 				
 				
+				
 
 				<form method="POST" action="{{ url('/login') }}" class="needs-validation" >
 					{{ csrf_field() }}
 
 					<div class="form-group">
-					@if(Session::has('alert'))
+						@if(Session::has('alert'))
 
-					<div class="alert alert-danger alert-dismissible">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					<strong> <div>{{Session::get('alert')}}</div></strong>
+						<div class="alert alert-danger alert-dismissible">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong> <div>{{Session::get('alert')}}</div></strong>
 
+						</div>
+						@endif
 					</div>
-					@endif
-					</div>
 
 
-                  <div class="form-group">
+					<div class="form-group">
 						<input type="text" name="user_email" placeholder="Email"><br>
-                  </div>
+					</div>
 
-                  <div class="form-group">
-						<input type="password" name="user_password" placeholder="Password"><br>
-                  </div>
+					<div class="form-group">
+						
+						<input type="password" name="user_password" placeholder="Password" id="user_password" style="width: 420px;" >
+						<span>
+							<i id="eye" class="fas fa-eye" onclick="pass()"></i>
+						</span>
 
-				  <p class="small">did you forget your password? Click <span style="color: red;">here</span></p>
-				
-                  <div class="form-group">
+						<!-- <img src="{{ asset('img/dyah/ic-eye.png')}}"> --><br>
+					</div>
+
+					<p class="small">did you forget your password? Click <a href=""><span style="color: red;">here</span></a></p>
+
+					<div class="form-group">
 						<button type="submit" class="btn">Login</button>
-                  </div>
+					</div>
 				</form>
-				
+
 
 
 			</div>
@@ -293,12 +303,23 @@
 </script>
 
 <script>
-$(document).ready(function() {
-  $(".alert").hide();
-    $(".alert").fadeTo(2000, 500).slideUp(500, function() {
-      $(".alert").slideUp(500);
-    });
-});
+	$(document).ready(function() {
+		$(".alert").hide();
+		$(".alert").fadeTo(2000, 500).slideUp(500, function() {
+			$(".alert").slideUp(500);
+		});
+	});
+</script>
+<script type="text/javascript">
+      function pass() {
+        var x = document.getElementById("user_password");
+        $('#eye').toggleClass("far fa-eye-slash");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
 </script>
 
 </body>
