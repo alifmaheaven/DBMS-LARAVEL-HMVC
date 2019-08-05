@@ -4,6 +4,16 @@ namespace Modules\Partner\Http\Controllers;
 
 use Modules\Partner\Entities\Partner;
 use Modules\Partner\Entities\CompanyDetail;
+
+use Modules\Partner\Entities\CompanyBod;
+use Modules\Partner\Entities\CompanyBranch;
+use Modules\Partner\Entities\CompanyDivision;
+use Modules\Partner\Entities\CompanyPartner;
+use Modules\Partner\Entities\CompanyProduct;
+use Modules\Partner\Entities\CompanySocmed;
+use Modules\Partner\Entities\CompanySubsidiary;
+use Modules\Partner\Entities\HistAm;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -106,19 +116,46 @@ class PartnerController extends Controller
             // when data there is
             $Detail = CompanyDetail::where('id',$id_partner)->first();
 
+            $Bods = CompanyBod::where('id',$id_partner)->get();
+            $Branchs = CompanyBranch::where('id',$id_partner)->get();
+            $Divisions = CompanyDivision::where('id',$id_partner)->get();
+            $Partners = CompanyPartner::where('id',$id_partner)->get();
+            $Products = CompanyProduct::where('id',$id_partner)->get();
+            $Socmeds = CompanySocmed::where('id',$id_partner)->get();
+            $Subsidiarys = CompanySubsidiary::where('id',$id_partner)->get();
+            $Hists = HistAm::where('id',$id_partner)->get();
+
 
             return view('partner::editpartner',compact('Detail'));
         } else {
 
             // when data is nothing
             $Detail = Partner::where('id',$id_partner)->first();
+            
+            //dropdown
             $Businesstypes = DB::table('p_businesstype')->get();
             $Positions = DB::table('p_position')->get();
             $Segments = DB::table('p_segment')->get();
             $Sigmaproducts = DB::table('p_sigmaproduct')->get();
             $Socmedtypes = DB::table('p_socmedtype')->get();
 
-            return view('partner::editpartner', compact('Detail','Businesstypes','Positions','Segments','Sigmaproducts','Socmedtypes'));
+            //tabvalue
+            $Bods = [];
+            $Branchs = [];
+            $Divisions = [];
+            $Partners = [];
+            $Products = [];
+            $Socmeds = [];
+            $Subsidiarys = [];
+            $Hists = [];
+            
+
+
+            return view('partner::editpartner', compact('Detail','Businesstypes',
+                                                        'Positions','Segments',
+                                                        'Sigmaproducts','Socmedtypes',
+                                                        'Bods','Branchs','Divisions','Partners',
+                                                        'Products','Socmeds','Subsidiarys','Hists'));
         }
         
 
