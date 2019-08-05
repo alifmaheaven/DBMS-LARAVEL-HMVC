@@ -9,9 +9,9 @@ if (Socmedstable.length > 0) {
 
     Socmedstable.forEach(data => {
     //console.log(data);
-    for (let i = 0; i < position.length; i++) {
-        if (position[i].id_position == data.id_position) {
-            var companySocmedpositionname = position[i].position_name
+    for (let i = 0; i < Socmedtype.length; i++) {
+        if (Socmedtype[i].id_socmedtype == data.id_socmedtype) {
+            var companySocmedpositionname = Socmedtype[i].socmedtype_name
         }
     }
     if (data.is_active == 1) {
@@ -21,9 +21,11 @@ if (Socmedstable.length > 0) {
     }
     var arraySocmeds = nomorSocmeds
     nomorSocmeds += 1
-    htmlSocmeds += '<tr><td>'+nomorSocmeds+'</td><td>'+data.companySocmed_name+'</td><td>'+companySocmedpositionname+'</td><td>'+data.companySocmed_birthday+'</td><td>'+data.companySocmed_phone+'</td><td>'+data.companySocmed_email+'</td><td>'+companySocmedisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
+    htmlSocmeds += '<tr><td>'+nomorSocmeds+'</td><td>'+companySocmedpositionname+'</td><td>'+data.socmed_name+'</td><td>'+companySocmedisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
     $("#Socmedstableid").find('tbody').html(htmlSocmeds).show();
-    });
+
+  
+});
     
 
 } else {

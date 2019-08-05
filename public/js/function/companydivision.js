@@ -9,11 +9,7 @@ if (Divisionstable.length > 0) {
 
     Divisionstable.forEach(data => {
     //console.log(data);
-    for (let i = 0; i < position.length; i++) {
-        if (position[i].id_position == data.id_position) {
-            var companyDivisionpositionname = position[i].position_name
-        }
-    }
+   
     if (data.is_active == 1) {
         var companyDivisionisactive = "aktif"
     } else{
@@ -21,9 +17,11 @@ if (Divisionstable.length > 0) {
     }
     var arrayDivisions = nomorDivisions
     nomorDivisions += 1
-    htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companyDivision_name+'</td><td>'+companyDivisionpositionname+'</td><td>'+data.companyDivision_birthday+'</td><td>'+data.companyDivision_phone+'</td><td>'+data.companyDivision_email+'</td><td>'+companyDivisionisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+    htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td>'+companyDivisionisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
     $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
-    });
+
+  
+});
     
 
 } else {

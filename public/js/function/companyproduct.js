@@ -9,9 +9,9 @@ if (Productstable.length > 0) {
 
     Productstable.forEach(data => {
     //console.log(data);
-    for (let i = 0; i < position.length; i++) {
-        if (position[i].id_position == data.id_position) {
-            var companyProductpositionname = position[i].position_name
+    for (let i = 0; i < Sigmaproduct.length; i++) {
+        if (Sigmaproduct[i].id_sigmaproduct == data.id_sigmaproduct) {
+            var companyProductSigmaproductname = Sigmaproduct[i].sigmaproduct_name
         }
     }
     if (data.is_active == 1) {
@@ -21,10 +21,11 @@ if (Productstable.length > 0) {
     }
     var arrayProducts = nomorProducts
     nomorProducts += 1
-    htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+data.companyProduct_name+'</td><td>'+companyProductpositionname+'</td><td>'+data.companyProduct_birthday+'</td><td>'+data.companyProduct_phone+'</td><td>'+data.companyProduct_email+'</td><td>'+companyProductisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+    htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td>'+companyProductisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
     $("#Productstableid").find('tbody').html(htmlProducts).show();
-    });
-    
+
+  
+});
 
 } else {
 

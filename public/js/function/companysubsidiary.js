@@ -6,14 +6,10 @@ if (Subsidiarystable.length > 0) {
 
     let htmlSubsidiarys = ''
     let nomorSubsidiarys = 0
-
+    
     Subsidiarystable.forEach(data => {
     //console.log(data);
-    for (let i = 0; i < position.length; i++) {
-        if (position[i].id_position == data.id_position) {
-            var companySubsidiarypositionname = position[i].position_name
-        }
-    }
+    
     if (data.is_active == 1) {
         var companySubsidiaryisactive = "aktif"
     } else{
@@ -21,8 +17,10 @@ if (Subsidiarystable.length > 0) {
     }
     var arraySubsidiarys = nomorSubsidiarys
     nomorSubsidiarys += 1
-    htmlSubsidiarys += '<tr><td>'+nomorSubsidiarys+'</td><td>'+data.companySubsidiary_name+'</td><td>'+companySubsidiarypositionname+'</td><td>'+data.companySubsidiary_birthday+'</td><td>'+data.companySubsidiary_phone+'</td><td>'+data.companySubsidiary_email+'</td><td>'+companySubsidiaryisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
+    htmlSubsidiarys += '<tr><td>'+nomorSubsidiarys+'</td><td>'+data.companysubsidiary_name+'</td><td>'+companySubsidiaryisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
     $("#Subsidiarystableid").find('tbody').html(htmlSubsidiarys).show();
+    
+    
     });
     
 

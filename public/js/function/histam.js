@@ -4,26 +4,25 @@
 
 if (Histsstable.length > 0) {
 
-    let htmlHistss = ''
-    let nomorHistss = 0
+   
+let htmlHistss = ''
+let nomorHistss = 0
 
-    Histsstable.forEach(data => {
-    //console.log(data);
-    for (let i = 0; i < position.length; i++) {
-        if (position[i].id_position == data.id_position) {
-            var companyHistspositionname = position[i].position_name
-        }
-    }
-    if (data.is_active == 1) {
-        var companyHistsisactive = "aktif"
-    } else{
-        var companyHistsisactive = "non aktif"
-    }
-    var arrayHistss = nomorHistss
-    nomorHistss += 1
-    htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.companyHists_name+'</td><td>'+companyHistspositionname+'</td><td>'+data.companyHists_birthday+'</td><td>'+data.companyHists_phone+'</td><td>'+data.companyHists_email+'</td><td>'+companyHistsisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
-    $("#Histsstableid").find('tbody').html(htmlHistss).show();
-    });
+Histsstable.forEach(data => {
+//console.log(data);
+
+if (data.is_active == 1) {
+    var companyHistsisactive = "aktif"
+} else{
+    var companyHistsisactive = "non aktif"
+}
+var arrayHistss = nomorHistss
+nomorHistss += 1
+htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td>'+companyHistsisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+$("#Histsstableid").find('tbody').html(htmlHistss).show();
+
+
+});
     
 
 } else {

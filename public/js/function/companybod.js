@@ -4,7 +4,7 @@
 
 if (Bodstable.length > 0) {
 
-    let htmlbods = ''
+   let htmlbods = ''
     let nomorbods = 0
 
     Bodstable.forEach(data => {
@@ -23,7 +23,9 @@ if (Bodstable.length > 0) {
     nomorbods += 1
     htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td>'+companybodisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
     $("#Bodstableid").find('tbody').html(htmlbods).show();
-    });
+
+  
+});
     
 
 } else {

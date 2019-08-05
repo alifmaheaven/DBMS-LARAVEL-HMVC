@@ -4,26 +4,25 @@
 
 if (Branchstable.length > 0) {
 
-    let htmlbods = ''
-    let nomorbods = 0
+   
+let htmlBranchs = ''
+let nomorBranchs = 0
 
-    Branchstable.forEach(data => {
-    //console.log(data);
-    for (let i = 0; i < position.length; i++) {
-        if (position[i].id_position == data.id_position) {
-            var companybodpositionname = position[i].position_name
-        }
-    }
-    if (data.is_active == 1) {
-        var companybodisactive = "aktif"
-    } else{
-        var companybodisactive = "non aktif"
-    }
-    var arrayBods = nomorbods
-    nomorbods += 1
-    htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td>'+companybodisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
-    $("#Branchstableid").find('tbody').html(htmlbods).show();
-    });
+Branchstable.forEach(data => {
+//console.log(data);
+
+if (data.is_active == 1) {
+    var companyBranchisactive = "aktif"
+} else{
+    var companyBranchisactive = "non aktif"
+}
+var arrayBranchs = nomorBranchs
+nomorBranchs += 1
+htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td>'+companyBranchisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+$("#Branchstableid").find('tbody').html(htmlBranchs).show();
+
+  
+});
     
 
 } else {

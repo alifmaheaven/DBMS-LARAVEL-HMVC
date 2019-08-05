@@ -9,7 +9,7 @@ if (Partnerstable.length > 0) {
 
     Partnerstable.forEach(data => {
     //console.log(data);
-   
+
     if (data.is_active == 1) {
         var companyPartnerisactive = "aktif"
     } else{
@@ -17,8 +17,10 @@ if (Partnerstable.length > 0) {
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companyPartner_name+'</td><td>'+companyPartnerpositionname+'</td><td>'+data.companyPartner_birthday+'</td><td>'+data.companyPartner_phone+'</td><td>'+data.companyPartner_email+'</td><td>'+companyPartnerisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td>'+companyPartnerisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
+
+
     });
     
 
