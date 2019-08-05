@@ -41,7 +41,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <textarea rows="4" placeholder="lorem ipsum dolor sit amet dyah jalan danau towuti g5 a17 malang urea malang asd lorem ipsum dolor ist amet" disabled></textarea>
+                                <textarea rows="4" placeholder="Address 1" disabled>{{$Detail->street}}</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -51,7 +51,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <textarea rows="4" placeholder="lorem ipsum dolor sit amet dyah jalan danau towuti g5 a17 malang urea malang asd lorem ipsum dolor ist amet" disabled></textarea>
+                                <textarea rows="4" placeholder="Address 2" disabled>{{$Detail->street2}}</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -61,7 +61,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <textarea rows="4" placeholder="lorem ipsum dolor sit amet dyah jalan danau towuti g5 a17 malang urea malang asd lorem ipsum dolor ist amet" disabled></textarea>
+                                <textarea rows="4" placeholder="Address 3" disabled></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -71,7 +71,7 @@
                                 </div>
                             </td>
                             <td width="40%">
-                                <input type="text" name="">
+                                <input id="inputan_company_doe" type="text" name="">
                             </td>
                         </tr>
                         <tr>
@@ -83,7 +83,7 @@
                             </td>
                             <td width="40%">
                                 <div class="select"  style="width:200px;">
-                                    <select id="add_Bodposition">
+                                    <select id="inputan_id_businesstype">
                                       {{-- dinamic select --}}
                                   </select>
                               </div>
@@ -96,7 +96,7 @@
                             </div>
                         </td>
                         <td width="40%">
-                            <input type="text" name="">
+                            <input id="inputan_number_of_employee" type="number" name="">
                         </td>
                     </tr>
                     <tr>
@@ -106,7 +106,7 @@
                             </div>
                         </td>
                         <td width="40%">
-                            <input type="text" name="">
+                            <input id="inputan_company_phone" type="text" name="">
                         </td>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@
                             </div>
                         </td>
                         <td width="40%">
-                            <input type="text" name="">
+                            <input id="inputan_company_website" type="text" name="">
                         </td>
                     </tr>
                     <tr>
@@ -126,7 +126,7 @@
                             </div>
                         </td>
                         <td width="40%">
-                            <input type="text" name="">
+                            <input id="inputan_asset_value" type="text" name="">
                         </td>
                     </tr>
                 </table>
@@ -142,7 +142,7 @@
                     </div>
                 </td>
                 <td width="40%">
-                    <input type="text" name="">
+                    <input id="inputan_company_annual_income" type="text" name="">
                 </td>
             </tr>
             <tr>
@@ -152,7 +152,7 @@
                     </div>
                 </td>
                 <td width="40%">
-                    <input type="text" name="">
+                    <input id="inputan_company_email"  type="text" name="">
                 </td>
             </tr>
             <tr>
@@ -162,7 +162,7 @@
                     </div>
                 </td>
                 <td width="40%">
-                    <input type="text" name="">
+                    <input id="inputan_product_sold_permonth"  type="text" name="">
                 </td>
             </tr>
             <tr>
@@ -172,7 +172,7 @@
                     </div>
                 </td>
                 <td width="40%">
-                    <input type="text" name="">
+                    <input  id="inputan_company_revenue" type="text" name="">
                 </td>
             </tr>
             <tr>
@@ -182,7 +182,7 @@
                     </div>
                 </td>
                 <td width="40%">
-                    <input type="text" name="">
+                    <input id="inputan_company_competitor"  type="text" name="">
                 </td>
             </tr>
             <tr>
@@ -194,7 +194,7 @@
                 </td>
                 <td width="40%">
                     <div class="select"  style="width:200px;">
-                        <select id="add_Bodposition">
+                        <select  id="inputan_id_segment" >
                           {{-- dinamic select --}}
                       </select>
                   </div>
@@ -207,7 +207,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_history"  type="text" name="">
             </td>
         </tr>
         <tr>
@@ -217,7 +217,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_num_customer" type="text" name="">
             </td>
         </tr>
         <tr>
@@ -227,7 +227,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_culture" type="text" name="">
             </td>
         </tr>
         <tr>
@@ -237,7 +237,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_workinghours" type="text" name="">
             </td>
         </tr>
         <tr>
@@ -247,7 +247,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_budget_permonth" type="text" name="">
             </td>
         </tr>
         <tr>
@@ -257,7 +257,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_product_needs" type="text" name="">
             </td>
         </tr>
         <tr>
@@ -267,7 +267,7 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
+                <input id="inputan_company_last_am" type="text" name="">
             </td>
         </tr>
         <tr>
@@ -277,8 +277,13 @@
                 </div>
             </td>
             <td width="40%">
-                <input type="text" name="">
-            </td>
+                    <div class="select"  style="width:200px;">
+                        <select  id="inputan_is_active" >
+                                <option value="0">Non Actif</option>
+                                <option value="1">Actif</option>
+                      </select>
+                  </div>
+              </td>
         </tr>
     </table>
 </div>
