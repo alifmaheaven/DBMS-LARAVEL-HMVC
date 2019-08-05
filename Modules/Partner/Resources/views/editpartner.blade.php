@@ -270,7 +270,7 @@
                                 <table id="Bodstableid" class="table" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Detail</th>
+                                            <th>No.</th>
                                             <th>Company Name</th>
                                             <th>Position</th>
                                             <th>Company Birthday</th>
@@ -458,7 +458,7 @@
                                 <table class="table" id="Branchstableid" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID Branch</th>
+                                            <th>No.</th>
                                             <th>Company Branch</th>
                                             <th>Address</th>
                                             <th>Active</th>
@@ -590,7 +590,7 @@
                                 <table class="table" cellspacing="0" id="Divisionstableid">
                                     <thead>
                                         <tr>
-                                            <th>ID Division</th>
+                                            <th>No.</th>
                                             <th>Division Name</th>
                                             <th>Active</th>
                                             <th>Action</th>
@@ -710,7 +710,7 @@
                                 <table class="table" cellspacing="0" id="Partnerstableid">
                                     <thead>
                                         <tr>
-                                            <th>ID Partner</th>
+                                            <th>No.</th>
                                             <th>Partner Name</th>
                                             <th>Active</th>
                                             <th>Action</th>
@@ -829,7 +829,7 @@
                                 <table class="table" cellspacing="0" id="Productstableid">
                                     <thead>
                                         <tr>
-                                            <th>ID Product</th>
+                                            <th>No.</th>
                                             <th>Product Name</th>
                                             <th>Active</th>
                                             <th>Action</th>
@@ -955,7 +955,7 @@
                                 <table class="table" cellspacing="0" id="Socmedstableid">
                                     <thead>
                                         <tr>
-                                            <th>ID Socmed</th>
+                                            <th>No.</th>
                                             <th>Socmed Type</th>
                                             <th>Socmed Name</th>
                                             <th>Active</th>
@@ -1099,7 +1099,7 @@
                                 <table class="table" cellspacing="0" id="Subsidiarystableid">
                                     <thead>
                                         <tr>
-                                            <th>ID Subsidiary</th>
+                                            <th>No.</th>
                                             <th>Subsidiary Name</th>
                                             <th>Active</th>
                                             <th>Action</th>
