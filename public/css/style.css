@@ -252,55 +252,64 @@ table th {
 /* LOGIN */
 #login {
 	background: url(../img/dyah/bg-login.png);
-	background-color: #cccccc;
-	height: 900px;
+	/*background-color: #cccccc;*/
+	height: 100%;
 	width: 100%;
 	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+	/*background-repeat: no-repeat;*/
+	background-size: 100% 100%;
+	/*background-attachment: fixed;*/
 }
 
 .konten-login {
-	padding: 50px 0 0 0;
+	padding: 30px 0 0 0;
 	height: 100vh;
 }
 
 .konten-login h1 {
 	font-weight: bold;
+	font-size: 40px;
 	color: #000;
-	margin-top: 60px;
+	margin-top: 40px;
 	padding-top: 30px;
 }
 
 .konten-login .separator {
-	width: 140px;
-	height: 3px;
+	width: 110px;
+	height: 2px;
 	background-color: #C879D9;
 	margin: auto;
 }
 
 .konten-login h4 {
-	line-height: 1px;
+	font-size: 20px;
+	line-height: 5px;
+	margin-top: 40px;
+}
+.konten-login h5 {
+	font-size: 14px;
+	line-height: 5px;
+	margin-top: 15px;
 }
 
 .konten-login input {
 	width: 450px;
 	padding: 8px 20px;
 	font-size: 16px;
-	margin: 40px 0 0 0;
+	margin: 25px 0 0 0;
 	box-sizing: border-box;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
 
 .konten-login p {
-	margin: 20px 0 0 -170px;
+	margin: 10px 0 0 -170px;
 }
 
 .konten-login button {
-	width: 300px;
-	margin-top: 50px;
+	width: 280px;
+	height: 35px;
+	margin-top: 20px;
 	letter-spacing: 2px;
 	background-image: linear-gradient(90deg, #E672C3, #9784FF);
 }
@@ -308,10 +317,11 @@ table th {
 .cardku {
 	background-color: #fff;
 	text-align: center;
-	width: 550px;
-	/*height: 500px;*/
+	width: 450px;
+	/*height: 100%;*/
 	padding: 0 0 50px 0;
 	margin: auto;
+	border-radius: 4px;
 }
 
 /* search tambahan */
@@ -347,6 +357,11 @@ table th {
 		width: 350px!important;
 		float: left;
 	}
+}
+@media screen and (max-width:575px) {
+    .konten-login h1 {
+    font-size: 40px;
+    
 }
 
 /* showing data */
