@@ -148,12 +148,13 @@ table button {
 	padding: 7px 0 7px 0!important;
 }
 
-table th, td {
-	text-align: center!important;
+table td {
+	text-align: left;
 }
 
 table th {
 	background-color: #f4f4f4;
+	text-align: center!important;
 }
 
 .footer__customer {
