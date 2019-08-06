@@ -17,37 +17,37 @@
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-id.png')}}"><span>Customer ID</span>
                         </div>
-                        <input type="text" id="inputan_id" class="form-control" name="" style="margin-bottom: 15px;" readonly="" placeholder="" value="{{$Detail->id}}">
+                        <input type="text" id="inputan_id" class="form-control" name="" style="margin-bottom: 15px;width: 340px;" readonly="" placeholder="" value="{{$Detail->id}}">
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-name.png')}}"><span>Customer Name</span>
                         </div>
-                        <input type="text" class="form-control" name="" style="margin-bottom: 15px;" readonly="" placeholder="Dyah Group" value="{{$Detail->name}}">
+                        <input type="text" class="form-control" name="" style="margin-bottom: 15px;width: 340px;" readonly="" placeholder="Dyah Group" value="{{$Detail->name}}">
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address 1</span>
                         </div>
-                        <textarea rows="4" class="form-control" placeholder="Address 1" style="margin-bottom: 15px;" readonly="">{{$Detail->street}}</textarea>
+                        <textarea rows="4" class="form-control" placeholder="Address 1" style="margin-bottom: 15px;width: 340px;" readonly="">{{$Detail->street}}</textarea>
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address 2</span>
                         </div>
-                        <textarea rows="4" class="form-control" placeholder="Address 2" style="margin-bottom: 15px;" readonly="">{{$Detail->street2}}</textarea>
+                        <textarea rows="4" class="form-control" placeholder="Address 2" style="margin-bottom: 15px;width: 340px;" readonly="">{{$Detail->street2}}</textarea>
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address 3</span>
                         </div>
-                        <textarea rows="4" class="form-control" placeholder="Address 3" style="margin-bottom: 15px;" readonly=""></textarea>
+                        <textarea rows="4" class="form-control" placeholder="Address 3" style="margin-bottom: 15px;width: 340px;" readonly=""></textarea>
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Doe</span>
                         </div>
-                        <input id="inputan_company_doe" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+                        <input id="inputan_company_doe" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
                         <div style="float: left; ">
                             <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>ID Bussiness</span>
                         </div>
-                        <div class="select"  style="width:200px;">
+                        <div class="select"  style="width: 340px;">
                             <select id="inputan_id_businesstype">
                               {{-- dinamic select --}}
                           </select>
@@ -56,59 +56,57 @@
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Number Employee</span>
                         </div>
-                        <input id="inputan_number_of_employee" class="form-control" type="number" name="" style="margin-bottom: 15px;">
+                        <input id="inputan_number_of_employee" class="form-control" type="number" name="" style="margin-bottom: 15px;width: 340px;">
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Company Phone</span>
                         </div>
-                        <input id="inputan_company_phone" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+                        <input id="inputan_company_phone" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Website</span>
                         </div>
-                        <input id="inputan_company_website" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+                        <input id="inputan_company_website" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Assets Value</span>
                         </div>
-                        <input id="inputan_asset_value" class="form-control" type="text" name="" style="margin-bottom: 15px;">
-
+                        <input id="inputan_asset_value" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
+                        <div style="float: left;" >
+                            <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Income</span>
+                        </div>
+                        <input id="inputan_company_annual_income" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
                 </table>
             </div>
         </div>
         <div class="col-md-6">
            <div class="form__customer">
             <table width="100%;">
-
-                <div style="float: left;" >
-                    <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Income</span>
-                </div>
-                <input id="inputan_company_annual_income" class="form-control" type="text" name="" style="margin-bottom: 15px;">
-
+                
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>Company Email</span>
                 </div>
-                <input id="inputan_company_email" class="form-control"  type="text" name="" style="margin-bottom: 15px;">
+                <input id="inputan_company_email" class="form-control"  type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/ic-name.png')}}"><span>Product Sold</span>
                 </div>
-                <input id="inputan_product_sold_permonth" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+                <input id="inputan_product_sold_permonth" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
                 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/ic-title.png')}}"><span>Company Revenue</span>
                 </div>
-                <input  id="inputan_company_revenue" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+                <input  id="inputan_company_revenue" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
                 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Company Competitor</span>
                 </div>
-                <input id="inputan_company_competitor" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+                <input id="inputan_company_competitor" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>ID Segment</span>
                 </div>
-                <div class="select "  style="width:275px;">
+                <div class="select "  style="width: 340px;">
                     <select  id="inputan_id_segment"  >
                       {{-- dinamic select --}}
                   </select>
@@ -117,42 +115,42 @@
               <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Company History</span>
             </div>
-            <input id="inputan_company_history" class="form-control"  type="text" name="" style="margin-bottom: 15px;">
+            <input id="inputan_company_history" class="form-control"  type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Customer</span>
             </div>
-            <input id="inputan_company_num_customer" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+            <input id="inputan_company_num_customer" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Culture</span>
             </div>
-            <input id="inputan_company_culture" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+            <input id="inputan_company_culture" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>Company Workinghours</span>
             </div>
-            <input id="inputan_company_workinghours" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+            <input id="inputan_company_workinghours" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
 
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Company Budget</span>
             </div>
-            <input id="inputan_company_budget_permonth" pattern="[0-9]" class="form-control" type="text" name="" style="margin-bottom: 15px;" onkeypress="return isNumber(event)" >
+            <input id="inputan_company_budget_permonth" pattern="[0-9]" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;" onkeypress="return isNumber(event)" >
 
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Product</span>
             </div>
-            <input id="inputan_company_product_needs" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+            <input id="inputan_company_product_needs" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
             
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Company last</span>
             </div>
-            <input id="inputan_company_last_am" class="form-control" type="text" name="" style="margin-bottom: 15px;">
+            <input id="inputan_company_last_am" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;">
             
             <div style="float: left;">
                 <img src="{{ URL::asset('img/dyah/ic-title.png')}}"><span>Active</span>
             </div>
-            <div class="select"  style="width:275px;">
+            <div class="select"  style="width: 340px;">
                 <select  id="inputan_is_active" >
                     <option value="0">Non Actif</option>
                     <option value="1">Actif</option>
