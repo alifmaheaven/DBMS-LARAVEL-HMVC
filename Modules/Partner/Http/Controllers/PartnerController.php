@@ -14,6 +14,7 @@ use Modules\Partner\Entities\CompanySocmed;
 use Modules\Partner\Entities\CompanySubsidiary;
 use Modules\Partner\Entities\HistAm;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -28,21 +29,28 @@ class PartnerController extends Controller
      */
     public function index(Request $request)
     {
-
-        if (!$request->showdata) {
-            $pagination = 10;
-        } else {
-            $pagination = $request->showdata;
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','you must login first!!!');
         }
-        
-        $data = Partner::when($request->keyword, function ($query) use ($request) {
-            $query->where('id', 'like', "%{$request->keyword}%")
-                ->orWhere('name', 'like', "%{$request->keyword}%");
-        })->paginate($pagination);
+        else{
 
-        $data->appends($request->only('keyword'));
+            if (!$request->showdata) {
+                $pagination = 10;
+            } else {
+                $pagination = $request->showdata;
+            }
+            
+            $data = Partner::when($request->keyword, function ($query) use ($request) {
+                $query->where('id', 'like', "%{$request->keyword}%")
+                    ->orWhere('name', 'like', "%{$request->keyword}%");
+            })->paginate($pagination);
+    
+            $data->appends($request->only('keyword'));
+    
+            return view('partner::partner',['data' => $data, 'showdata' => $pagination]);
+        }
 
-        return view('partner::partner',['data' => $data, 'showdata' => $pagination]);
+       
     }
 
     /**
@@ -519,6 +527,10 @@ class PartnerController extends Controller
 
    
     public function getres_partner(Request $request){
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','you must login first!!!');
+        }
+        else{
 
         $id_partner = $request->id_partner;
         
@@ -587,9 +599,9 @@ class PartnerController extends Controller
         }
         
 
+    }
         
-        
-      }
+    }
 
       
   
