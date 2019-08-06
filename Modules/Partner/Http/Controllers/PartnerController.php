@@ -300,9 +300,16 @@ class PartnerController extends Controller
                         $companyHistAm = HistAm::where('id_hist_am', $inputHistAms[$i]["id_hist_am"])->update($inputHistAms[$i]); 
                     }
                  }
+
+                 return response()->json([
+                    "status" => true,
+                    "message" => "data has been update!!!",
+                    "url" => '/partner'
+                ]);
                  
                
             }
+
 
         } else {
             $user = CompanyDetail::create($input); 
@@ -497,7 +504,11 @@ class PartnerController extends Controller
                  }
                  
              
-
+                 return response()->json([
+                    "status" => true,
+                    "message" => "data has been Created!!!",
+                    "url" => '/partner'
+                ]);
                
                 
                 
