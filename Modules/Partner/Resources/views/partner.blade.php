@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{{ $d->id }}</td>
                                     <td>{{ $d->name }}</td>
-                                    <td>{{ $d->city }}</td>
+                                    <td>{{ $d->street1 }}</td>
                                     <td>
                                         <center>
                                             <form action="{{ url('/partner/update') }}" method="get">

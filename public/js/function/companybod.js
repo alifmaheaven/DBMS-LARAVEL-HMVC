@@ -109,7 +109,7 @@ var addBodphone = document.getElementById('add_Bodphone').value
 var addBodemail = document.getElementById('add_Bodemail').value
 //bodactive
 var addBodactif = document.getElementById('add_Bodactif')
-var optionBodactif = addBodactif.options[addBodactif.selectedIndex].value;
+
 Bodstable.push({
                 id_companybod: '' ,
                 id_companydetail: '' ,
@@ -118,7 +118,7 @@ Bodstable.push({
                 companybod_birthday: addBodbirthday,
                 companybod_phone: addBodphone,
                 companybod_email: addBodemail,
-                is_active : optionBodactif,
+                is_active :1,
                 })
 
 //console.log(Bodstable);
@@ -217,7 +217,8 @@ $('#editBod').modal('hide');
     });
 
 
-
+$('<option value="">Select Position</option>').appendTo('#add_Bodposition');
+    $('<option value="">Select Position</option>').appendTo('#edit_Bodposition');
 
 position.forEach(data => {
     //console.log(data);
