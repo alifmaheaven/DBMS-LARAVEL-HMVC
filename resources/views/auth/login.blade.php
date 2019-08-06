@@ -36,12 +36,8 @@
 				<h1>Login</h1>
 				<div class="separator"></div>
 				
-				<h4>Welcome back!</h4>
-				<h5>Login to access the DBMS</h5>
-				
-				
-				
-				
+				<h4>Welcome !</h4>
+				<h5>Login to access the DBMS</h5>	
 
 				<form method="POST" action="{{ url('/login') }}" class="needs-validation" >
 					{{ csrf_field() }}
@@ -49,7 +45,7 @@
 					<div class="form-group">
 						@if(Session::has('alert'))
 
-						<div class="alert alert-danger alert-dismissible">
+						<div class="alert alert-primary alert-dismissible">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 							<strong> <div>{{Session::get('alert')}}</div></strong>
 
@@ -59,21 +55,22 @@
 
 
 					<div class="form-group">
-						<input type="text" name="user_email" placeholder="Email" style="width: 320px;height: 35px;">
+						<input type="email" name="user_email" placeholder="Email" style="width: 320px;height: 35px;">
 						<span>
 							<i id="email" class="fas fa-envelope" style="width: 30px;height: 35px;"></i>
 						</span>
 						<br>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group">	
+						<input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,12}$"  title="8-12 that contains uppercase, lowercase, and numeric without whitespace" name="user_password" placeholder="Password" id="user_password" style="width: 320px;height: 35px;" >
 						
-						<input type="password" name="user_password" placeholder="Password" id="user_password" style="width: 320px;height: 35px;" >
 						<span>
 							<i id="eye" class="fas fa-eye" onclick="pass()" style="width: 30px;height: 35px;"></i>
 						</span>
-
+						
 					</div>
+
 					<p class="small" style="margin-left: 10px;">Did you forget your password? Click <a href=""><span style="color: red;">here</span></a></p>
 					
 					<div class="form-group">
