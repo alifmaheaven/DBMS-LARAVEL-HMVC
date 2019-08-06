@@ -21,6 +21,9 @@
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
+                            <th style="width: 5%;">
+                                No.
+                            </th>
                             <th style="width: 15%;">
                                 Customer ID
                             </th>
@@ -35,17 +38,18 @@
                             </th>
                         </thead>
                         <tbody>
-                                @foreach($data as $d)
+                                @foreach($data as $index => $d)
                                 <tr>
-                                    <td>{{ $d->id }}</td>
+                                    <td style="text-align: center;">{{ $index+1}}</td>
+                                    <td style="text-align: center;">{{ $d->id }}</td>
                                     <td>{{ $d->name }}</td>
                                     <td>{{ $d->street1 }}</td>
                                     <td>
                                         <center>
                                             <form action="{{ url('/partner/update') }}" method="get">
                                                 {{--- {{ csrf_field() }} --}}
-                                                <input type="hidden" name="id_partner" value="{{$d->id}}">
-                                                <button class="btn btn-danger btn-round" >Edit</button>
+                                                <input align="center" type="hidden" name="id_partner" value="{{$d->id}}">
+                                                <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
                                             </form>
                                         </center>
                                     </td>
