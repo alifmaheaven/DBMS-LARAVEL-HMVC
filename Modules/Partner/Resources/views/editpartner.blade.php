@@ -155,10 +155,10 @@
 
 </div>
 
-<table class="cards-table">
+
 
 <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-    <li><a class="active nav-item nav-link " data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Bod</a></li>
+    <li><a class="active nav-item nav-link " data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">BOD</a></li>
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">Branch</a></li>
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Division</a></li>
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu3" role="tab" aria-controls="nav-profile" aria-selected="false">Partner</a></li>
@@ -168,19 +168,24 @@
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu7" role="tab" aria-controls="nav-profile" aria-selected="false">History</a></li>
 
 </ul>
-</table>
+
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <table id="Bodstableid" class="table" cellspacing="0">
+       
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                    <button style="text-align: right;" data-toggle="modal" data-target="#addBod" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+        <table id="Bodstableid" class="table border" cellspacing="0">
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Company Name</th>
+                    <th>BOD Name</th>
                     <th>Position</th>
-                    <th>Company Birthday</th>
-                    <th>Company Phone</th>
-                    <th>Company Email</th>
-                    <th>Active</th>
+                    <th>Date of Birth</th>
+                    <th>Phone Number</th>
+                    <th>Email Address</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -188,7 +193,9 @@
               {{-- dinamical table --}}                                        
           </tbody>
       </table>
-      <button data-toggle="modal" data-target="#addBod" class="btn btn-success btn-round" >Add</button>
+  </div>
+
+      
   </div>
 
   {{-- Add Data Bod --}}
@@ -196,7 +203,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah BOD</h5>
+            <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add BOD</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
           </button>
@@ -205,65 +212,54 @@
 
 
         <form id="form-Bod">
-          <div class="form-group">
-            <label> Bod Name</label>
+          <div class="form-group ">
+            <label style="color: black;font-weight: bold;"> BOD Name</label>
             <div class="input-group">
 
-              <input type="text" class="form-control" id="add_Bodname" placeholder="Masukan Nama" name="add_Bodname">
+              <input type="text" class="form-control" id="add_Bodname" placeholder="Input Name" name="add_Bodname" required style="margin-bottom: 15px;">
           </div>
       </div>
       <div class="form-group">
-        <label>Position</label>
+        <label style="color: black;font-weight: bold;">Position</label>
         <div class="input-group">
 
-          <div class="select"  style="width:200px;">
-            <select id="add_Bodposition">
+          <div class="select"  style="width:470px;">
+            <select id="add_Bodposition" style="border:solid 1px lightgrey;border-radius: 3px;">
               {{-- dinamic select --}}
           </select>
       </div>
   </div>
 </div>
 
-<div class="form-group">
-    <label>Birth Day</label>
-    <div class="input-group unstyled">
+<div class="form-group" style="width: 470px;">
+    <label style="color: black;font-weight: bold;">Date of Birth</label>
+    <div class="input-group">
 
-        <input type="date" id="add_Bodbirthday" name="bday">
+        <input type="date" class="form-control unstyled" id="add_Bodbirthday" name="bday" style="margin-bottom: 15px;border:solid 1px lightgrey;border-radius: 3px;">
     </div>
 </div>
 
 <div class="form-group">
-    <label>Bod Phone</label>
+    <label style="color: black;font-weight: bold;">BOD Phone</label>
     <div class="input-group">
-      <input type="number" class="form-control" id="add_Bodphone" placeholder="Masukan nomor telpon" name="username">
+      <input type="number" class="form-control unstyled" id="add_Bodphone" placeholder="Input Phone Number" name="username" style="margin-bottom: 15px;">
   </div>
 </div>
 
 <div class="form-group">
-    <label>Email</label>
+    <label style="color: black;font-weight: bold;">Email</label>
     <div class="input-group">
-      <input type="email" class="form-control" id="add_Bodemail" placeholder="Masukan Username" name="username">
+      <input type="email" class="form-control" id="add_Bodemail" placeholder="Input Email" name="username" style="margin-bottom: 15px;">
   </div>
 </div>   
 
-<div class="form-group">
-    <label>Active</label>
-    <div class="input-group">
-        <div class="select" style="width:200px;">
-            <select id="add_Bodactif">
-              <option value="0">Non Actif</option>
-              <option value="1">Actif</option>
-          </select>
-      </div>
-  </div>
-</div>   
 
 </form>
 
 </div>
 <div class="modal-footer">
 
-    <button id="addBodbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+    <button id="addBodbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
 </div>
 </div>
 </div>
@@ -274,7 +270,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Bod</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit BOD</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -282,66 +278,55 @@
             <div class="modal-body">
 
 
-                <form id="form-Bod">
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" id="edit_Bodarray" >
-                        <label> Bod Name</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="edit_Bodname" placeholder="Masukan Nama" name="edit_Bodname">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Position</label>
-                        <div class="input-group">
+        <form id="form-Bod">
+          <div class="form-group ">
+            <label style="color: black;font-weight: bold;"> BOD Name</label>
+            <div class="input-group">
 
-                            <div class="select"  style="width:200px;">
-                                <select id="edit_Bodposition">
-                                    {{-- dinamic select --}}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+              <input type="text" class="form-control" id="edit_Bodname" placeholder="Input Name" name="add_Bodname" required style="margin-bottom: 15px;">
+          </div>
+      </div>
+      <div class="form-group">
+        <label style="color: black;font-weight: bold;">Position</label>
+        <div class="input-group">
 
-                    <div class="form-group">
-                        <label>Birth Day</label>
-                        <div class="input-group">
+          <div class="select"  style="width:470px;">
+            <select id="edit_Bodposition" style="border:solid 1px lightgrey;border-radius: 3px;">
+              {{-- dinamic select --}}
+          </select>
+      </div>
+  </div>
+</div>
 
-                            <input type="date" id="edit_Bodbirthday" name="bday">
-                        </div>
-                    </div>
+<div class="form-group" style="width: 470px;">
+    <label style="color: black;font-weight: bold;">Date of Birth</label>
+    <div class="input-group">
 
-                    <div class="form-group">
-                        <label>Bod Phone</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="edit_Bodphone" placeholder="Masukan nomor telpon" name="username">
-                        </div>
-                    </div>
+        <input type="date" class="form-control unstyled" id="edit_Bodbirthday" name="bday" style="margin-bottom: 15px;border:solid 1px lightgrey;border-radius: 3px;">
+    </div>
+</div>
 
-                    <div class="form-group">
-                        <label>Email</label>
-                        <div class="input-group">
-                            <input type="email" class="form-control" id="edit_Bodemail" placeholder="Masukan Username" name="username">
-                        </div>
-                    </div>   
+<div class="form-group">
+    <label style="color: black;font-weight: bold;">BOD Phone</label>
+    <div class="input-group">
+      <input type="number" class="form-control unstyled" id="edit_Bodphone" placeholder="Input Phone Number" name="username" style="margin-bottom: 15px;">
+  </div>
+</div>
 
-                    <div class="form-group">
-                        <label>Active</label>
-                        <div class="input-group">
-                            <div class="select" style="width:200px;">
-                                <select id="edit_Bodactif">
-                                    <option value="0">Non Actif</option>
-                                    <option value="1">Actif</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>   
+<div class="form-group">
+    <label style="color: black;font-weight: bold;">Email</label>
+    <div class="input-group">
+      <input type="email" class="form-control" id="edit_Bodemail" placeholder="Input Email" name="username" style="margin-bottom: 15px;">
+  </div>
+</div>   
 
-                </form>
 
-            </div>
+</form>
+
+</div>
             <div class="modal-footer">
 
-                <button id="editBodbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="editBodbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
@@ -359,7 +344,13 @@
 
 
 <div class="tab-pane fade" id="menu1"role="tabpanel" aria-labelledby="nav-contact-tab">
-    <table class="table" id="Branchstableid" cellspacing="0">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                   <button data-toggle="modal" data-target="#addBranch" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" id="Branchstableid" cellspacing="0">
         <thead>
             <tr>
                 <th>No.</th>
@@ -373,7 +364,8 @@
 
         </tbody>
     </table>
-    <button data-toggle="modal" data-target="#addBranch" class="btn btn-success btn-round" >Add</button>
+</div>
+    
 </div>
 
 
@@ -491,7 +483,13 @@
 
 
 <div class="tab-pane fade" id="menu2" role="tabpanel" aria-labelledby="nav-contact-tab">
-    <table class="table" cellspacing="0" id="Divisionstableid">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                    <button data-toggle="modal" data-target="#addDivision" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" cellspacing="0" id="Divisionstableid">
         <thead>
             <tr>
                 <th>No.</th>
@@ -504,7 +502,8 @@
 
         </tbody>
     </table>
-    <button data-toggle="modal" data-target="#addDivision" class="btn btn-success btn-round" >Add</button>
+    
+</div>
 </div>
 
 
@@ -611,7 +610,13 @@
 
 
 <div class="tab-pane fade" id="menu3" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <table class="table" cellspacing="0" id="Partnerstableid">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                   <button data-toggle="modal" data-target="#addPartner" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" cellspacing="0" id="Partnerstableid">
         <thead>
             <tr>
                 <th>No.</th>
@@ -624,7 +629,8 @@
             {{-- dinamical table partner --}}
         </tbody>
     </table>
-    <button data-toggle="modal" data-target="#addPartner" class="btn btn-success btn-round" >Add</button>
+   
+</div>
 </div>
 
 
@@ -730,7 +736,13 @@
 
 
 <div class="tab-pane fade" id="menu4" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <table class="table" cellspacing="0" id="Productstableid">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                   <button data-toggle="modal" data-target="#addProduct" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" cellspacing="0" id="Productstableid">
         <thead>
             <tr>
                 <th>No.</th>
@@ -743,9 +755,9 @@
             {{-- dinamical product --}}
         </tbody>
     </table>
-    <button data-toggle="modal" data-target="#addProduct" class="btn btn-success btn-round" >Add</button>
+   
 </div>
-
+</div>
 
 {{-- Add Data Product --}}
 <div class="modal" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
@@ -856,7 +868,13 @@
 
 
 <div class="tab-pane fade" id="menu5" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <table class="table" cellspacing="0" id="Socmedstableid">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                   <button data-toggle="modal" data-target="#addSocmed" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" cellspacing="0" id="Socmedstableid">
         <thead>
             <tr>
                 <th>No.</th>
@@ -870,7 +888,7 @@
 
         </tbody>
     </table>
-    <button data-toggle="modal" data-target="#addSocmed" class="btn btn-success btn-round" >Add</button>
+  </div>
 </div>
 
 {{-- Add Data Socmed --}}
@@ -1000,7 +1018,13 @@
 
 
 <div class="tab-pane fade" id="menu6" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <table class="table" cellspacing="0" id="Subsidiarystableid">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                   <button data-toggle="modal" data-target="#addSubsidiary" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" cellspacing="0" id="Subsidiarystableid">
         <thead>
             <tr>
                 <th>No.</th>
@@ -1013,7 +1037,7 @@
          {{-- dinamical table subsidiary --}}
      </tbody>
  </table>
- <button data-toggle="modal" data-target="#addSubsidiary" class="btn btn-success btn-round" >Add</button>
+ </div>
 </div>
 
 
@@ -1120,7 +1144,13 @@
 
 
 <div class="tab-pane fade" id="menu7" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <table class="table" cellspacing="0" id="Histsstableid">
+
+            <div style="padding: 0px 40px 10px 40px;">
+                <div style="text-align: right;">
+                    <button data-toggle="modal" data-target="#addHists" class="btn btn-primary btn-round" >Add</button>
+                        </div>
+       <br>
+    <table class="table border" cellspacing="0" id="Histsstableid">
         <thead>
             <tr>
                 <th>No.</th>
@@ -1133,7 +1163,7 @@
 
         </tbody>
     </table>
-    <button data-toggle="modal" data-target="#addHists" class="btn btn-success btn-round" >Add</button>
+  </div>
 </div>
 
 
@@ -1309,7 +1339,7 @@
 
 <script>
     var segment = @JSON($Segments); 
-    var businesstype = @JSON($Businesstypes); 
+    var businesstype = @JSON($Businesstypes);
 
     $('<option value="">Select Segment types</option>').appendTo('#inputan_id_segment');
 
@@ -1324,6 +1354,8 @@
         //console.log(data);
         $('<option value="'+data.id_businesstype+'">'+data.businesstype+'</option>').appendTo('#inputan_id_businesstype');
     });
+
+
 </script>
 
 <script>
