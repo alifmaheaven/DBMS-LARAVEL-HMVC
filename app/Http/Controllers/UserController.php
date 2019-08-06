@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index(){
         if(!Session::get('login')){
-            return redirect('login')->with('alert','Kamu harus login dulu');
+            return redirect('login')->with('alert','You must login first');
         }
         else{
             return redirect('partner');
@@ -37,7 +37,7 @@ class UserController extends Controller
         } 
         else{ 
             
-            return redirect('login')->with('alert','email dan password salah');
+            return redirect('login')->with('alert','Incorrect email or password');
         } 
     
 

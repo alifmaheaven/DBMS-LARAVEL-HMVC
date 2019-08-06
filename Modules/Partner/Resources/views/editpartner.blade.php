@@ -1,6 +1,12 @@
 @extends('partner::layouts.template')
 
 @section('content')
+<style type="text/css">
+    .unstyled::-webkit-inner-spin-button{
+        display: none;
+        -webkit-appearance:none;
+    }
+</style>
 <div class="containerku">
     <div class="bar-1">
         <img src="{{ URL::asset('img/dyah/ic-customer.png')}}"><span>Customer</span>
@@ -14,276 +20,134 @@
             <div class="col-md-6">
                 <div class="form__customer">
                     <table  width="100%;">
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-id.png')}}"><span>Customer ID</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" id="inputan_id" name="" disabled placeholder="" value="{{$Detail->id}}">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-name.png')}}"><span>Customer Name</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input type="text" name="" disabled placeholder="Dyah Group" value="{{$Detail->name}}">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address 1</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <textarea rows="4" placeholder="Address 1" disabled>{{$Detail->street}}</textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address 2</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <textarea rows="4" placeholder="Address 2" disabled>{{$Detail->street2}}</textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-location.png')}}"><span>Address 3</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <textarea rows="4" placeholder="Address 3" disabled></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left;">
-                                    <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Doe</span>
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <input id="inputan_company_doe" type="text" name="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="15%">
-                                <div style="float: left; ">
-                                    <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>ID Bussiness</span>
+                        <div style="float: left;">
+                            <img src="{{ URL::asset('img/dyah/ic-id.png')}}"><span>Customer ID</span>
+                        </div>
+                        <input type="text" id="inputan_id" class="form-control" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="" placeholder="" value="{{$Detail->id}}" maxlength="32">
 
-                                </div>
-                            </td>
-                            <td width="40%">
-                                <div class="select"  style="width:200px;">
-                                    <select id="inputan_id_businesstype">
-                                      {{-- dinamic select --}}
-                                  </select>
-                              </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td width="15%">
-                            <div style="float: left;">
-                                <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Number Employee</span>
-                            </div>
-                        </td>
-                        <td width="40%">
-                            <input id="inputan_number_of_employee" type="number" name="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="15%">
-                            <div style="float: left;">
-                                <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Company Phone</span>
-                            </div>
-                        </td>
-                        <td width="40%">
-                            <input id="inputan_company_phone" type="text" name="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="15%">
-                            <div style="float: left;">
-                                <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Website</span>
-                            </div>
-                        </td>
-                        <td width="40%">
-                            <input id="inputan_company_website" type="text" name="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="15%">
-                            <div style="float: left;">
-                                <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Assets Value</span>
-                            </div>
-                        </td>
-                        <td width="40%">
-                            <input id="inputan_asset_value" type="text" name="">
-                        </td>
-                    </tr>
+                        <div style="float: left;">
+                            <img src="{{ URL::asset('img/dyah/002-pass.png')}}"><span>Customer Name</span>
+                        </div>
+                        <input type="text" class="form-control" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="" placeholder="Dyah Group" value="{{$Detail->name}}">
+
+                        <div style="float: left;">
+                            <img src="{{ URL::asset('img/dyah/address.png')}}"><span>Address 1</span>
+                        </div>
+                        <textarea rows="4" class="form-control" placeholder="Address 1" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="">{{$Detail->street}}</textarea>
+
+                        <div style="float: left;">
+                            <img src="{{ URL::asset('img/dyah/address.png')}}"><span>Address 2</span>
+                        </div>
+                        <textarea rows="4" class="form-control" placeholder="Address 2" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="">{{$Detail->street2}}</textarea>
+
+                        <div style="float: left;">
+                            <img src="{{ URL::asset('img/dyah/calen.png')}}"><span>Company Date of Estabilished</span>
+                        </div>
+                        <input id="inputan_company_doe" class="form-control unstyled" type="date" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;">
+
+                        <div style="float: left; ">
+                            <img src="{{ URL::asset('img/dyah/007.png')}}"><span>Bussiness Type</span>
+                        </div>
+                        <div class="select"  style="width: 340px;">
+                            <select id="inputan_id_businesstype" style="border:solid 1px lightgrey;border-radius: 3px;" >
+                              <!-- <option value="0">Select</option> -->
+                              {{-- dinamic select --}}
+                          </select>
+                      </div>
+
+                      <div style="float: left;">
+                        <img src="{{ URL::asset('img/dyah/006-number-1.png')}}"><span>Employee Number</span>
+                    </div>
+                    <input id="inputan_number_of_employee" pattern="[0-9]" class="form-control unstyled" type="number" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+
+                    <div style="float: left;">
+                        <img src="{{ URL::asset('img/dyah/call-answer.png')}}"><span>Company Phone</span>
+                    </div>
+                    <input id="inputan_company_phone" pattern="[0-9]" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+
+                    <div style="float: left;">
+                        <img src="{{ URL::asset('img/dyah/web.png')}}"><span>Company Website</span>
+                    </div>
+                    <input id="inputan_company_website" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="200">
+
+                    <div style="float: left;">
+                        <img src="{{ URL::asset('img/dyah/coin-stack.png')}}"><span>Assets Value</span>
+                    </div>
+                    <input id="inputan_asset_value" pattern="[0-9]" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" maxlength="50">
+                    <div style="float: left;" >
+                        <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Income</span>
+                    </div>
+                    <input id="inputan_company_annual_income" pattern="[0-9]" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="50">
+                    <div style="float: left;">
+                        <img src="{{ URL::asset('img/dyah/envelope.png')}}"><span>Company Email</span>
+                    </div>
+                    <input id="inputan_company_email" class="form-control"  type="email" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="200">
                 </table>
             </div>
         </div>
         <div class="col-md-6">
-           <div class="form__customer">
+         <div class="form__customer">
             <table width="100%;">
-             <tr>
-                <td width="15%">
-                    <div style="float: left;">
-                        <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Income</span>
-                    </div>
-                </td>
-                <td width="40%">
-                    <input id="inputan_company_annual_income" type="text" name="">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">
-                    <div style="float: left;">
-                        <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>Company Email</span>
-                    </div>
-                </td>
-                <td width="40%">
-                    <input id="inputan_company_email"  type="text" name="">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">
-                    <div style="float: left;">
-                        <img src="{{ URL::asset('img/dyah/ic-name.png')}}"><span>Product Sold</span>
-                    </div>
-                </td>
-                <td width="40%">
-                    <input id="inputan_product_sold_permonth"  type="text" name="">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">
-                    <div style="float: left;">
-                        <img src="{{ URL::asset('img/dyah/ic-title.png')}}"><span>Company Revenue</span>
-                    </div>
-                </td>
-                <td width="40%">
-                    <input  id="inputan_company_revenue" type="text" name="">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">
-                    <div style="float: left;">
-                        <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Company Competitor</span>
-                    </div>
-                </td>
-                <td width="40%">
-                    <input id="inputan_company_competitor"  type="text" name="">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">
-                    <div style="float: left; ">
-                        <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>ID Segment</span>
+                <div style="float: left;">
+                    <img src="{{ URL::asset('img/dyah/coin-stack.png')}}"><span>Product Sold Permonth</span>
+                </div>
+                <input id="inputan_product_sold_permonth" class="form-control unstyled" type="number" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="10">
+                
+                <div style="float: left;">
+                    <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Revenue</span>
+                </div>
+                <input  id="inputan_company_revenue" class="form-control unstyled" type="number" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="15">
+                
+                <div style="float: left;">
+                    <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Company Competitor</span>
+                </div>
+                <input id="inputan_company_competitor" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="200">
 
-                    </div>
-                </td>
-                <td width="40%">
-                    <div class="select"  style="width:200px;">
-                        <select  id="inputan_id_segment" >
-                          {{-- dinamic select --}}
-                      </select>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-            <td width="15%">
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Company History</span>
+                    <img src="{{ URL::asset('img/dyah/controls.png')}}"><span>ID Segment</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_history"  type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <div class="select "  style="width: 340px;">
+                    <select  id="inputan_id_segment" style="border:solid 1px lightgrey;border-radius: 3px;" >
+                         {{-- dinamic select --}}
+                    </select>
+                </div>
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Customer</span>
+                    <img src="{{ URL::asset('img/dyah/001-clock.png')}}"><span>Company History</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_num_customer" type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <textarea rows="4" class="form-control" placeholder="Company History" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;"></textarea>
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Culture</span>
+                    <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Customer Number</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_culture" type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <input id="inputan_company_num_customer" class="form-control" type="number" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="10">
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-email.png')}}"><span>Company Workinghours</span>
+                    <img src="{{ URL::asset('img/dyah/theatre-masks.png')}}"><span>Company Culture</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_workinghours" type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <textarea rows="4" class="form-control" placeholder=" Company Culture" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;"></textarea>
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-phone1.png')}}"><span>Company Budget</span>
+                    <img src="{{ URL::asset('img/dyah/history (2).png')}}"><span>Company Working Hours</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_budget_permonth" type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <textarea rows="4" class="form-control" placeholder="Company Working Hours" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;"></textarea>
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-web.png')}}"><span>Company Product</span>
+                    <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Budget</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_product_needs" type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <input id="inputan_company_budget_permonth" pattern="[0-9]" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" >
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-phone.png')}}"><span>Company last</span>
+                    <img src="{{ URL::asset('img/dyah/008-product.png')}}"><span>Company Product Needs</span>
                 </div>
-            </td>
-            <td width="40%">
-                <input id="inputan_company_last_am" type="text" name="">
-            </td>
-        </tr>
-        <tr>
-            <td width="15%">
+                <textarea rows="4" class="form-control" placeholder="Company Product Needs" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;"></textarea>
+
                 <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/ic-title.png')}}"><span>Active</span>
+                    <img src="{{ URL::asset('img/dyah/001-clock.png')}}"><span>Last AM</span>
                 </div>
+                <input id="inputan_company_last_am" class="form-control" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="200">
+
             </td>
-            <td width="40%">
-                    <div class="select"  style="width:200px;">
-                        <select  id="inputan_is_active" >
-                                <option value="0">Non Actif</option>
-                                <option value="1">Actif</option>
-                      </select>
-                  </div>
-              </td>
         </tr>
     </table>
 </div>
@@ -291,92 +155,91 @@
 
 </div>
 
+<table class="cards-table">
 
+<ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+    <li><a class="active nav-item nav-link " data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Bod</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">Branch</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Division</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu3" role="tab" aria-controls="nav-profile" aria-selected="false">Partner</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu4" role="tab" aria-controls="nav-profile" aria-selected="false">Product</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu5" role="tab" aria-controls="nav-profile" aria-selected="false">Socmed</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu6" role="tab" aria-controls="nav-profile" aria-selected="false">Subsidiary</a></li>
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu7" role="tab" aria-controls="nav-profile" aria-selected="false">History</a></li>
 
-
-
-        <ul style="align-content: center; margin-left:20px; margin-top:20px;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-            <li><a class="active nav-item nav-link " data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Bod</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu1" role="tab" aria-controls="nav-profile" aria-selected="false">Branch</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu2" role="tab" aria-controls="nav-profile" aria-selected="false">Division</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu3" role="tab" aria-controls="nav-profile" aria-selected="false">Partner</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu4" role="tab" aria-controls="nav-profile" aria-selected="false">Product</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu5" role="tab" aria-controls="nav-profile" aria-selected="false">Socmed</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu6" role="tab" aria-controls="nav-profile" aria-selected="false">Subsidiary</a></li>
-            <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu7" role="tab" aria-controls="nav-profile" aria-selected="false">History</a></li>
-
-        </ul>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <table id="Bodstableid" class="table" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Company Name</th>
-                            <th>Position</th>
-                            <th>Company Birthday</th>
-                            <th>Company Phone</th>
-                            <th>Company Email</th>
-                            <th>Active</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      {{-- dinamical table --}}                                        
-                  </tbody>
-              </table>
-              <button data-toggle="modal" data-target="#addBod" class="btn btn-success btn-round" >Add</button>
-          </div>
-
-          {{-- Add Data Bod --}}
-          <div class="modal" id="addBod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Bod</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-
-
-                <form id="form-Bod">
-                  <div class="form-group">
-                    <label> Bod Name</label>
-                    <div class="input-group">
-
-                      <input type="text" class="form-control" id="add_Bodname" placeholder="Masukan Nama" name="add_Bodname">
-                  </div>
-              </div>
-              <div class="form-group">
-                <label>Position</label>
-                <div class="input-group">
-
-                  <div class="select"  style="width:200px;">
-                    <select id="add_Bodposition">
-                      {{-- dinamic select --}}
-                  </select>
-              </div>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label>Birth Day</label>
-        <div class="input-group">
-
-            <input type="date" id="add_Bodbirthday" name="bday">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Bod Phone</label>
-        <div class="input-group">
-          <input type="number" class="form-control" id="add_Bodphone" placeholder="Masukan nomor telpon" name="username">
-      </div>
+</ul>
+</table>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <table id="Bodstableid" class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Company Name</th>
+                    <th>Position</th>
+                    <th>Company Birthday</th>
+                    <th>Company Phone</th>
+                    <th>Company Email</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{-- dinamical table --}}                                        
+          </tbody>
+      </table>
+      <button data-toggle="modal" data-target="#addBod" class="btn btn-success btn-round" >Add</button>
   </div>
 
-  <div class="form-group">
+  {{-- Add Data Bod --}}
+  <div class="modal" id="addBod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambah BOD</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+
+
+        <form id="form-Bod">
+          <div class="form-group">
+            <label> Bod Name</label>
+            <div class="input-group">
+
+              <input type="text" class="form-control" id="add_Bodname" placeholder="Masukan Nama" name="add_Bodname">
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Position</label>
+        <div class="input-group">
+
+          <div class="select"  style="width:200px;">
+            <select id="add_Bodposition">
+              {{-- dinamic select --}}
+          </select>
+      </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <label>Birth Day</label>
+    <div class="input-group unstyled">
+
+        <input type="date" id="add_Bodbirthday" name="bday">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Bod Phone</label>
+    <div class="input-group">
+      <input type="number" class="form-control" id="add_Bodphone" placeholder="Masukan nomor telpon" name="username">
+  </div>
+</div>
+
+<div class="form-group">
     <label>Email</label>
     <div class="input-group">
       <input type="email" class="form-control" id="add_Bodemail" placeholder="Masukan Username" name="username">
@@ -1147,10 +1010,10 @@
             </tr>
         </thead>
         <tbody>
-           {{-- dinamical table subsidiary --}}
-       </tbody>
-   </table>
-   <button data-toggle="modal" data-target="#addSubsidiary" class="btn btn-success btn-round" >Add</button>
+         {{-- dinamical table subsidiary --}}
+     </tbody>
+ </table>
+ <button data-toggle="modal" data-target="#addSubsidiary" class="btn btn-success btn-round" >Add</button>
 </div>
 
 
@@ -1388,76 +1251,91 @@
 
 <script>
 
-function SubmitAll() {  
+    function SubmitAll() {  
 
-            let inputannya = [ 'id', 'company_doe', 'id_businesstype', 'number_of_employee', 'company_phone', 'company_website', 'asset_value', 'company_annual_income', 'company_email', 'product_sold_permonth', 'company_revenue', 'company_competitor', 'id_segment', 'company_history', 'company_num_customer', 'company_culture', 'company_workinghours', 'company_budget_permonth', 'company_product_needs', 'company_last_am', 'is_active']
-            
-           var data = {}
+        let inputannya = [ 'id', 'company_doe', 'id_businesstype', 'number_of_employee', 'company_phone', 'company_website', 'asset_value', 'company_annual_income', 'company_email', 'product_sold_permonth', 'company_revenue', 'company_competitor', 'id_segment', 'company_history', 'company_num_customer', 'company_culture', 'company_workinghours', 'company_budget_permonth', 'company_product_needs', 'company_last_am', 'is_active']
 
-           
-            for (let i = 0; i < inputannya.length; i++) {
-                var halo = document.getElementById("inputan_"+inputannya[i])
-                if ( halo !== 'undefined' && halo !== null) {
-                    data[inputannya[i]] = halo.value;
-                }
-               
+        var data = {}
+
+
+        for (let i = 0; i < inputannya.length; i++) {
+            var halo = document.getElementById("inputan_"+inputannya[i])
+            if ( halo !== 'undefined' && halo !== null) {
+                data[inputannya[i]] = halo.value;
             }
 
-            
-    data.Bodstable = Bodstable
-    data.remBodstable = remBodstable
-    data.Branchstable = Branchstable
-    data.remBranchstable = remBranchstable
-    data.Divisionstable = Divisionstable
-    data.remDivisionstable = remDivisionstable
-    data.Partnerstable = Partnerstable
-    data.remPartnerstable = remPartnerstable
-    data.Productstable = Productstable
-    data.remProductstable = remProductstable
-    data.Socmedstable = Socmedstable
-    data.remSocmedstable = remSocmedstable
-    data.Subsidiarystable = Subsidiarystable
-    data.remSubsidiarystable = remSubsidiarystable
-    data.Histsstable = Histsstable
-    data.remHistsstable = remHistsstable     
-            
-
-    $.ajaxSetup({
-                  headers: {
-                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                  });
-
-    $.ajax({
-        type: 'POST',
-        url: '/partner/update',
-        data: data,
-
-        success: function(resp) {
-          console.log(resp);
-          
         }
+
+
+        data.Bodstable = Bodstable
+        data.remBodstable = remBodstable
+        data.Branchstable = Branchstable
+        data.remBranchstable = remBranchstable
+        data.Divisionstable = Divisionstable
+        data.remDivisionstable = remDivisionstable
+        data.Partnerstable = Partnerstable
+        data.remPartnerstable = remPartnerstable
+        data.Productstable = Productstable
+        data.remProductstable = remProductstable
+        data.Socmedstable = Socmedstable
+        data.remSocmedstable = remSocmedstable
+        data.Subsidiarystable = Subsidiarystable
+        data.remSubsidiarystable = remSubsidiarystable
+        data.Histsstable = Histsstable
+        data.remHistsstable = remHistsstable     
+
+
+        $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+
+        $.ajax({
+            type: 'POST',
+            url: '/partner/update',
+            data: data,
+
+            success: function(resp) {
+              console.log(resp);
+
+          }
       })
-    
-    
-}
+
+
+    }
 
 </script>
 
 <script>
-        var segment = @JSON($Segments); 
-        var businesstype = @JSON($Businesstypes); 
+    var segment = @JSON($Segments); 
+    var businesstype = @JSON($Businesstypes); 
+
+    $('<option value="">Select Segment types</option>').appendTo('#inputan_id_segment');
+
     segment.forEach(data => {
         //console.log(data);
         $('<option value="'+data.id_segment+'">'+data.segment_industry+'</option>').appendTo('#inputan_id_segment');
     });
+
+    $('<option value=""> Select Business Types </option>').appendTo('#inputan_id_businesstype');
+
     businesstype.forEach(data => {
         //console.log(data);
         $('<option value="'+data.id_businesstype+'">'+data.businesstype+'</option>').appendTo('#inputan_id_businesstype');
     });
-    </script>
+</script>
 
-
+<script>
+  function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+  }
+  return true;
+}
+</script>
 
 @stop
 
