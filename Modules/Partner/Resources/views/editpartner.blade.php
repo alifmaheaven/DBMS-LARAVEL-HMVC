@@ -12,7 +12,7 @@
     <div class="sectionku" >
         <div class="container__customer__edit row">
             <div class="col-md-6">
-                <div class="form__customer">
+                <div>
                     <table  width="100%;">
                         <tr>
                             <td width="30%">
