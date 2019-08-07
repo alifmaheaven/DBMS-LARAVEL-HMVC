@@ -18,7 +18,7 @@ if (data.is_active == 1) {
 }
 var arrayHistss = nomorHistss
 nomorHistss += 1
-htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td>'+companyHistsisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
 $("#Histsstableid").find('tbody').html(htmlHistss).show();
 
 
@@ -60,13 +60,13 @@ function deleteHistsstablerow(data){
         }
         var arrayHistss = nomorHistss
         nomorHistss += 1
-        htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td>'+companyHistsisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+        htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
         $("#Histsstableid").find('tbody').html(htmlHistss).show();
     
       
     });
     } else{
-    htmlHistss += '<tr><td></td><td></td><td></td><td></td></tr>'
+    htmlHistss += '<tr><td></td><td></td><td></td></tr>'
      $("#Histsstableid").find('tbody').html(htmlHistss).show();
     }
      
@@ -79,8 +79,7 @@ function deleteHistsstablerow(data){
 
     $('#editHists').find('.modal-body').find("#edit_Histsarray").val($(data).data('array'));
     $('#editHists').find('.modal-body').find("#edit_Histsname").val(Histsstable[$(data).data('array')].hist_am_name);
-    $('#editHists').find('.modal-body').find("#edit_Histsactif").val(Histsstable[$(data).data('array')].is_active);
-
+   
     }
 
 
@@ -92,15 +91,13 @@ e.preventDefault();
 //Histsname
 var addHistsname = document.getElementById('add_Histsname').value
 
-//Histsactive
-var addHistsactif = document.getElementById('add_Histsactif')
-var optionHistsactif = addHistsactif.options[addHistsactif.selectedIndex].value;
+
 Histsstable.push({
                 id_hist_am: '' ,
                 id_companydetail: '' ,
                 hist_am_name: addHistsname,
                
-                is_active : optionHistsactif,
+                is_active : 1,
                 })
 
 //console.log(Histsstable);
@@ -118,7 +115,7 @@ Histsstable.push({
     }
     var arrayHistss = nomorHistss
     nomorHistss += 1
-    htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td>'+companyHistsisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+    htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
     $("#Histsstableid").find('tbody').html(htmlHistss).show();
 
   
@@ -140,13 +137,10 @@ var editHistsarray = document.getElementById('edit_Histsarray').value
 //Histsname
 var editHistsname = document.getElementById('edit_Histsname').value
 
-//Histsactive
-var editHistsactif = document.getElementById('edit_Histsactif')
-var optionHistsactif = editHistsactif.options[editHistsactif.selectedIndex].value;
+
 
 Histsstable[editHistsarray].hist_am_name = editHistsname
 
-Histsstable[editHistsarray].is_active = optionHistsactif
 
 
 //console.log(Histsstable);
@@ -164,7 +158,7 @@ if (data.is_active == 1) {
 }
 var arrayHistss = nomorHistss
 nomorHistss += 1
-htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td>'+companyHistsisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+htmlHistss += '<tr><td>'+nomorHistss+'</td><td>'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
 $("#Histsstableid").find('tbody').html(htmlHistss).show();
 
 
@@ -181,9 +175,3 @@ $('#editHists').modal('hide');
 
 
 
-
-position.forEach(data => {
-    //console.log(data);
-    $('<option value="'+data.id_position+'">'+data.position_name+'</option>').appendTo('#add_Histsposition');
-    $('<option value="'+data.id_position+'">'+data.position_name+'</option>').appendTo('#edit_Histsposition');
-});

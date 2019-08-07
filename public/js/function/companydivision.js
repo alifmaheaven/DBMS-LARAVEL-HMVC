@@ -17,7 +17,7 @@ if (Divisionstable.length > 0) {
     }
     var arrayDivisions = nomorDivisions
     nomorDivisions += 1
-    htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td>'+companyDivisionisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+    htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
     $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
 
   
@@ -51,21 +51,16 @@ function deleteDivisionstablerow(data){
        
         Divisionstable.forEach(data => {
         //console.log(data);
-       
-        if (data.is_active == 1) {
-            var companyDivisionisactive = "aktif"
-        } else{
-            var companyDivisionisactive = "non aktif"
-        }
+     
         var arrayDivisions = nomorDivisions
         nomorDivisions += 1
-        htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td>'+companyDivisionisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+        htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
         $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
     
       
     });
     } else{
-        htmlDivisions += '<tr><td></td><td></td><td></td><td></td></tr>'
+        htmlDivisions += '<tr><td></td><td></td><td></td></tr>'
         $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
     }
      
@@ -78,7 +73,7 @@ function deleteDivisionstablerow(data){
 
     $('#editDivision').find('.modal-body').find("#edit_Divisionarray").val($(data).data('array'));
     $('#editDivision').find('.modal-body').find("#edit_Divisionname").val(Divisionstable[$(data).data('array')].companydivision_name);
-    $('#editDivision').find('.modal-body').find("#edit_Divisionactif").val(Divisionstable[$(data).data('array')].is_active);
+   
 
     }
 
@@ -91,14 +86,11 @@ e.preventDefault();
 //Divisionname
 var addDivisionname = document.getElementById('add_Divisionname').value
 
-//Divisionactive
-var addDivisionactif = document.getElementById('add_Divisionactif')
-var optionDivisionactif = addDivisionactif.options[addDivisionactif.selectedIndex].value;
 Divisionstable.push({
                 id_companydivision: '' ,
                 id_companydetail: '' ,
                 companydivision_name: addDivisionname,
-                is_active : optionDivisionactif,
+                is_active : 1,
                 })
 
 //console.log(Divisionstable);
@@ -116,7 +108,7 @@ Divisionstable.push({
     }
     var arrayDivisions = nomorDivisions
     nomorDivisions += 1
-    htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td>'+companyDivisionisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+    htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
     $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
 
   
@@ -137,13 +129,10 @@ e.preventDefault();
 var editDivisionarray = document.getElementById('edit_Divisionarray').value
 //Divisionname
 var editDivisionname = document.getElementById('edit_Divisionname').value
-//Divisionactive
-var editDivisionactif = document.getElementById('edit_Divisionactif')
-var optionDivisionactif = editDivisionactif.options[editDivisionactif.selectedIndex].value;
+
 
 Divisionstable[editDivisionarray].companydivision_name = editDivisionname
 
-Divisionstable[editDivisionarray].is_active = optionDivisionactif
 
 
 //console.log(Divisionstable);
@@ -161,7 +150,7 @@ Divisionstable[editDivisionarray].is_active = optionDivisionactif
             }
             var arrayDivisions = nomorDivisions
             nomorDivisions += 1
-            htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td>'+companyDivisionisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+            htmlDivisions += '<tr><td>'+nomorDivisions+'</td><td>'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
             $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
 
 

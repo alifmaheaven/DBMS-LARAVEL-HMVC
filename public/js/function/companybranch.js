@@ -18,7 +18,7 @@ if (data.is_active == 1) {
 }
 var arrayBranchs = nomorBranchs
 nomorBranchs += 1
-htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td>'+companyBranchisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
 $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 
   
@@ -60,11 +60,11 @@ function deleteBranchstablerow(data){
     }
     var arrayBranchs = nomorBranchs
     nomorBranchs += 1
-    htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td>'+companyBranchisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+    htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
     $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 });
     } else{
-        htmlBranchs += '<tr><td></td><td></td><td></td><td></td><td></td></tr>'
+        htmlBranchs += '<tr><td></td><td></td><td></td><td></td></tr>'
      $("#Branchstableid").find('tbody').html(htmlBranchs).show();
     }
      
@@ -78,7 +78,7 @@ function deleteBranchstablerow(data){
     $('#editBranch').find('.modal-body').find("#edit_Brancharray").val($(data).data('array'));
     $('#editBranch').find('.modal-body').find("#edit_Branchname").val(Branchstable[$(data).data('array')].companybranch);
     $('#editBranch').find('.modal-body').find("#edit_Branchaddress").val(Branchstable[$(data).data('array')].companybranch_addr);
-    $('#editBranch').find('.modal-body').find("#edit_Branchactif").val(Branchstable[$(data).data('array')].is_active);
+    
 
     }
 
@@ -94,15 +94,13 @@ var addBranchname = document.getElementById('add_Branchname').value
 //branch address
 var addBranchaddress = document.getElementById('add_Branchaddress').value
 
-//branch active
-var addBranchactif = document.getElementById('add_Branchactif')
-var optionBranchactif = addBranchactif.options[addBranchactif.selectedIndex].value;
+
 Branchstable.push({
                 id_companybranch: '' ,
                 id_companydetail: '' ,
                 companybranch: addBranchname,
                 companybranch_addr: addBranchaddress,
-                is_active : optionBranchactif,
+                is_active : 1,
                 })
 
 console.log(Branchstable);
@@ -113,14 +111,10 @@ console.log(Branchstable);
     Branchstable.forEach(data => {
     //console.log(data);
     
-    if (data.is_active == 1) {
-        var companyBranchisactive = "aktif"
-    } else{
-        var companyBranchisactive = "non aktif"
-    }
+   
     var arrayBranchs = nomorBranchs
     nomorBranchs += 1
-    htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td>'+companyBranchisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+    htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
     $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 
   
@@ -146,13 +140,11 @@ var addBranchname = document.getElementById('edit_Branchname').value
 //branch address
 var addBranchaddress = document.getElementById('edit_Branchaddress').value
 
-//branch active
-var addBranchactif = document.getElementById('edit_Branchactif')
-var optionBranchactif = addBranchactif.options[addBranchactif.selectedIndex].value;
+
 
 Branchstable[editBrancharray].companybranch = addBranchname
 Branchstable[editBrancharray].companybranch_addr = addBranchaddress
-Branchstable[editBrancharray].is_active = optionBranchactif
+
 
 
 //console.log(Branchstable);
@@ -163,14 +155,10 @@ let nomorBranchs = 0
 Branchstable.forEach(data => {
 //console.log(data);
 
-if (data.is_active == 1) {
-    var companyBranchisactive = "aktif"
-} else{
-    var companyBranchisactive = "non aktif"
-}
+
 var arrayBranchs = nomorBranchs
 nomorBranchs += 1
-htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td>'+companyBranchisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
 $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 
   

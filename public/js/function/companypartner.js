@@ -17,7 +17,7 @@ if (Partnerstable.length > 0) {
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td>'+companyPartnerisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
 
@@ -59,13 +59,13 @@ function deletePartnerstablerow(data){
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td>'+companyPartnerisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
   
 }); 
     } else{
-        htmlPartners += '<tr><td></td><td></td><td></td><td></td></tr>'
+        htmlPartners += '<tr><td></td><td></td><td></td></tr>'
      $("#Partnerstableid").find('tbody').html(htmlPartners).show();
     }
      
@@ -78,8 +78,7 @@ function deletePartnerstablerow(data){
 
     $('#editPartner').find('.modal-body').find("#edit_Partnerarray").val($(data).data('array'));
     $('#editPartner').find('.modal-body').find("#edit_Partnername").val(Partnerstable[$(data).data('array')].companypartner_name);
-    $('#editPartner').find('.modal-body').find("#edit_Partneractif").val(Partnerstable[$(data).data('array')].is_active);
-
+    
     }
 
 
@@ -97,7 +96,7 @@ Partnerstable.push({
                 id_companypartner: '' ,
                 id_companydetail: '' ,
                 companypartner_name: addPartnername,
-                is_active : optionPartneractif,
+                is_active : 1,
                 })
 
 //console.log(Partnerstable);
@@ -115,7 +114,7 @@ Partnerstable.push({
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td>'+companyPartnerisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
   
@@ -137,13 +136,11 @@ var editPartnerarray = document.getElementById('edit_Partnerarray').value
 //Partnername
 var editPartnername = document.getElementById('edit_Partnername').value
 
-//Partneractive
-var editPartneractif = document.getElementById('edit_Partneractif')
-var optionPartneractif = editPartneractif.options[editPartneractif.selectedIndex].value;
+
 
 Partnerstable[editPartnerarray].companypartner_name = editPartnername
 
-Partnerstable[editPartnerarray].is_active = optionPartneractif
+
 
 
 //console.log(Partnerstable);
@@ -161,7 +158,7 @@ Partnerstable[editPartnerarray].is_active = optionPartneractif
             }
             var arrayPartners = nomorPartners
             nomorPartners += 1
-            htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td>'+companyPartnerisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+            htmlPartners += '<tr><td>'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
             $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
 

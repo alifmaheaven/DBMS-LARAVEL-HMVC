@@ -21,7 +21,7 @@ if (Productstable.length > 0) {
     }
     var arrayProducts = nomorProducts
     nomorProducts += 1
-    htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td>'+companyProductisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+    htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
     $("#Productstableid").find('tbody').html(htmlProducts).show();
 
   
@@ -66,7 +66,7 @@ function deleteProductstablerow(data){
         }
         var arrayProducts = nomorProducts
         nomorProducts += 1
-        htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td>'+companyProductisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+        htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
         $("#Productstableid").find('tbody').html(htmlProducts).show();
     
       
@@ -85,8 +85,7 @@ function deleteProductstablerow(data){
 
     $('#editProduct').find('.modal-body').find("#edit_Productarray").val($(data).data('array'));
     $('#editProduct').find('.modal-body').find("#edit_sigmaproduct").val(Productstable[$(data).data('array')].id_sigmaproduct);
-    $('#editProduct').find('.modal-body').find("#edit_Productactif").val(Productstable[$(data).data('array')].is_active);
-
+   
     }
 
 
@@ -99,16 +98,14 @@ e.preventDefault();
 var addProductsigma = document.getElementById('add_sigmaproduct')
 var optionProductsigma = addProductsigma.options[addProductsigma.selectedIndex].value;
 
-//Productactive
-var addProductactif = document.getElementById('add_Productactif')
-var optionProductactif = addProductactif.options[addProductactif.selectedIndex].value;
+
 Productstable.push({
                 id_companyproduct: '' ,
                 id_companydetail: '' ,
                
                 id_sigmaproduct : optionProductsigma,
                 
-                is_active : optionProductactif,
+                is_active : 1,
                 })
 
 //console.log(Productstable);
@@ -130,7 +127,7 @@ Productstable.push({
     }
     var arrayProducts = nomorProducts
     nomorProducts += 1
-    htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td>'+companyProductisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+    htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
     $("#Productstableid").find('tbody').html(htmlProducts).show();
 
   
@@ -153,14 +150,12 @@ var editProductarray = document.getElementById('edit_Productarray').value
 var editProductsigma = document.getElementById('edit_sigmaproduct')
 var optionProductsigma = editProductsigma.options[editProductsigma.selectedIndex].value;
 
-//Productactive
-var editProductactif = document.getElementById('edit_Productactif')
-var optionProductactif = editProductactif.options[editProductactif.selectedIndex].value;
+
 
 
 Productstable[editProductarray].id_sigmaproduct = optionProductsigma
 
-Productstable[editProductarray].is_active = optionProductactif
+
 
 
 //console.log(Productstable);
@@ -182,7 +177,7 @@ Productstable[editProductarray].is_active = optionProductactif
             }
             var arrayProducts = nomorProducts
             nomorProducts += 1
-            htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td>'+companyProductisactive+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+            htmlProducts += '<tr><td>'+nomorProducts+'</td><td>'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
             $("#Productstableid").find('tbody').html(htmlProducts).show();
 
 
@@ -197,8 +192,9 @@ $('#editProduct').modal('hide');
 
     });
 
-
-
+    
+    $('<option value="" selected disabled hidden>Select Sigma Product Types</option>').appendTo('#add_sigmaproduct');
+    $('<option value="" selected disabled hidden>Select Sigma Product Types</option>').appendTo('#edit_sigmaproduct');
 
     Sigmaproduct.forEach(data => {
     //console.log(data);
