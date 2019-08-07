@@ -18,7 +18,7 @@ if (data.is_active == 1) {
 }
 var arrayBranchs = nomorBranchs
 nomorBranchs += 1
-htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+htmlBranchs += '<tr><td style="text-align:center;">'+nomorBranchs+'</td><td  style="text-align:center;">'+data.companybranch+'</td><td  style="text-align:center;">'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
 $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 
   
@@ -60,7 +60,7 @@ function deleteBranchstablerow(data){
     }
     var arrayBranchs = nomorBranchs
     nomorBranchs += 1
-    htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+    htmlBranchs += '<tr><td style="text-align:center;">'+nomorBranchs+'</td><td style="text-align:center;">'+data.companybranch+'</td><td style="text-align:center;">'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
     $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 });
     } else{
@@ -141,7 +141,7 @@ console.log(Branchstable);
    
     var arrayBranchs = nomorBranchs
     nomorBranchs += 1
-    htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+    htmlBranchs += '<tr><td  style="text-align:center;">'+nomorBranchs+'</td><td  style="text-align:center;">'+data.companybranch+'</td><td  style="text-align:center;">'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
     $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 
   
@@ -203,7 +203,7 @@ Branchstable.forEach(data => {
 
 var arrayBranchs = nomorBranchs
 nomorBranchs += 1
-htmlBranchs += '<tr><td>'+nomorBranchs+'</td><td>'+data.companybranch+'</td><td>'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
+htmlBranchs += '<tr><td style="text-align:center;">'+nomorBranchs+'</td><td  style="text-align:center;">'+data.companybranch+'</td><td  style="text-align:center;">'+data.companybranch_addr+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBranchs+'" onclick="deleteBranchstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBranchs+'" onclick="editBranchstablerow(this);" data-toggle="modal" data-target="#editBranch" >Edit</button></td></tr>'
 $("#Branchstableid").find('tbody').html(htmlBranchs).show();
 
   

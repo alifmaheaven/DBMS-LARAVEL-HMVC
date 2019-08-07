@@ -17,7 +17,7 @@ if (Bodstable.length > 0) {
    
     var arrayBods = nomorbods
     nomorbods += 1
-    htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
+    htmlbods += '<tr><td style="text-align:center;">'+nomorbods+'</td><td style="text-align:center;">'+data.companybod_name+'</td><td style="text-align:center;">'+companybodpositionname+'</td><td style="text-align:center;">'+data.companybod_birthday+'</td><td style="text-align:center;">'+data.companybod_phone+'</td><td style="text-align:center;">'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
     $("#Bodstableid").find('tbody').html(htmlbods).show();
 
   
@@ -57,8 +57,8 @@ function deleteBodstablerow(data){
    
     var arrayBods = nomorbods
     nomorbods += 1
-    htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
-     $("#Bodstableid").find('tbody').html(htmlbods).show();
+    htmlbods += '<tr><td style="text-align:center;">'+nomorbods+'</td><td style="text-align:center;">'+data.companybod_name+'</td><td style="text-align:center;">'+companybodpositionname+'</td><td style="text-align:center;">'+data.companybod_birthday+'</td><td style="text-align:center;">'+data.companybod_phone+'</td><td style="text-align:center;">'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
+    $("#Bodstableid").find('tbody').html(htmlbods).show();
     }); 
     } else{
         htmlbods += '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>'
@@ -83,10 +83,10 @@ function deleteBodstablerow(data){
 
     alertnyabod = function() {}
     alertnyabod.edit = function(message1,message2) {
-            $('#allertBodedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+            $('#allertBodedit').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
     alertnyabod.add = function(message1,message2) {
-        $('#allertBodadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+        $('#allertBodadd').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
 
    
@@ -183,7 +183,7 @@ Bodstable.push({
     
     var arrayBods = nomorbods
     nomorbods += 1
-    htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
+    htmlbods += '<tr><td style="text-align:center;">'+nomorbods+'</td><td style="text-align:center;">'+data.companybod_name+'</td><td style="text-align:center;">'+companybodpositionname+'</td><td style="text-align:center;">'+data.companybod_birthday+'</td><td style="text-align:center;">'+data.companybod_phone+'</td><td style="text-align:center;">'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'    
     $("#Bodstableid").find('tbody').html(htmlbods).show();
 
   
@@ -284,7 +284,7 @@ Bodstable[editbodarray].companybod_email = editBodemail
    
     var arrayBods = nomorbods
     nomorbods += 1
-    htmlbods += '<tr><td>'+nomorbods+'</td><td>'+data.companybod_name+'</td><td>'+companybodpositionname+'</td><td>'+data.companybod_birthday+'</td><td>'+data.companybod_phone+'</td><td>'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
+    htmlbods += '<tr><td style="text-align:center;">'+nomorbods+'</td><td style="text-align:center;">'+data.companybod_name+'</td><td style="text-align:center;">'+companybodpositionname+'</td><td style="text-align:center;">'+data.companybod_birthday+'</td><td style="text-align:center;">'+data.companybod_phone+'</td><td style="text-align:center;">'+data.companybod_email+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayBods+'" onclick="deleteBodstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayBods+'" onclick="editBodstablerow(this);" data-toggle="modal" data-target="#editBod" >Edit</button></td></tr>'
     $("#Bodstableid").find('tbody').html(htmlbods).show();
 
   

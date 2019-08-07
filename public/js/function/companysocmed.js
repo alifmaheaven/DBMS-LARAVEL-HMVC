@@ -21,7 +21,7 @@ if (Socmedstable.length > 0) {
     }
     var arraySocmeds = nomorSocmeds
     nomorSocmeds += 1
-    htmlSocmeds += '<tr><td>'+nomorSocmeds+'</td><td>'+companySocmedpositionname+'</td><td>'+data.socmed_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
+    htmlSocmeds += '<tr><td style="text-align:center;">'+nomorSocmeds+'</td><td style="text-align:center;">'+companySocmedpositionname+'</td><td style="text-align:center;">'+data.socmed_name+'</td><td><button style="margin-right:230px;" class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
     $("#Socmedstableid").find('tbody').html(htmlSocmeds).show();
 
   
@@ -67,7 +67,7 @@ function deleteSocmedstablerow(data){
         }
         var arraySocmeds = nomorSocmeds
         nomorSocmeds += 1
-        htmlSocmeds += '<tr><td>'+nomorSocmeds+'</td><td>'+companySocmedpositionname+'</td><td>'+data.socmed_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
+        htmlSocmeds += '<tr><td style="text-align:center;">'+nomorSocmeds+'</td><td style="text-align:center;">'+companySocmedpositionname+'</td><td style="text-align:center;">'+data.socmed_name+'</td><td><button style="margin-right:230px;" class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
         $("#Socmedstableid").find('tbody').html(htmlSocmeds).show();
     
       
@@ -158,7 +158,7 @@ Socmedstable.push({
     }
     var arraySocmeds = nomorSocmeds
     nomorSocmeds += 1
-    htmlSocmeds += '<tr><td>'+nomorSocmeds+'</td><td>'+companySocmedpositionname+'</td><td>'+data.socmed_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
+    htmlSocmeds += '<tr><td style="text-align:center;">'+nomorSocmeds+'</td><td style="text-align:center;">'+companySocmedpositionname+'</td><td style="text-align:center;">'+data.socmed_name+'</td><td><button style="margin-right:230px;" class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
     $("#Socmedstableid").find('tbody').html(htmlSocmeds).show();
 
   
@@ -227,7 +227,7 @@ let htmlSocmeds = ''
     }
     var arraySocmeds = nomorSocmeds
     nomorSocmeds += 1
-    htmlSocmeds += '<tr><td>'+nomorSocmeds+'</td><td>'+companySocmedpositionname+'</td><td>'+data.socmed_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
+    htmlSocmeds += '<tr><td style="text-align:center;">'+nomorSocmeds+'</td><td style="text-align:center;">'+companySocmedpositionname+'</td><td style="text-align:center;">'+data.socmed_name+'</td><td><button style="margin-right:230px;" class="btn btn-primary btn-round" data-array="'+arraySocmeds+'" onclick="deleteSocmedstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySocmeds+'" onclick="editSocmedstablerow(this);" data-toggle="modal" data-target="#editSocmed" >Edit</button></td></tr>'
     $("#Socmedstableid").find('tbody').html(htmlSocmeds).show();
 
   
