@@ -80,6 +80,14 @@ function deleteSubsidiarystablerow(data){
    
     }
 
+    alertnyaSubsidiary = function() {}
+    alertnyaSubsidiary.edit = function(message1,message2) {
+            $('#allertSubsidiaryedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyaSubsidiary.add = function(message1,message2) {
+        $('#allertSubsidiaryadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+
 
 
 $(document).ready(function() {
@@ -88,6 +96,16 @@ e.preventDefault();
 
 //Subsidiaryname
 var addSubsidiaryname = document.getElementById('add_Subsidiaryname').value
+
+if (addSubsidiaryname == "") {
+    alertnyaSubsidiary.add('Sorry,','Subsidiary Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Subsidiarystable.push({
                 id_companysubsidiary: '' ,
@@ -133,6 +151,16 @@ var editSubsidiaryarray = document.getElementById('edit_Subsidiaryarray').value
 //Subsidiaryname
 var editSubsidiaryname = document.getElementById('edit_Subsidiaryname').value
 
+//validation add Subsidiary
+if (editSubsidiaryname == "") {
+    alertnyaSubsidiary.edit('Sorry,','Subsidiary Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Subsidiarystable[editSubsidiaryarray].companysubsidiary_name = editSubsidiaryname
 

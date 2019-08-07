@@ -40,7 +40,7 @@
                         <tbody>
                                 @foreach($data as $index => $d)
                                 <tr>
-                                    <td style="text-align: center;">{{ $index+1}}</td>
+                                    <td style="text-align: center;">{{ $index + $data->firstItem()}}</td>
                                     <td style="text-align: center;">{{ $d->id }}</td>
                                     <td>{{ $d->name }}</td>
                                     <td>{{ $d->street1 }}</td>

@@ -28,7 +28,7 @@
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/002-pass.png')}}"><span>Customer Name</span>
                         </div>
-                        <input type="text" class="form-control" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="" placeholder="Dyah Group" value="{{$Detail->name}}">
+                        <input type="text" class="form-control " name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="" placeholder="Dyah Group" value="{{$Detail->name}}">
 
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/address.png')}}"><span>Address 1</span>
@@ -213,6 +213,10 @@
       </div>
       <div class="modal-body">
 
+            
+        <div id="allertBodadd"></div>
+           
+
 
         <form id="form-Bod">
           <div class="form-group has-error">
@@ -280,6 +284,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertBodedit"></div>
 
         <form id="form-Bod">
           <div class="form-group ">
@@ -383,6 +388,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                    <div id="allertBranchadd"></div>
 
 
                 <form id="form-Branch">
@@ -425,6 +431,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertBranchedit"></div>
 
                 <form id="form-Bod">
                     <input type="hidden" class="form-control" id="edit_Brancharray" >
@@ -499,6 +506,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                    <div id="allertDevisionadd"></div>
 
 
                 <form id="form-Bod">
@@ -534,7 +542,7 @@
                 </button>
             </div>
             <div class="modal-body">
-
+                    <div id="allertDevisionedit"></div>
 
                 <form id="form-Bod">
                     <div class="form-group">
@@ -606,6 +614,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertPartneradd"></div>
 
                 <form id="form-Partner">
                     <div class="form-group">
@@ -640,7 +649,7 @@
                 </button>
             </div>
             <div class="modal-body">
-
+                    <div id="allertPartneredit"></div>
 
                 <form id="form-Partner">
                     <div class="form-group">
@@ -709,6 +718,7 @@
         </button>
     </div>
     <div class="modal-body">
+            <div id="allertProductadd"></div>
 
 
       <form id="form-Product">
@@ -750,7 +760,7 @@
           </div>
           <div class="modal-body">
 
-
+                <div id="allertProductedit"></div>
               <form id="form-Product">
                   <div class="form-group">
                       <input type="hidden" class="form-control" id="edit_Productarray" >
@@ -822,6 +832,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertSocmedadd"></div>
 
                 <form id="form-Socmed">
 
@@ -870,6 +881,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertSocmededit"></div>
 
                 <form id="form-Socmed">
 
@@ -952,6 +964,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertSubsidiaryadd"></div>
 
                 <form id="form-Subsidiary">
                     <div class="form-group">
@@ -987,6 +1000,7 @@
             </div>
             <div class="modal-body">
 
+                    <div id="allertSubsidiaryedit"></div>
 
                 <form id="form-Subsidiary">
                     <div class="form-group">
@@ -1056,6 +1070,7 @@
         </button>
     </div>
     <div class="modal-body">
+            <div id="allertHistsadd"></div>
 
 
       <form id="form-Hists">
@@ -1080,6 +1095,8 @@
 </div>
 </div>
 
+
+
 {{-- edit Data Hists --}}
 <div class="modal" id="editHists" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
@@ -1091,7 +1108,7 @@
               </button>
           </div>
           <div class="modal-body">
-
+                <div id="allertHistsedit"></div>
 
               <form id="form-Hists">
                   <div class="form-group">
@@ -1124,9 +1141,6 @@
 </script>
 <script src="{{ URL::asset('js/function/histam.js') }}"></script>
 
-
-
-
 </div>              
 </div>
 </div>
@@ -1134,6 +1148,30 @@
     <button class="btn btn-danger btn-round">Cancel</button>
     <button onclick="SubmitAll()" class="btn btn-info btn-round">Save</button>
 </div>
+</div>
+
+{{-- Success after poping up --}}
+<div class="modal" id="succesafterclick" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                         </div>
+                        
+                        <div class="modal-body">
+                           
+                            <div class="thank-you-pop">
+                                <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                                <h1>Success!</h1>
+                                <p>Data Hasbeen Update!</p>
+                                {{-- <h3 class="cupon-pop">Your Id: <span>12345</span></h3> --}}
+                                
+                             </div>
+                             
+                        </div>
+                        
+                    </div>
+        </div>
 </div>
 
 
@@ -1183,9 +1221,14 @@
             type: 'POST',
             url: '/partner/update',
             data: data,
+            beforeSend: function() {
+            $('#succesafterclick').show();             
+        },
 
             success: function(resp) {
-              console.log(resp);
+           
+              console.log(resp["url"]);
+              window.location =resp["url"]
 
           }
       })
@@ -1194,6 +1237,8 @@
     }
 
 </script>
+
+
 
 <script>
     var segment = @JSON($Segments); 
@@ -1214,7 +1259,7 @@
         $('<option value="'+data.id_businesstype+'">'+data.businesstype+'</option>').appendTo('#inputan_id_businesstype');
     });
 
-//    auto select when data is added
+    //  auto select when data is added
     $("#inputan_id_businesstype").val(autoselected["id_businesstype"]);
     $("#inputan_id_segment").val(autoselected["id_segment"]);
     console.log(autoselected);

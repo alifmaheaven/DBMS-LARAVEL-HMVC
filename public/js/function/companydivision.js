@@ -77,6 +77,13 @@ function deleteDivisionstablerow(data){
 
     }
 
+    alertnyaDivision = function() {}
+    alertnyaDivision.edit = function(message1,message2) {
+            $('#allertDevisionedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyaDivision.add = function(message1,message2) {
+        $('#allertDevisionadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
 
 
 $(document).ready(function() {
@@ -85,6 +92,16 @@ e.preventDefault();
 
 //Divisionname
 var addDivisionname = document.getElementById('add_Divisionname').value
+
+if (addDivisionname == "") {
+    alertnyaDivision.add('Sorry,','Division Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Divisionstable.push({
                 id_companydivision: '' ,
@@ -130,7 +147,16 @@ var editDivisionarray = document.getElementById('edit_Divisionarray').value
 //Divisionname
 var editDivisionname = document.getElementById('edit_Divisionname').value
 
-
+//validation add Division
+if (editDivisionname == "") {
+    alertnyaDivision.edit('Sorry,','Division Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 Divisionstable[editDivisionarray].companydivision_name = editDivisionname
 
 

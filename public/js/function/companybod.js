@@ -81,8 +81,17 @@ function deleteBodstablerow(data){
     
     }
 
+    alertnyabod = function() {}
+    alertnyabod.edit = function(message1,message2) {
+            $('#allertBodedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyabod.add = function(message1,message2) {
+        $('#allertBodadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
 
+   
 
+    
 $(document).ready(function() {
 $('#addBodbutton').click(function(e){ //on add input button click
 e.preventDefault();
@@ -98,6 +107,55 @@ var addBodbirthday = document.getElementById('add_Bodbirthday').value
 var addBodphone = document.getElementById('add_Bodphone').value
 //bodemail
 var addBodemail = document.getElementById('add_Bodemail').value
+
+//validation add Bod
+if (addBodname == "") {
+    alertnyabod.add('Sorry,','BOD Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (optionBodPosition == "") {
+    alertnyabod.add('Sorry,','Please Select position');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (addBodbirthday == "") {
+    alertnyabod.add('Sorry,','Date of Birth Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (addBodphone == "") {
+    alertnyabod.add('Sorry,','Phone Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (addBodemail == "") {
+    alertnyabod.add('Sorry,','Email Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+
+
 
 Bodstable.push({
                 id_companybod: '' ,
@@ -156,6 +214,52 @@ var editBodphone = document.getElementById('edit_Bodphone').value
 //bodemail
 var editBodemail = document.getElementById('edit_Bodemail').value
 
+//validation for edit
+if (editBodname == "") {
+    alertnyabod.edit('Sorry,','BOD Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (optionBodPosition == "") {
+    alertnyabod.edit('Sorry,','Please Select position');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (editBodbirthday == "") {
+    alertnyabod.edit('Sorry,','Date of Birth Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (editBodphone == "") {
+    alertnyabod.edit('Sorry,','Phone Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (editBodemail == "") {
+    alertnyabod.edit('Sorry,','Email Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Bodstable[editbodarray].companybod_name = editBodname
 Bodstable[editbodarray].id_position = optionBodPosition

@@ -82,6 +82,14 @@ function deleteBranchstablerow(data){
 
     }
 
+    alertnyabranch = function() {}
+    alertnyabranch.edit = function(message1,message2) {
+            $('#allertBranchedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyabranch.add = function(message1,message2) {
+        $('#allertBranchadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+
 
 
 $(document).ready(function() {
@@ -94,6 +102,25 @@ var addBranchname = document.getElementById('add_Branchname').value
 //branch address
 var addBranchaddress = document.getElementById('add_Branchaddress').value
 
+//validation add branch
+if (addBranchname == "") {
+    alertnyabranch.add('Sorry,','Branch Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (addBranchaddress == "") {
+    alertnyabranch.add('Sorry,','Branch address Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Branchstable.push({
                 id_companybranch: '' ,
@@ -140,7 +167,25 @@ var addBranchname = document.getElementById('edit_Branchname').value
 //branch address
 var addBranchaddress = document.getElementById('edit_Branchaddress').value
 
-
+//validation edt branch
+if (addBranchname == "") {
+    alertnyabranch.edit('Sorry,','Branch Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (addBranchaddress == "") {
+    alertnyabranch.edit('Sorry,','Branch address Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Branchstable[editBrancharray].companybranch = addBranchname
 Branchstable[editBrancharray].companybranch_addr = addBranchaddress

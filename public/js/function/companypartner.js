@@ -80,6 +80,13 @@ function deletePartnerstablerow(data){
     $('#editPartner').find('.modal-body').find("#edit_Partnername").val(Partnerstable[$(data).data('array')].companypartner_name);
     
     }
+    alertnyaPartner = function() {}
+    alertnyaPartner.edit = function(message1,message2) {
+            $('#allertPartneredit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyaPartner.add = function(message1,message2) {
+        $('#allertPartneradd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
 
 
 
@@ -89,9 +96,18 @@ e.preventDefault();
 
 //Partnername
 var addPartnername = document.getElementById('add_Partnername').value
-//Partneractive
-var addPartneractif = document.getElementById('add_Partneractif')
-var optionPartneractif = addPartneractif.options[addPartneractif.selectedIndex].value;
+
+
+if (addPartnername == "") {
+    alertnyaPartner.add('Sorry,','Partner Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+
 Partnerstable.push({
                 id_companypartner: '' ,
                 id_companydetail: '' ,
@@ -135,7 +151,16 @@ e.preventDefault();
 var editPartnerarray = document.getElementById('edit_Partnerarray').value
 //Partnername
 var editPartnername = document.getElementById('edit_Partnername').value
-
+//validation add Partner
+if (editPartnername == "") {
+    alertnyaPartner.edit('Sorry,','Partner Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 
 Partnerstable[editPartnerarray].companypartner_name = editPartnername

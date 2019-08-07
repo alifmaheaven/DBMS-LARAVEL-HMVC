@@ -82,6 +82,15 @@ function deleteHistsstablerow(data){
    
     }
 
+    alertnyaHists = function() {}
+    alertnyaHists.edit = function(message1,message2) {
+            $('#allertHistsedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyaHists.add = function(message1,message2) {
+        $('#allertHistsadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+
+
 
 
 $(document).ready(function() {
@@ -90,6 +99,16 @@ e.preventDefault();
 
 //Histsname
 var addHistsname = document.getElementById('add_Histsname').value
+
+if (addHistsname == "") {
+    alertnyaHists.add('Sorry,','Hists Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 
 Histsstable.push({
@@ -137,6 +156,17 @@ var editHistsarray = document.getElementById('edit_Histsarray').value
 //Histsname
 var editHistsname = document.getElementById('edit_Histsname').value
 
+
+//validation add Hists
+if (editHistsname == "") {
+    alertnyaHists.edit('Sorry,','Hists Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 
 Histsstable[editHistsarray].hist_am_name = editHistsname

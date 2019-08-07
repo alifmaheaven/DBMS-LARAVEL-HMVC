@@ -88,6 +88,15 @@ function deleteProductstablerow(data){
    
     }
 
+    alertnyaProduct = function() {}
+    alertnyaProduct.edit = function(message1,message2) {
+            $('#allertProductedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyaProduct.add = function(message1,message2) {
+        $('#allertProductadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+
+
 
 
 $(document).ready(function() {
@@ -98,6 +107,15 @@ e.preventDefault();
 var addProductsigma = document.getElementById('add_sigmaproduct')
 var optionProductsigma = addProductsigma.options[addProductsigma.selectedIndex].value;
 
+if (optionProductsigma == "") {
+    alertnyaProduct.add('Sorry,','Product Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 Productstable.push({
                 id_companyproduct: '' ,
@@ -150,7 +168,16 @@ var editProductarray = document.getElementById('edit_Productarray').value
 var editProductsigma = document.getElementById('edit_sigmaproduct')
 var optionProductsigma = editProductsigma.options[editProductsigma.selectedIndex].value;
 
-
+//validation add Product
+if (optionProductsigma == "") {
+    alertnyaProduct.edit('Sorry,','Product Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 
 Productstable[editProductarray].id_sigmaproduct = optionProductsigma

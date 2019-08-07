@@ -90,6 +90,14 @@ function deleteSocmedstablerow(data){
    
     }
 
+    alertnyaSocmed = function() {}
+    alertnyaSocmed.edit = function(message1,message2) {
+            $('#allertSocmededit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+    alertnyaSocmed.add = function(message1,message2) {
+        $('#allertSocmedadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+    }
+
 
 
 $(document).ready(function() {
@@ -101,6 +109,26 @@ var addSocmedname = document.getElementById('add_Socmedname').value
 //posision select
 var addsocmedtype = document.getElementById('add_socmedtype')
 var optionsocmedtype = addsocmedtype .options[addsocmedtype .selectedIndex].value;
+
+//validation add Socmed
+if (addSocmedname == "") {
+    alertnyaSocmed.add('Sorry,','Socmed Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (optionsocmedtype == "") {
+    alertnyaSocmed.add('Sorry,','Socmed address Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 
 Socmedstable.push({
@@ -154,6 +182,27 @@ var editSocmedname = document.getElementById('edit_Socmedname').value
 //posision select
 var editsocmedtype = document.getElementById('edit_socmedtype')
 var optionsocmedtype = editsocmedtype .options[editsocmedtype .selectedIndex].value;
+
+//validation edt Socmed
+
+if (optionsocmedtype == "") {
+    alertnyaSocmed.edit('Sorry,','Socmed ');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
+if (addSocmedname == "") {
+    alertnyaSocmed.edit('Sorry,','Socmed Name Field cannot be empty');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+return false
+}
 
 
 Socmedstable[editSocmedarray].socmed_name = editSocmedname
