@@ -1136,6 +1136,7 @@
 </div>
 </div>
 
+
 <script>
 
     function SubmitAll() {  
@@ -1197,23 +1198,30 @@
 <script>
     var segment = @JSON($Segments); 
     var businesstype = @JSON($Businesstypes);
+    var autoselected = @JSON($Detail);
 
-    $('<option value="">Select Segment types</option>').appendTo('#inputan_id_segment');
+    $('<option value="" selected disabled hidden>Select Segment types</option>').appendTo('#inputan_id_segment');
 
     segment.forEach(data => {
         //console.log(data);
         $('<option value="'+data.id_segment+'">'+data.segment_industry+'</option>').appendTo('#inputan_id_segment');
     });
 
-    $('<option value=""> Select Business Types </option>').appendTo('#inputan_id_businesstype');
+    $('<option value="" selected disabled hidden> Select Business Types </option>').appendTo('#inputan_id_businesstype');
 
     businesstype.forEach(data => {
         //console.log(data);
         $('<option value="'+data.id_businesstype+'">'+data.businesstype+'</option>').appendTo('#inputan_id_businesstype');
     });
 
+//    auto select when data is added
+    $("#inputan_id_businesstype").val(autoselected["id_businesstype"]);
+    $("#inputan_id_segment").val(autoselected["id_segment"]);
+    console.log(autoselected);
+
 
 </script>
+
 
 <script>
   function isNumber(evt) {
