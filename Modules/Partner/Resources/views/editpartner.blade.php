@@ -44,6 +44,7 @@
                             <img src="{{ URL::asset('img/dyah/calen.png')}}"><span>Company Date of Estabilished</span>
                         </div>
                         <input id="inputan_company_doe" class="form-control unstyled" type="date" name="" value="{{$Detail->company_doe}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;">
+                        <div style=" margin-top:-20px; font-size:10px; color:red;" id="validation_item_custom_payment" class="validation-advice">This is a required field.</div>
 
                         <div style="float: left; ">
                             <img src="{{ URL::asset('img/dyah/007.png')}}"><span>Bussiness Type</span>
@@ -115,7 +116,7 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/001-clock.png')}}"><span>Company History</span>
                 </div>
-                <textarea rows="4" class="form-control" placeholder="Company History"  style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;">{{$Detail->company_history }}</textarea>
+                <textarea id="inputan_company_history" rows="4" class="form-control" placeholder="Company History"  style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;">{{$Detail->company_history }}</textarea>
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Customer Number</span>
@@ -125,12 +126,12 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/theatre-masks.png')}}"><span>Company Culture</span>
                 </div>
-                <textarea rows="4" class="form-control" placeholder=" Company Culture" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;"> {{$Detail->company_culture}}</textarea>
+                <textarea id="inputan_company_culture" rows="4" class="form-control" placeholder=" Company Culture" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;"> {{$Detail->company_culture}}</textarea>
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/history (2).png')}}"><span>Company Working Hours</span>
                 </div>
-                <textarea rows="4" class="form-control" placeholder="Company Working Hours" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;">{{$Detail->company_workinghours}}</textarea>
+                <textarea id="inputan_company_workinghours" rows="4" class="form-control" placeholder="Company Working Hours" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;">{{$Detail->company_workinghours}}</textarea>
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Budget</span>
@@ -140,7 +141,7 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/008-product.png')}}"><span>Company Product Needs</span>
                 </div>
-                <textarea rows="4" class="form-control" placeholder="Company Product Needs" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;">{{$Detail->company_product_needs}}</textarea>
+                <textarea id="inputan_company_product_needs" rows="4" class="form-control" placeholder="Company Product Needs" style="margin-bottom: 15px;width: 340px;border:solid 1px lightgrey;border-radius: 3px;">{{$Detail->company_product_needs}}</textarea>
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/001-clock.png')}}"><span>Last AM</span>
