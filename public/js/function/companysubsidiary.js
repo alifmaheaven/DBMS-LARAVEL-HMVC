@@ -82,10 +82,10 @@ function deleteSubsidiarystablerow(data){
 
     alertnyaSubsidiary = function() {}
     alertnyaSubsidiary.edit = function(message1,message2) {
-            $('#allertSubsidiaryedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+            $('#allertSubsidiaryedit').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
     alertnyaSubsidiary.add = function(message1,message2) {
-        $('#allertSubsidiaryadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+        $('#allertSubsidiaryadd').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
 
 

@@ -92,10 +92,10 @@ function deleteSocmedstablerow(data){
 
     alertnyaSocmed = function() {}
     alertnyaSocmed.edit = function(message1,message2) {
-            $('#allertSocmededit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+            $('#allertSocmededit').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
     alertnyaSocmed.add = function(message1,message2) {
-        $('#allertSocmedadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+        $('#allertSocmedadd').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
 
 
@@ -121,7 +121,7 @@ if (addSocmedname == "") {
 return false
 }
 if (optionsocmedtype == "") {
-    alertnyaSocmed.add('Sorry,','Socmed address Field cannot be empty');
+    alertnyaSocmed.add('Sorry,','Please Select Position');
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 
@@ -186,7 +186,7 @@ var optionsocmedtype = editsocmedtype .options[editsocmedtype .selectedIndex].va
 //validation edt Socmed
 
 if (optionsocmedtype == "") {
-    alertnyaSocmed.edit('Sorry,','Socmed ');
+    alertnyaSocmed.edit('Sorry,','Please Select Position');
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 
@@ -194,7 +194,7 @@ if (optionsocmedtype == "") {
     }, 4000);
 return false
 }
-if (addSocmedname == "") {
+if (editSocmedname == "") {
     alertnyaSocmed.edit('Sorry,','Socmed Name Field cannot be empty');
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
