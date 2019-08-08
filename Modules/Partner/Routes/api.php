@@ -19,8 +19,10 @@ Route::middleware('auth:api')->get('/partner', function (Request $request) {
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     
-    Route::prefix('partner')->group(function() {
+    
+});
 
-        Route::post('add', 'PartnerController@add_res_partner');
-    });
+Route::prefix('partner')->group(function() {
+
+    Route::post('add', 'PartnerController@add_res_partner');
 });
