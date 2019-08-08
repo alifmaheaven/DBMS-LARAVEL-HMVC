@@ -67,6 +67,8 @@ function deleteBodstablerow(data){
      
     }
 
+ 
+
     
     function editBodstablerow(data){     
    // Bodstable.splice($(data).data('array'), 1);     
@@ -90,7 +92,11 @@ function deleteBodstablerow(data){
     }
 
    
-
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      }
+      
     
 $(document).ready(function() {
 $('#addBodbutton').click(function(e){ //on add input button click
@@ -154,6 +160,16 @@ if (addBodemail == "") {
     }, 4000);
 return false
 }
+
+if(!validateEmail(addBodemail)){
+    alertnyabod.add('Sorry,','Email is wrong format');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+    return false
+} 
 
 
 
@@ -259,6 +275,16 @@ if (editBodemail == "") {
         });
     }, 4000);
 return false
+}
+
+if(!validateEmail(editBodemail)){
+    alertnyabod.edit('Sorry,','Email is wrong format');
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+    return false
 }
 
 Bodstable[editbodarray].companybod_name = editBodname
