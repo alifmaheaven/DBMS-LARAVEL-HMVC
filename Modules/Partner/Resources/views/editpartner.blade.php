@@ -1218,7 +1218,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/partner/update',
+            url: '{{ url('/partner/update') }}',
             data: data,
             beforeSend: function() {
           //  $('#succesafterclick').show();             
