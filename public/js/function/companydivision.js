@@ -164,7 +164,7 @@ Divisionstable[editDivisionarray].companydivision_name = editDivisionname
 //console.log(Divisionstable);
 
             let htmlDivisions = ''
-            let nomorDivisions = 0
+            let nomorDivisions = 0 
 
             Divisionstable.forEach(data => {
             //console.log(data);
