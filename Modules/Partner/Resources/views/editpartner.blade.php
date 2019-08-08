@@ -24,7 +24,6 @@
                             <img src="{{ URL::asset('img/dyah/ic-id.png')}}"><span>Customer ID</span>
                         </div>
                         <input type="text" id="inputan_id" class="form-control" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" readonly="" placeholder="" value="{{$Detail->id}}" maxlength="32">
-
                         <div style="float: left;">
                             <img src="{{ URL::asset('img/dyah/002-pass.png')}}"><span>Customer Name</span>
                         </div>
@@ -44,7 +43,7 @@
                             <img src="{{ URL::asset('img/dyah/calen.png')}}"><span>Company Date of Estabilished</span>
                         </div>
                         <input id="inputan_company_doe" class="form-control unstyled" type="date" name="" value="{{$Detail->company_doe}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;">
-                        <div style=" margin-top:-20px; font-size:10px; color:red;" id="validation_item_custom_payment" class="validation-advice">This is a required field.</div>
+                        
 
                         <div style="float: left; ">
                             <img src="{{ URL::asset('img/dyah/007.png')}}"><span>Bussiness Type</span>
@@ -74,11 +73,13 @@
                     <div style="float: left;">
                         <img src="{{ URL::asset('img/dyah/coin-stack.png')}}"><span>Assets Value</span>
                     </div>
-                    <input id="inputan_asset_value" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->asset_value}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" maxlength="50">
+                    <input id="inputan_asset_value" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->asset_value}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="50">
+
                     <div style="float: left;" >
                         <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Income</span>
                     </div>
-                    <input id="inputan_company_annual_income" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_annual_income}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="50">
+                    <input id="inputan_company_annual_income" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_annual_income}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+                    
                     <div style="float: left;">
                         <img src="{{ URL::asset('img/dyah/envelope.png')}}"><span>Company Email</span>
                     </div>
@@ -92,13 +93,13 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/coin-stack.png')}}"><span>Product Sold Permonth</span>
                 </div>
-                <input id="inputan_product_sold_permonth" class="form-control unstyled" type="number" name="" value="{{$Detail->product_sold_permonth}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="10">
-                
+                <input id="inputan_product_sold_permonth" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->product_sold_permonth}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Revenue</span>
                 </div>
-                <input  id="inputan_company_revenue" class="form-control unstyled" type="number" name="" value="{{$Detail->company_revenue}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="15">
-                
+                <input id="inputan_company_revenue" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_revenue}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" maxlength="20" >
+
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Company Competitor</span>
                 </div>
@@ -121,7 +122,7 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Customer Number</span>
                 </div>
-                <input id="inputan_company_num_customer" class="form-control" type="number" name="" value="{{$Detail->company_num_customer}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="10">
+                <input id="inputan_company_num_customer" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_num_customer}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="10">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/theatre-masks.png')}}"><span>Company Culture</span>
@@ -136,7 +137,7 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Budget</span>
                 </div>
-                <input id="inputan_company_budget_permonth" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_budget_permonth}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" >
+                <input id="inputan_company_budget_permonth" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_budget_permonth}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/008-product.png')}}"><span>Company Product Needs</span>
@@ -250,7 +251,7 @@
 <div class="form-group">
     <label style="color: black;font-weight: bold;">BOD Phone</label>
     <div class="input-group">
-      <input type="number" class="form-control unstyled" id="add_Bodphone" placeholder="Input Phone Number" name="username" style="margin-bottom: 15px;">
+      <input type="text" pattern="[0-9]" class="form-control unstyled" id="add_Bodphone" placeholder="Input Phone Number" name="username" style="margin-bottom: 15px;" onkeypress="return isNumber(event)" maxlength="20">
   </div>
 </div>
 
@@ -278,7 +279,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit BOD</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit BOD</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -318,7 +319,7 @@
 <div class="form-group">
     <label style="color: black;font-weight: bold;">BOD Phone</label>
     <div class="input-group">
-      <input type="number" class="form-control unstyled" id="edit_Bodphone" placeholder="Input Phone Number" name="username" style="margin-bottom: 15px;">
+      <input type="text" pattern="[0-9]" class="form-control unstyled" id="edit_Bodphone" placeholder="Input Phone Number" name="username" style="margin-bottom: 15px;" onkeypress="return isNumber(event)" maxlength="20">
   </div>
 </div>
 
@@ -383,7 +384,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Branch</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Branch</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -396,7 +397,7 @@
                     <div class="form-group">
                         <label style="color: black;font-weight: bold;"> Branch Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="add_Branchname" placeholder="Masukan Nama" name="add_Bodname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="add_Branchname" placeholder="Masukan Nama" name="add_Bodname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -414,18 +415,18 @@
             </div>
             <div class="modal-footer">
 
-                <button id="addBranchbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="addBranchbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>
 </div>
 
-{{-- edit Data BOD --}}
+{{-- edit Data Branch --}}
 <div class="modal" id="editBranch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Bod</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Branch</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -440,7 +441,7 @@
                     <div class="form-group">
                         <label style="color: black;font-weight: bold;"> Branch Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" style="margin-bottom: 15px;" id="edit_Branchname" placeholder="Masukan Nama" name="edit_Bodname">
+                            <input type="text" maxlenght="50" class="form-control" style="margin-bottom: 15px;" id="edit_Branchname" placeholder="Masukan Nama" name="edit_Bodname">
                         </div>
                     </div>
 
@@ -456,7 +457,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="editBranchbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="editBranchbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
@@ -501,7 +502,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Bod</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Division</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -512,10 +513,10 @@
 
                 <form id="form-Bod">
                     <div class="form-group">
-                        <label style="color: black;font-weight: bold;"> Bod Name</label>
+                        <label style="color: black;font-weight: bold;"> Division Name</label>
                         <div class="input-group">
 
-                            <input type="text" class="form-control" id="add_Divisionname" placeholder="Masukan Nama" name="add_Bodname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="add_Divisionname" placeholder="Masukan Nama" name="add_Bodname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -526,7 +527,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="addDivisionbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="addDivisionbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>
@@ -537,7 +538,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Bod</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Division</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -548,9 +549,9 @@
                 <form id="form-Bod">
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="edit_Divisionarray" >
-                        <label style="color: black;font-weight: bold;"> Bod Name</label>
+                        <label style="color: black;font-weight: bold;"> Division Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="edit_Divisionname" placeholder="Masukan Nama" name="edit_Bodname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="edit_Divisionname" placeholder="Masukan Nama" name="edit_Bodname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -562,7 +563,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="editDivisionbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="editDivisionbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
@@ -608,7 +609,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Partner</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Partner</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -622,7 +623,7 @@
                         <label style="color: black;font-weight: bold;"> Partner Name</label>
                         <div class="input-group">
 
-                            <input type="text" class="form-control" id="add_Partnername" placeholder="Masukan Nama" name="add_Partnername" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="add_Partnername" placeholder="Masukan Nama" name="add_Partnername" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -633,7 +634,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="addPartnerbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="addPartnerbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>
@@ -644,7 +645,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Partner</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Partner</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -657,7 +658,7 @@
                         <input type="hidden" class="form-control" id="edit_Partnerarray" >
                         <label style="color: black;font-weight: bold;"> Partner Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="edit_Partnername" placeholder="Masukan Nama" name="edit_Partnername" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="edit_Partnername" placeholder="Masukan Nama" name="edit_Partnername" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -669,7 +670,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="editPartnerbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="editPartnerbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
@@ -713,7 +714,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Product</h5>
+          <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Product</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -724,7 +725,7 @@
 
       <form id="form-Product">
         <div class="form-group">
-            <label>Sigma Product</label>
+            <label  style="color: black;font-weight: bold;"> Sigma Product</label>
             <div class="input-group">
 
               <div class="select"  style="width:470px;">
@@ -743,7 +744,7 @@
 </div>
 <div class="modal-footer">
 
-  <button id="addProductbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+  <button id="addProductbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
 </div>
 </div>
 </div>
@@ -754,7 +755,7 @@
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Product</h5>
+              <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Product</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -781,7 +782,7 @@
       </div>
       <div class="modal-footer">
 
-          <button id="editProductbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+          <button id="editProductbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
       </div>
   </div>
 </div>
@@ -826,7 +827,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Socmed</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Socmed</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -853,7 +854,7 @@
                         <label style="color: black;font-weight: bold;"> Socmed Name</label>
                         <div class="input-group">
 
-                            <input type="text" class="form-control" id="add_Socmedname" placeholder="Masukan Nama" name="add_Socmedname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="add_Socmedname" placeholder="Masukan Nama" name="add_Socmedname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -864,7 +865,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="addSocmedbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="addSocmedbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>
@@ -875,7 +876,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Socmed</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Socmed</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -902,7 +903,7 @@
                         <input type="hidden" class="form-control" id="edit_Socmedarray" >
                         <label style="color: black;font-weight: bold;"> Socmed Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="edit_Socmedname" placeholder="Masukan Nama" name="edit_Socmedname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="edit_Socmedname" placeholder="Masukan Nama" name="edit_Socmedname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -913,7 +914,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="editSocmedbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="editSocmedbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
@@ -958,7 +959,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Subsidiary</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Subsidiary</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -972,7 +973,7 @@
                         <label style="color: black;font-weight: bold;"> Subsidiary Name</label>
                         <div class="input-group">
 
-                            <input type="text" class="form-control" id="add_Subsidiaryname" placeholder="Masukan Nama" name="add_Subsidiaryname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="add_Subsidiaryname" placeholder="Masukan Nama" name="add_Subsidiaryname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -983,7 +984,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="addSubsidiarybutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="addSubsidiarybutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>
@@ -994,7 +995,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Subsidiary</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Subsidiary</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1008,7 +1009,7 @@
                         <input type="hidden" class="form-control" id="edit_Subsidiaryarray" >
                         <label style="color: black;font-weight: bold;"> Subsidiary Name</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="edit_Subsidiaryname" placeholder="Masukan Nama" name="edit_Subsidiaryname" style="margin-bottom: 15px;">
+                            <input type="text" maxlenght="50" class="form-control" id="edit_Subsidiaryname" placeholder="Masukan Nama" name="edit_Subsidiaryname" style="margin-bottom: 15px;">
                         </div>
                     </div>
 
@@ -1020,7 +1021,7 @@
             </div>
             <div class="modal-footer">
 
-                <button id="editSubsidiarybutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+                <button id="editSubsidiarybutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
@@ -1065,7 +1066,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Hists</h5>
+          <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add History</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -1076,10 +1077,10 @@
 
       <form id="form-Hists">
         <div class="form-group">
-          <label style="color: black;font-weight: bold;"> Hists Name</label>
+          <label style="color: black;font-weight: bold;"> History Name</label>
           <div class="input-group">
 
-            <input type="text" class="form-control" id="add_Histsname" placeholder="Masukan Nama" name="add_Histsname" style="margin-bottom: 15px;">
+            <input type="text" maxlenght="50" class="form-control" id="add_Histsname" placeholder="Masukan Nama" name="add_Histsname" style="margin-bottom: 15px;">
         </div>
     </div>
 
@@ -1103,7 +1104,7 @@
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Tambah Hists</h5>
+              <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Hists</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -1114,9 +1115,9 @@
               <form id="form-Hists">
                   <div class="form-group">
                       <input type="hidden" class="form-control" id="edit_Histsarray" >
-                      <label style="color: black;font-weight: bold;"> Hists Name</label>
+                      <label style="color: black;font-weight: bold;"> History Name</label>
                       <div class="input-group">
-                          <input type="text" class="form-control" id="edit_Histsname" placeholder="Masukan Nama" name="edit_Histsname" style="margin-bottom: 15px;">
+                          <input type="text" maxlenght="50" class="form-control" id="edit_Histsname" placeholder="Masukan Nama" name="edit_Histsname" style="margin-bottom: 15px;">
                       </div>
                   </div>
 
@@ -1128,7 +1129,7 @@
           </div>
           <div class="modal-footer">
 
-              <button id="editHistsbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+              <button id="editHistsbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
           </div>
       </div>
   </div>
@@ -1146,8 +1147,8 @@
 </div>
 </div>
 <div class="bar-3" style="padding: 0">
-    <button class="btn btn-danger btn-round">Cancel</button>
-    <button onclick="SubmitAll()" class="btn btn-info btn-round">Save</button>
+    <a href="{{ url('/partner') }}"><button class="btn btn-danger btn-round">Cancel</button></a>
+    <button onclick="SubmitAll()" data-toggle="modal" data-target="#succesafterclick" class="btn btn-info btn-round">Save</button>
 </div>
 </div>
 
@@ -1220,7 +1221,7 @@
             url: '/partner/update',
             data: data,
             beforeSend: function() {
-            $('#succesafterclick').show();             
+          //  $('#succesafterclick').show();             
         },
 
             success: function(resp) {
