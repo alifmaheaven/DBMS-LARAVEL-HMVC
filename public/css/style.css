@@ -114,9 +114,7 @@
 	margin-top: 30px;
 }
 
-.sectionku p {
-	margin: 3px 0 43px 0;
-}
+
 
 .isi-section input[type=text], input[type=number], input[type=email], select {
 	width: 100%;
@@ -427,4 +425,9 @@ table th {
 }
 #ignismyModal .modal-header{
     border:0px;
+}
+
+/* custom static */
+.form-control-static{
+	margin-top: 30px;
 }
