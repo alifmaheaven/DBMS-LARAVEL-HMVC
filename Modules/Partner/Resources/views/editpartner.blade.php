@@ -1216,7 +1216,7 @@
           }
       });
 
-        $.ajax({
+      $.ajax({
             type: 'POST',
             url: '{{ url('/partner/update') }}',
             data: data,
@@ -1227,11 +1227,10 @@
             success: function(resp) {
            
               console.log(resp["url"]);
-              window.location =resp["url"]
+              window.location = '{{ url('/partner') }}'
 
           }
       })
-
 
     }
 
