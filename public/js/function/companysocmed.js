@@ -112,7 +112,7 @@ var optionsocmedtype = addsocmedtype .options[addsocmedtype .selectedIndex].valu
 
 //validation add Socmed
 if (addSocmedname == "") {
-    alertnyaSocmed.add('Sorry,','Socmed Name Field cannot be empty');
+    alertnyaSocmed.add('Sorry,','Please Select Socmed Type');
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 
@@ -186,7 +186,7 @@ var optionsocmedtype = editsocmedtype .options[editsocmedtype .selectedIndex].va
 //validation edt Socmed
 
 if (optionsocmedtype == "") {
-    alertnyaSocmed.edit('Sorry,','Please Select Position');
+    alertnyaSocmed.edit('Sorry,','Please Select Socmed Type');
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 
