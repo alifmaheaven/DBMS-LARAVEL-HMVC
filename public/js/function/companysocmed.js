@@ -30,7 +30,7 @@ if (Socmedstable.length > 0) {
 
 } else {
 
-//console.log('halo');    
+//console.log('halo  ');    
 }
 
 
