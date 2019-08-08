@@ -79,10 +79,10 @@ function deleteDivisionstablerow(data){
 
     alertnyaDivision = function() {}
     alertnyaDivision.edit = function(message1,message2) {
-            $('#allertDevisionedit').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+            $('#allertDevisionedit').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
     alertnyaDivision.add = function(message1,message2) {
-        $('#allertDevisionadd').html('<div style="display:block;" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
+        $('#allertDevisionadd').html('<div style="display:block;" class="alert alert-primary alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><Strong>'+message1+' </Strong>'+message2+'</div>')
     }
 
 
@@ -102,6 +102,7 @@ if (addDivisionname == "") {
     }, 4000);
 return false
 }
+
 
 Divisionstable.push({
                 id_companydivision: '' ,
