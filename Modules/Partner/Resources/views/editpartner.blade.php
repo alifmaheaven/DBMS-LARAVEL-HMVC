@@ -7,6 +7,26 @@
         -webkit-appearance:none;
     }
 </style>
+
+{{-- formatin Rupiah PHP --}}
+<?php
+function rupiah($angka){
+	
+	$hasil_rupiah = "Rp. " . number_format($angka,0,',','.');
+	return $hasil_rupiah;
+ 
+}
+
+function formatangka($angka){
+	
+	$halo = number_format($angka,0,',','.');
+	return $halo;
+ 
+}
+ 
+
+?>
+
 <div class="containerku">
     <div class="bar-1">
         <img src="{{ URL::asset('img/dyah/ic-customer.png')}}"><span>Customer</span>
@@ -58,7 +78,7 @@
                       <div style="float: left;">
                         <img src="{{ URL::asset('img/dyah/006-number-1.png')}}"><span>Employee Number</span>
                     </div>
-                    <input id="inputan_number_of_employee" pattern="[0-9]" class="form-control unstyled" value="{{$Detail->number_of_employee }}" type="number" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+                    <input id="inputan_number_of_employee" class="form-control unstyled numbering" value="{{formatangka($Detail->number_of_employee) }}" type="text" name="" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
 
                     <div style="float: left;">
                         <img src="{{ URL::asset('img/dyah/call-answer.png')}}"><span>Company Phone</span>
@@ -73,12 +93,12 @@
                     <div style="float: left;">
                         <img src="{{ URL::asset('img/dyah/coin-stack.png')}}"><span>Assets Value</span>
                     </div>
-                    <input id="inputan_asset_value" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->asset_value}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="50">
+                    <input id="inputan_asset_value" class="form-control uang" type="text" name="" value="{{rupiah($Detail->asset_value)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
 
                     <div style="float: left;" >
                         <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Income</span>
                     </div>
-                    <input id="inputan_company_annual_income" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_annual_income}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+                    <input id="inputan_company_annual_income"  class="form-control uang" type="text" name="" value="{{rupiah($Detail->company_annual_income)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
                     
                     <div style="float: left;">
                         <img src="{{ URL::asset('img/dyah/envelope.png')}}"><span>Company Email</span>
@@ -93,12 +113,12 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/coin-stack.png')}}"><span>Product Sold Permonth</span>
                 </div>
-                <input id="inputan_product_sold_permonth" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->product_sold_permonth}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+                <input id="inputan_product_sold_permonth"  class="form-control numbering" type="text" name="" value="{{formatangka($Detail->product_sold_permonth)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Revenue</span>
                 </div>
-                <input id="inputan_company_revenue" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_revenue}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" maxlength="20" >
+                <input id="inputan_company_revenue"  class="form-control uang" type="text" name="" value="{{rupiah($Detail->company_revenue)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" maxlength="20" >
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Company Competitor</span>
@@ -122,7 +142,7 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Customer Number</span>
                 </div>
-                <input id="inputan_company_num_customer" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_num_customer}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="10">
+                <input id="inputan_company_num_customer"  class="form-control numbering" type="text" name="" value="{{formatangka($Detail->company_num_customer)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="10">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/theatre-masks.png')}}"><span>Company Culture</span>
@@ -137,7 +157,7 @@
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/004-money.png')}}"><span>Company Budget</span>
                 </div>
-                <input id="inputan_company_budget_permonth" pattern="[0-9]" class="form-control" type="text" name="" value="{{$Detail->company_budget_permonth}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
+                <input id="inputan_company_budget_permonth" class="form-control uang" type="text" name="" value="{{rupiah($Detail->company_budget_permonth)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;"  onkeypress="return isNumber(event)" maxlength="20">
 
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/008-product.png')}}"><span>Company Product Needs</span>
@@ -1226,7 +1246,7 @@
 
             success: function(resp) {
            
-              console.log(resp["url"]);
+              console.log(resp);
               window.location = '{{ url('/partner') }}'
 
           }
@@ -1276,6 +1296,68 @@
   return true;
 }
 </script>
+
+{{-- number formating --}}
+<script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
+<script>
+$(document).ready(function(){
+// Format mata uang.
+$( '.numbering' ).mask('0.000.000.000', {reverse: true});
+})
+
+let rupiah = document.getElementById("inputan_company_annual_income");
+//rupiah.value = formatRupiah(this.value, "Rp. ");
+
+rupiah.addEventListener("keyup", function(e) {
+  // tambahkan 'Rp.' pada saat form di ketik
+  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+  rupiah.value = formatRupiah(this.value, "Rp. ");
+});
+
+let rupiah1 = document.getElementById("inputan_company_revenue");
+rupiah1.addEventListener("keyup", function(e) {
+  // tambahkan 'Rp.' pada saat form di ketik
+  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+  rupiah1.value = formatRupiah(this.value, "Rp. ");
+});
+
+
+let rupiah2 = document.getElementById("inputan_company_budget_permonth");
+rupiah2.addEventListener("keyup", function(e) {
+  // tambahkan 'Rp.' pada saat form di ketik
+  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+  rupiah2.value = formatRupiah(this.value, "Rp. ");
+});
+
+let rupiah3 = document.getElementById("inputan_asset_value");
+rupiah3.addEventListener("keyup", function(e) {
+  // tambahkan 'Rp.' pada saat form di ketik
+  // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+  rupiah3.value = formatRupiah(this.value, "Rp. ");
+});
+
+
+
+/* Fungsi formatRupiah */
+function formatRupiah(angka, prefix) {
+  var number_string = angka.replace(/[^,\d]/g, "").toString(),
+    split = number_string.split(","),
+    sisa = split[0].length % 3,
+    rupiah = split[0].substr(0, sisa),
+    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+  // tambahkan titik jika yang di input sudah menjadi angka ribuan
+  if (ribuan) {
+    separator = sisa ? "." : "";
+    rupiah += separator + ribuan.join(".");
+  }
+
+  rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+  return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+}
+
+</script>
+    
 
 @stop
 

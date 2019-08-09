@@ -79,12 +79,6 @@ class PartnerController extends Controller
             }
         }
 
-    
-             
-      
-
-      
-
        
         for ($L=0; $L < count($data) ; $L++) {
             
@@ -145,6 +139,15 @@ class PartnerController extends Controller
     public function add_datadetail(Request $request)
     {
          $input = $request->except('Bodstable','remBodstable','Branchstable','remBranchstable','Divisionstable','remDivisionstable','Partnerstable','remPartnerstable','Productstable','remProductstable','Socmedstable','remSocmedstable','Subsidiarystable','remSubsidiarystable','Histsstable','remHistsstable');
+        
+        $formatchanging=['asset_value','company_annual_income','company_budget_permonth','company_num_customer','company_revenue','number_of_employee','product_sold_permonth'];
+
+        for ($i=0; $i < count( $formatchanging) ; $i++) { 
+            $input[$formatchanging[$i]] = str_replace("Rp. ", "", $input[$formatchanging[$i]]);
+            $input[$formatchanging[$i]] = str_replace(".", "", $input[$formatchanging[$i]]);
+        }
+        
+     
         
         $getData= CompanyDetail::where('id',$input["id"])->first();
 
