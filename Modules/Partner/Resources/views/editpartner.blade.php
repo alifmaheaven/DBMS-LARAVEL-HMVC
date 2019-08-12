@@ -32,7 +32,7 @@ function formatangka($angka){
         <img src="{{ URL::asset('img/dyah/ic-customer.png')}}"><span>Customer</span>
     </div>
     <div class="bar-2">
-        <b>Customer List > Edit Customer</b>
+        <b><a style="color:white;" href="{{ url('/partner') }}">Customer List</a> > Edit Customer</b>
     </div>
 
     <div class="sectionku" >

@@ -43,7 +43,7 @@
                                     <td style="text-align: center;">{{ $index + $data->firstItem()}}</td>
                                     <td style="text-align: center;">{{ $d->id }}</td>
                                     <td>{{ $d->name }}</td>
-                                    <td>{{ $d->street1 }}</td>
+                                    <td>{{ $d->street }}</td>
                                     <td>
                                         <center>
                                             <form action="{{ url('/partner/update') }}" method="get">
