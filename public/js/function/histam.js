@@ -18,7 +18,7 @@ if (data.is_active == 1) {
 }
 var arrayHistss = nomorHistss
 nomorHistss += 1
-htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
 $("#Histsstableid").find('tbody').html(htmlHistss).show();
 
 
@@ -60,7 +60,7 @@ function deleteHistsstablerow(data){
         }
         var arrayHistss = nomorHistss
         nomorHistss += 1
-        htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+        htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
         $("#Histsstableid").find('tbody').html(htmlHistss).show();
     
       
@@ -134,7 +134,7 @@ Histsstable.push({
     }
     var arrayHistss = nomorHistss
     nomorHistss += 1
-    htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+    htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
     $("#Histsstableid").find('tbody').html(htmlHistss).show();
 
   
@@ -188,7 +188,7 @@ if (data.is_active == 1) {
 }
 var arrayHistss = nomorHistss
 nomorHistss += 1
-htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
+htmlHistss += '<tr><td style="text-align:center;">'+nomorHistss+'</td><td style="text-align:center;">'+data.hist_am_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayHistss+'" onclick="deleteHistsstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayHistss+'" onclick="editHistsstablerow(this);" data-toggle="modal" data-target="#editHists" >Edit</button></td></tr>'
 $("#Histsstableid").find('tbody').html(htmlHistss).show();
 
 

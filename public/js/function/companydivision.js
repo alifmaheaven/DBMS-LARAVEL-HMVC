@@ -17,7 +17,7 @@ if (Divisionstable.length > 0) {
     }
     var arrayDivisions = nomorDivisions
     nomorDivisions += 1
-    htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+    htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
     $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
 
   
@@ -54,7 +54,7 @@ function deleteDivisionstablerow(data){
      
         var arrayDivisions = nomorDivisions
         nomorDivisions += 1
-        htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+        htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
         $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
     
       
@@ -126,7 +126,7 @@ Divisionstable.push({
     }
     var arrayDivisions = nomorDivisions
     nomorDivisions += 1
-    htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+    htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
     $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
 
   
@@ -177,7 +177,7 @@ Divisionstable[editDivisionarray].companydivision_name = editDivisionname
             }
             var arrayDivisions = nomorDivisions
             nomorDivisions += 1
-            htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
+            htmlDivisions += '<tr><td style="text-align:center;">'+nomorDivisions+'</td><td style="text-align:center;">'+data.companydivision_name +'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayDivisions+'" onclick="deleteDivisionstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayDivisions+'" onclick="editDivisionstablerow(this);" data-toggle="modal" data-target="#editDivision" >Edit</button></td></tr>'
             $("#Divisionstableid").find('tbody').html(htmlDivisions).show();
 
 

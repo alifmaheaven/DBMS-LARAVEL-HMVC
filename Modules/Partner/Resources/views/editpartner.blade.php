@@ -205,13 +205,13 @@ function formatangka($angka){
         <table id="Bodstableid" class="table border" cellspacing="0">
             <thead>
                 <tr>
-                    <th>No.</th>
+                    <th style="width:5%;">No.</th>
                     <th>BOD Name</th>
                     <th>Position</th>
                     <th>Date of Birth</th>
                     <th>Phone Number</th>
                     <th>Email Address</th>
-                    <th>Action</th>
+                    <th style="width:10%;" colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -380,14 +380,13 @@ function formatangka($angka){
                    <button data-toggle="modal" data-target="#addBranch" class="btn btn-primary btn-round" >Add</button>
                         </div>
        <br>
-    <table class="table border" id="Branchstableid" cellspacing="0">
+    <table class="table border" id="Branchstableid" >
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Company Branch</th>
-                <th>Address</th>
-               
-                <th>Action</th>
+                <th style="width: 5%;">No.</th>
+                <th style="width: 20%;">Company Branch</th>
+                <th style="width: 60%;">Address</th>
+                <th style="width: 15%;" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -502,10 +501,10 @@ function formatangka($angka){
     <table class="table border" cellspacing="0" id="Divisionstableid">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Division Name</th>
+                <th style="width:5%">No.</th>
+                <th style="width:80%">Division Name</th>
                 
-                <th>Action</th>
+                <th colspan="2"style="width:15%">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -609,10 +608,10 @@ function formatangka($angka){
     <table class="table border" cellspacing="0" id="Partnerstableid">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Partner Name</th>
+                <th style="width:5%">No.</th>
+                <th style="width:80%">Partner Name</th>
                 
-                <th>Action</th>
+                <th style="width:15%" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -715,10 +714,10 @@ function formatangka($angka){
     <table class="table border" cellspacing="0" id="Productstableid">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Product Name</th>
+                <th style="width:5%">No.</th>
+                <th style="width:80%">Product Name</th>
                
-                <th>Action</th>
+                <th style="width:15%" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -828,11 +827,11 @@ function formatangka($angka){
     <table class="table border" cellspacing="0" id="Socmedstableid">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Socmed Type</th>
-                <th>Socmed Name</th>
+                <th style="width:5%;">No.</th>
+                <th style="width:40%;">Socmed Type</th>
+                <th style="width:40%;">Socmed Name</th>
                
-                <th>Action</th>
+                <th style="width:15%;" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -960,10 +959,10 @@ function formatangka($angka){
     <table class="table border" cellspacing="0" id="Subsidiarystableid">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Subsidiary Name</th>
+                <th style="width:5%;">No.</th>
+                <th style="width:80%;">Subsidiary Name</th>
                
-                <th>Action</th>
+                <th style="width:15%;" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -1067,10 +1066,10 @@ function formatangka($angka){
     <table class="table border" cellspacing="0" id="Histsstableid">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>History Name</th>
+                <th style="width:5%;">No.</th>
+                <th style="width:80%;">History Name</th>
                 
-                <th>Action</th>
+                <th style="width:15%;" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>

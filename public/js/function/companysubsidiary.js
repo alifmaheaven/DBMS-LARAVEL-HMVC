@@ -17,7 +17,7 @@ if (Subsidiarystable.length > 0) {
     }
     var arraySubsidiarys = nomorSubsidiarys
     nomorSubsidiarys += 1
-    htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
+    htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
     $("#Subsidiarystableid").find('tbody').html(htmlSubsidiarys).show();
     
     
@@ -58,7 +58,7 @@ function deleteSubsidiarystablerow(data){
     }
     var arraySubsidiarys = nomorSubsidiarys
     nomorSubsidiarys += 1
-    htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
+    htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
     $("#Subsidiarystableid").find('tbody').html(htmlSubsidiarys).show();
 
   
@@ -129,7 +129,7 @@ Subsidiarystable.push({
     }
     var arraySubsidiarys = nomorSubsidiarys
     nomorSubsidiarys += 1
-    htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
+    htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
     $("#Subsidiarystableid").find('tbody').html(htmlSubsidiarys).show();
 
   
@@ -181,7 +181,7 @@ if (data.is_active == 1) {
 }
 var arraySubsidiarys = nomorSubsidiarys
 nomorSubsidiarys += 1
-htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
+htmlSubsidiarys += '<tr><td style="text-align:center;">'+nomorSubsidiarys+'</td><td style="text-align:center;">'+data.companysubsidiary_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arraySubsidiarys+'" onclick="deleteSubsidiarystablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arraySubsidiarys+'" onclick="editSubsidiarystablerow(this);" data-toggle="modal" data-target="#editSubsidiary" >Edit</button></td></tr>'
 $("#Subsidiarystableid").find('tbody').html(htmlSubsidiarys).show();
 
 

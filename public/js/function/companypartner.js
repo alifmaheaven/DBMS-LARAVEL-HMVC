@@ -17,7 +17,7 @@ if (Partnerstable.length > 0) {
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td style="text-align:center;">'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td style="text-align:center;">'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
 
@@ -59,7 +59,7 @@ function deletePartnerstablerow(data){
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td style="text-align:center;"><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td>'+data.companypartner_name+'</td><td style="text-align:center;"><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
   
@@ -130,7 +130,7 @@ Partnerstable.push({
     }
     var arrayPartners = nomorPartners
     nomorPartners += 1
-    htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td style="text-align:center;">'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+    htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td style="text-align:center;">'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
     $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
   
@@ -183,7 +183,7 @@ Partnerstable[editPartnerarray].companypartner_name = editPartnername
             }
             var arrayPartners = nomorPartners
             nomorPartners += 1
-            htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td style="text-align:center;">'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
+            htmlPartners += '<tr><td style="text-align:center;">'+nomorPartners+'</td><td style="text-align:center;">'+data.companypartner_name+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayPartners+'" onclick="deletePartnerstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayPartners+'" onclick="editPartnerstablerow(this);" data-toggle="modal" data-target="#editPartner" >Edit</button></td></tr>'
             $("#Partnerstableid").find('tbody').html(htmlPartners).show();
 
 

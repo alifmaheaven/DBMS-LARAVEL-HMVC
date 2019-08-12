@@ -21,7 +21,7 @@ if (Productstable.length > 0) {
     }
     var arrayProducts = nomorProducts
     nomorProducts += 1
-    htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+    htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
     $("#Productstableid").find('tbody').html(htmlProducts).show();
 
   
@@ -66,7 +66,7 @@ function deleteProductstablerow(data){
         }
         var arrayProducts = nomorProducts
         nomorProducts += 1
-        htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+        htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
         $("#Productstableid").find('tbody').html(htmlProducts).show();
     
       
@@ -145,7 +145,7 @@ Productstable.push({
     }
     var arrayProducts = nomorProducts
     nomorProducts += 1
-    htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+    htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
     $("#Productstableid").find('tbody').html(htmlProducts).show();
 
   
@@ -204,7 +204,7 @@ Productstable[editProductarray].id_sigmaproduct = optionProductsigma
             }
             var arrayProducts = nomorProducts
             nomorProducts += 1
-            htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
+            htmlProducts += '<tr><td style="text-align:center;">'+nomorProducts+'</td><td style="text-align:center;">'+companyProductSigmaproductname+'</td><td><button class="btn btn-primary btn-round" data-array="'+arrayProducts+'" onclick="deleteProductstablerow(this);" >Delete</button></td><td><button class="btn btn-warning btn-round" data-array="'+arrayProducts+'" onclick="editProductstablerow(this);" data-toggle="modal" data-target="#editProduct" >Edit</button></td></tr>'
             $("#Productstableid").find('tbody').html(htmlProducts).show();
 
 
