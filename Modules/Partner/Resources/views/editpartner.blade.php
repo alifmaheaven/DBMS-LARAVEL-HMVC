@@ -1110,7 +1110,7 @@ function formatangka($angka){
 </div>
 <div class="modal-footer">
 
-  <button id="addHistsbutton" form="form-daftar" type="button" class="btn btn-primary">Daftar</button>
+  <button id="addHistsbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
 </div>
 </div>
 </div>
@@ -1123,7 +1123,7 @@ function formatangka($angka){
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Hists</h5>
+              <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit History</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
