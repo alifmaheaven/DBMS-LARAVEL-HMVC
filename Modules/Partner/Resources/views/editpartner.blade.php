@@ -858,7 +858,7 @@ function formatangka($angka){
                 <form id="form-Socmed">
 
                     <div class="form-group">
-                        <label style="color: black;font-weight: bold;">Position</label>
+                        <label style="color: black;font-weight: bold;">Socmed</label>
                         <div class="input-group">
 
                             <div class="select"  style="width:470px;">
@@ -907,7 +907,7 @@ function formatangka($angka){
                 <form id="form-Socmed">
 
                     <div class="form-group">
-                        <label style="color: black;font-weight: bold;">Position</label>
+                        <label style="color: black;font-weight: bold;">Socmed</label>
                         <div class="input-group">
 
                             <div class="select" style="width:470px;">
