@@ -4,7 +4,7 @@
 
 <div class="containerku">
 	<div class="bar-1">
-		<img src="{{ URL::asset('img/dyah/ic-setting.png')}}')}}"><span>Profile</span>
+		<img src="{{ URL::asset('img/dyah/settings.png')}}"><span>Profile</span>
 	</div>
 	<div class="bar-2">
 		<b>My Profile</b>
@@ -13,7 +13,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2 col-sm-2">
-						<img src="{{ URL::asset('img/dyah/nigga.jpg')}}" class="rounded-circle foto-profil"><br>
+						<img src="{{ URL::asset('img/dyah/user.png')}}" class="rounded-circle foto-profil"><br>
 						<div style="margin-left: 25px;">
 							<img src="{{ URL::asset('img/dyah/ic-edit.png')}}" class="toolsku">
 							<img src="{{ URL::asset('img/dyah/ic-del.png')}}" class="toolsku">
