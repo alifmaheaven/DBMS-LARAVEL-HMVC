@@ -174,6 +174,9 @@ return [
         //JWT
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
+        //Data Table
+        Yajra\DataTables\DataTablesServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -238,6 +241,9 @@ return [
         //JWT
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, 
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+
+        //Datatable
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 

@@ -431,3 +431,37 @@ table th {
 .form-control-static{
 	margin-top: 30px;
 }
+
+/* the pagination */
+#data-table_previous {
+    cursor: default;
+    color: #fff !important;
+	border: 1px solid transparent;
+	border-radius: 15px;
+    background: #666;
+	box-shadow: none;
+	padding: 5px;
+}
+.paginate_button {
+	cursor: default;
+	color: #666 !important;
+	font-size: 15px;
+    border: 1px solid transparent;
+    background: transparent;
+	box-shadow: none;
+	padding: 5px;
+	
+}
+#data-table_next{
+	cursor: default;
+    color: #fff !important;
+	border: 1px solid transparent;
+	border-radius: 15px;
+    background: #666;
+	box-shadow: none;
+	padding: 5px;
+}
+
+#pagination{
+	margin-top: -10px;
+}

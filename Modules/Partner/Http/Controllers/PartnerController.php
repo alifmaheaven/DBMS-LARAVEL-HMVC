@@ -34,20 +34,13 @@ class PartnerController extends Controller
         }
         else{
 
-            if (!$request->showdata) {
-                $pagination = 10;
-            } else {
-                $pagination = $request->showdata;
-            }
+           
             
-            $data = Partner::when($request->keyword, function ($query) use ($request) {
-                $query->where('id', 'like', "%{$request->keyword}%")
-                    ->orWhere('name', 'like', "%{$request->keyword}%");
-            })->paginate($pagination);
+            $data = Partner::all();
     
-            $data->appends($request->only('keyword'));
+           
     
-            return view('partner::partner',['data' => $data, 'showdata' => $pagination]);
+            return view('partner::partner',['data' => $data]);
         }
 
        

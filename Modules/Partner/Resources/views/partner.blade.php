@@ -12,14 +12,16 @@
         <div class="bar-2">
             <b>Customer List</b> 
 
-            <form class="form_search" action="{{ url()->current() }}">
-            <input class="searchku" placeholder="Search.." type="search" name="keyword"><i class="fa fa-search icon-search"></i>
-            </form>
+            <form class="form_search" >
+                
+            {{-- <input aria-controls="data-table" class="searchku" placeholder="Search.." type="search" name="keyword"><i class="fa fa-search icon-search"></i>
+            <input type="search" class="" placeholder="" aria-controls="data-table"> --}}
+        </form>
         </div>
         <div class="sectionku">
             <div class="container container__customer">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" id="data-table">
                         <thead>
                             <th style="width: 5%;">
                                 No.
@@ -40,7 +42,7 @@
                         <tbody>
                                 @foreach($data as $index => $d)
                                 <tr>
-                                    <td style="text-align: center;">{{ $index + $data->firstItem()}}</td>
+                                    <td style="text-align: center;">{{ $index + 1}}</td>
                                     <td style="text-align: center;">{{ $d->id }}</td>
                                     <td>{{ $d->name }}</td>
                                     <td>{{ $d->street }}</td>
@@ -63,19 +65,19 @@
             </div>
             <div class="footer__customer">
                 <div class="footer__customer__container">
-                    <span>Show</span>
                     
-                    {{$data->perPage()}}
+                    
+                    <div id="length"></div>
                     
                     <center>
-                        <div style="margin-top: -40px;">
+                       
                             
-                            {{ $data->links('pagination::sayapunya') }}
+                             <div style="margin-top: -40px;" id="pagination"></div>
                             
-                        </div>
+                        
                     </center>
                   
-                    <div style="margin-top: -50px;" class="text-right">Showing {{ $data->currentPage() }} of {{ $data->lastPage() }}</div>
+                    <div id="showing" style="margin-top: -50px;" class="text-right"></div>
                     
                    
       
@@ -89,3 +91,32 @@
 
 
 @stop
+
+@push('scripts')
+<script>
+$(function() {
+    $('#data-table').DataTable({
+        // "dom": '<"top">frt<"bottom">lip<"clear">'
+    });
+});
+
+$( document ).ready(function() {
+    $( $( "#data-table_filter" )).appendTo( $( ".form_search" ) );
+    //$( "#data-table_filter" ).addClass( "searchku" );
+    // $('').text('');
+     $( "#data-table_filter" ).find( "label" ).find("input").addClass("searchku");
+     $('<i class="fa fa-search icon-search"></i>').appendTo($( "#data-table_filter" ).find( "label" ))
+    // $( "#data-table_filter" ).find( "label" ).remove();
+    // $(  '<label><input type="search" class="searchku" placeholder="" aria-controls="data-table"><i class="fa fa-search icon-search"></i></label>' ).appendTo( $( "#data-table_filter" ) );
+    $( "#data-table_filter" ).find( "label" ).css({"float": "right","color": "#8c7aec"});
+
+    $( $( "#data-table_length" )).appendTo( $( "#length" ) );
+    $( $( "#data-table_info" )).appendTo( $( "#showing" ) );
+    $( $( "#data-table_paginate" )).appendTo( $( "#pagination" ) );
+    
+});
+
+
+
+</script>
+@endpush

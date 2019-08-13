@@ -72,9 +72,17 @@
 	<!-- Material Dashboard DEMO methods, don't include it in your project! -->
 	<script src="{{ URL::asset('demo/demo.js') }}"></script>
 
+	
+
 </head>
 
 <body>
+
+<!-- DataTables -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+@stack('scripts')
 
 	<div id="headerku">
 				<img src="{{ URL::asset('img/dyah/logo2-white.png') }}" class="logoku">
