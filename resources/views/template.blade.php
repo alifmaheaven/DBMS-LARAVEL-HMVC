@@ -27,7 +27,7 @@
 				<div class="text-right">
 						<a href="{{ url('/logout') }}" ><img src="{{ URL::asset('img/dyah/ic-logout.png') }}" class="ic-logout"></a>
 					<div class="isine text-left"><span><b>{{Session::get('user_name')}}</b></span><br><span class="small">{{Session::get('user_nik')}}</span></div>
-					<img src="{{ URL::asset('img/dyah/nigga.jpg') }}" class="rounded-circle">
+					<img src="{{ URL::asset('img/dyah/user.png') }}" class="rounded-circle">
 				</div>
 		</div>
 
