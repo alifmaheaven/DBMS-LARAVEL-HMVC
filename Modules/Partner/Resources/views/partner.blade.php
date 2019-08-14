@@ -37,7 +37,7 @@
                             </th>
                         </thead>
                         <tbody>
-                                @foreach($data as $index => $d)
+                                {{-- @foreach($data as $index => $d)
                                 <tr>
                                     <td style="text-align: center;">{{ $index + 1}}</td>
                                     <td style="text-align: center;">{{ $d->id }}</td>
@@ -46,14 +46,14 @@
                                     <td>
                                         <center>
                                             <form action="{{ url('/partner/update') }}" method="get">
-                                                {{--- {{ csrf_field() }} --}}
+                                               
                                                 <input align="center" type="hidden" name="id_partner" value="{{$d->id}}">
                                                 <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
                                             </form>
                                         </center>
                                     </td>
                                 </tr>
-                                @endforeach
+                                @endforeach --}}
                             
                         </tbody>
                     </table>
@@ -93,7 +93,17 @@
 <script>
 $(function() {
     $('#data-table').DataTable({
-        // "dom": '<"top">frt<"bottom">lip<"clear">'
+        processing: true,
+        serverSide: true,
+        ajax: 'partner/json',
+        columns: [
+            { data: 'DT_RowIndex', name: 'DT_RowIndex' },
+            { data: 'id', name: 'id' },
+            { data: 'name', name: 'name' },
+            { data: 'street', name: 'street' },
+             { data: 'action', name: 'action' },
+            
+        ]
     });
 });
 
@@ -106,7 +116,7 @@ $( document ).ready(function() {
      $( "#data-table_filter" ).find( "label" ).find("input").attr('placeholder','search..');
      // $( "#data-table_filter" ).find( "label" ).remove();
     // $(  '<label><input type="search" class="searchku" placeholder="" aria-controls="data-table"><i class="fa fa-search icon-search"></i></label>' ).appendTo( $( "#data-table_filter" ) );
-    $( "#data-table_filter" ).find( "label" ).css({"float": "right","color": "#8c7aec"});
+     $( "#data-table_filter" ).find( "label" ).css({"float": "right","color": "#8c7aec"});
 
     $( $( "#data-table_length" )).appendTo( $( "#length" ) );
     $( $( "#data-table_info" )).appendTo( $( "#showing" ) );

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use DataTables;
 use DB;
 
 
@@ -36,14 +37,31 @@ class PartnerController extends Controller
 
            
             
-            $data = Partner::all();
+            
     
            
     
-            return view('partner::partner',['data' => $data]);
+            return view('partner::partner');
         }
 
        
+    }
+
+    public function json()
+    {
+        $data = Partner::select('id','name','street')->get();
+        return Datatables::of($data)
+        ->addColumn('action', function ($row) {
+            return '<center>
+            <form action="/partner/update" method="get">
+               
+                <input align="center" type="hidden" name="id_partner" value="'.$row->id.'">
+                <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
+            </form>
+            </center>';
+            })
+        ->addIndexColumn()
+        ->make(true);
     }
 
     /**
