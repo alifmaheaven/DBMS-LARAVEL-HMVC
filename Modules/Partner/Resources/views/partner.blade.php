@@ -19,17 +19,17 @@
             <div class="container container__customer">
                 <div class="table-responsive">
                     <table class="table" id="data-table">
-                        <thead>
+                        <thead style="font-weight: bold">
                             <th style="width: 5%;">
                                 No.
                             </th>
                             <th style="width: 15%;">
                                 Customer ID
                             </th>
-                            <th style="width: 25%;">
+                            <th style="width: 30%;">
                                 Customer Name
                             </th>
-                            <th style="width: 45%;">
+                            <th style="width: 40%;">
                                 Address
                             </th>
                             <th style="width: 15%;">
@@ -48,7 +48,7 @@
                                             <form action="{{ url('/partner/update') }}" method="get">
                                                 {{--- {{ csrf_field() }} --}}
                                                 <input align="center" type="hidden" name="id_partner" value="{{$d->id}}">
-                                                <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
+                                                <button style="margin-right: 15px;" class="btn btn-primary btn-round" >Edit</button>
                                             </form>
                                         </center>
                                     </td>
