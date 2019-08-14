@@ -18,7 +18,7 @@
         <div class="sectionku">
             <div class="container container__customer">
                 <div class="table-responsive">
-                    <table class="table" id="data-table">
+                    <table class="table display" id="data-table">
                         <thead style="font-weight: bold">
                             <th style="width: 5%;">
                                 No.
@@ -91,8 +91,19 @@
 
 @push('scripts')
 <script>
+    // var dataset = @JSON($data); 
 $(function() {
     $('#data-table').DataTable({
+        // data: dataset,
+        // columns: [
+        //     //{ data: 'DT_RowIndex', name: 'DT_RowIndex' },
+        //     { data: 'id', name: 'id' },
+        //     { data: 'name', name: 'name' },
+        //     { data: 'street', name: 'street' },
+        //     // { data: 'action', name: 'action' },
+            
+        //]
+       // stateSave: true
         processing: true,
         serverSide: true,
         ajax: 'partner/json',

@@ -39,9 +39,9 @@ class PartnerController extends Controller
             
             
     
-           
+            $data = Partner::select('id','name','street')->get();
     
-            return view('partner::partner');
+            return view('partner::partner', compact('data'));
         }
 
        
