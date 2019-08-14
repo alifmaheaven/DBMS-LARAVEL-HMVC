@@ -13,10 +13,7 @@
             <b>Customer List</b> 
 
             <form class="form_search" >
-                
-            {{-- <input aria-controls="data-table" class="searchku" placeholder="Search.." type="search" name="keyword"><i class="fa fa-search icon-search"></i>
-            <input type="search" class="" placeholder="" aria-controls="data-table"> --}}
-        </form>
+             </form>
         </div>
         <div class="sectionku">
             <div class="container container__customer">
@@ -106,7 +103,8 @@ $( document ).ready(function() {
     // $('').text('');
      $( "#data-table_filter" ).find( "label" ).find("input").addClass("searchku");
      $('<i class="fa fa-search icon-search"></i>').appendTo($( "#data-table_filter" ).find( "label" ))
-    // $( "#data-table_filter" ).find( "label" ).remove();
+     $( "#data-table_filter" ).find( "label" ).find("input").attr('placeholder','search..');
+     // $( "#data-table_filter" ).find( "label" ).remove();
     // $(  '<label><input type="search" class="searchku" placeholder="" aria-controls="data-table"><i class="fa fa-search icon-search"></i></label>' ).appendTo( $( "#data-table_filter" ) );
     $( "#data-table_filter" ).find( "label" ).css({"float": "right","color": "#8c7aec"});
 
