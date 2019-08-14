@@ -16284,7 +16284,7 @@ thead.thead-inverse th,
 .dataTable>thead>tr>td,
 .dataTable>tbody>tr>td,
 .dataTable>tfoot>tr>td {
-  padding: 5px !important;
+  padding: 7px !important;
 }
 
 body {
@@ -16331,9 +16331,9 @@ a .material-icons {
 
 .form-check,
 label {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857;
-  color: #AAAAAA;
+  color: #666666;
   font-weight: 400;
 }
 
