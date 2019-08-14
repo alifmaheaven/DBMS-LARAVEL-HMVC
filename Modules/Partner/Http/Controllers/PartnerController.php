@@ -43,7 +43,7 @@ class PartnerController extends Controller
             for ($i=0; $i < count($data) ; $i++) { 
                $data[$i]->indexing = $i+1;
                $data[$i]->action = '<center>
-               <form action="/partner/update" method="get">
+               <form action="'.url('/partner/update').'" method="get">
                   
                    <input align="center" type="hidden" name="id_partner" value="'.$data[$i]->id.'">
                    <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
