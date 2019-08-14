@@ -91,30 +91,30 @@
 
 @push('scripts')
 <script>
-    // var dataset = @JSON($data); 
+    var dataset = @JSON($data); 
 $(function() {
     $('#data-table').DataTable({
-        // data: dataset,
-        // columns: [
-        //     //{ data: 'DT_RowIndex', name: 'DT_RowIndex' },
-        //     { data: 'id', name: 'id' },
-        //     { data: 'name', name: 'name' },
-        //     { data: 'street', name: 'street' },
-        //     // { data: 'action', name: 'action' },
-            
-        //]
-       // stateSave: true
-        processing: true,
-        serverSide: true,
-        ajax: 'partner/json',
+        data: dataset,
         columns: [
-            { data: 'DT_RowIndex', name: 'DT_RowIndex' },
+            { data: 'indexing', name: 'indexing' },
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
             { data: 'street', name: 'street' },
-             { data: 'action', name: 'action' },
+            { data: 'action', name: 'action' },
             
         ]
+    //    // stateSave: true
+    //     processing: true,
+    //     serverSide: true,
+    //     ajax: 'partner/json',
+    //     columns: [
+    //         { data: 'DT_RowIndex', name: 'DT_RowIndex' },
+    //         { data: 'id', name: 'id' },
+    //         { data: 'name', name: 'name' },
+    //         { data: 'street', name: 'street' },
+    //          { data: 'action', name: 'action' },
+            
+    //     ]
     });
 });
 

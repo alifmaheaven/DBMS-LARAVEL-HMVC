@@ -40,6 +40,16 @@ class PartnerController extends Controller
             
     
             $data = Partner::select('id','name','street')->get();
+            for ($i=0; $i < count($data) ; $i++) { 
+               $data[$i]->indexing = $i+1;
+               $data[$i]->action = '<center>
+               <form action="/partner/update" method="get">
+                  
+                   <input align="center" type="hidden" name="id_partner" value="'.$data[$i]->id.'">
+                   <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
+               </form>
+               </center>';
+            }
     
             return view('partner::partner', compact('data'));
         }
