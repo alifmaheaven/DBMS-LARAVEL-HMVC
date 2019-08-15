@@ -74,7 +74,12 @@
     $(function() {
         $('#data-table').DataTable({
             data: dataset,
-          
+            columnDefs: [
+            {
+            targets: 1,
+            className: 'dt-body-center'
+                    }
+            ],
          
             columns: [
             { data: 'indexing', name: 'indexing' },

@@ -19,5 +19,5 @@ Route::prefix('partner')->group(function() {
     Route::get('/download/allpartner', 'PartnerController@exportAllCustomer');
     Route::get('/download/partner/{id}', 'PartnerController@exportcustomer');
     
-    Route::view('/halo','partner::homepage');
+    Route::view('/home','partner::homepage');
 });
