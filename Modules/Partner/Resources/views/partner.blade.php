@@ -18,12 +18,13 @@
     </div>
     <div class="sectionku">
     <div class="button group">
-        <button class="btn btn-round btn-sm" style="background-color: #006400; float: right;text-align: center;margin-right: 50px;margin-bottom: 10px;margin-top: 10px;"><i id="eye" class="fas fa-download"></i>&nbsp; Excel</button>
+    <a href="{{ url('partner/download/allpartner') }}"> <button class="btn btn-round btn-sm" style="background-color: #006400; float: right;text-align: center;margin-right: 50px;margin-bottom: 10px;margin-top: 10px;"><i id="eye" class="fas fa-download"></i>&nbsp; Excel</button></a>
     </div>   
         <div class="container container__customer">
             <div class="table-responsive">
                 <table class="table display" id="data-table">
                     <thead style="font-weight: bold">
+                        <tr>
                         <th style="width: 5%;">
                             No.
                         </th>
@@ -36,29 +37,15 @@
                         <th style="width: 40%;">
                             Address
                         </th>
-                        <th style="width: 15%;">
+                        <th  style="width: 15%;">
                             Action
                         </th>
+                    </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach($data as $index => $d)
-                            <tr>
-                                <td style="text-align: center;">{{ $index + 1}}</td>
-                                <td style="text-align: center;">{{ $d->id }}</td>
-                                <td>{{ $d->name }}</td>
-                                <td>{{ $d->street }}</td>
-                                <td>
-                                    <center>
-                                        <form action="{{ url('/partner/update') }}" method="get">
-
-                                            <input align="center" type="hidden" name="id_partner" value="{{$d->id}}">
-                                            <button style="margin-right: 15px;" class="btn btn-primary btn-round" >Edit</button>
-                                        </form>
-                                    </center>
-                                </td>
-                            </tr>
-
-                            @endforeach --}}
+                    <tr>
+                      
+                    </tr>                 
                         </tbody>
                     </table>
                 </div>
@@ -87,7 +74,7 @@
     $(function() {
         $('#data-table').DataTable({
             data: dataset,
-            dom: 'lBfrtip',
+          
          
             columns: [
             { data: 'indexing', name: 'indexing' },
@@ -95,11 +82,15 @@
             { data: 'name', name: 'name' },
             { data: 'street', name: 'street' },
             { data: 'action', name: 'action' },
-            
+            //{ data: 'action2', name: 'action' },
             ],
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ],
+    //         rowsGroup: [// Always the array (!) of the column-selectors in specified order to which rows groupping is applied
+	// 			// (column-selector could be any of specified in https://datatables.net/reference/type/column-selector)
+	// 	'second:name',
+	// 	0,
+	// 	2
+	// ],
+       
     //    // stateSave: true
     //     processing: true,
     //     serverSide: true,
