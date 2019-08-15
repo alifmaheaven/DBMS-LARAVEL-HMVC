@@ -18,4 +18,5 @@ Route::prefix('partner')->group(function() {
     Route::get('/json', 'PartnerController@json');
     Route::get('/coba', 'PartnerController@test');
     
+    Route::view('/halo','partner::homepage');
 });

@@ -4,8 +4,11 @@
 
 <div class="containerku">
 	<div class="bar-1">
-		<img src="{{ URL::asset('img/dyah/settings.png')}}"><span>Profile</span>
+		<a href="#"><span><img src="{{ URL ::asset('img/dyah/home-icon-silhouette.png')}}">Home</span></a>
+		<a href="http://localhost:8000/partner"><span style="margin-left: 40px;"><img src="{{ URL ::asset('img/dyah/ic-customer.png')}}">Customer</span></a>
+		<a href="http://localhost:8000/detail"><span style="margin-left: 40px;"><img src="{{ URL::asset('img/dyah/settings.png')}}">Profile</span></a>
 	</div>
+
 	<div class="bar-2">
 		<b>My Profile</b>
 	</div>
