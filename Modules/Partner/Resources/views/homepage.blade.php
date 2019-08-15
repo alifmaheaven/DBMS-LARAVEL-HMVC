@@ -11,9 +11,9 @@
 
 <div class="containerku">
     <div class="bar-1">
-        <a href="#"><span><img src="{{ URL ::asset('img/dyah/home-icon-silhouette.png')}}">Home</span></a>
-        <a href="http://localhost:8000/partner"><span style="margin-left: 40px;"><img src="{{ URL ::asset('img/dyah/ic-customer.png')}}">Customer</span></a>
-        <a href="http://localhost:8000/detail"><span style="margin-left: 40px;"><img src="{{ URL::asset('img/dyah/settings.png')}}">Profile</span></a>
+            <a href="{{ url('/partner/home') }}"><span><img src="{{ URL ::asset('img/dyah/home-icon-silhouette.png')}}">Home</span></a>
+            <a href="{{ url('/partner') }}"><span style="margin-left: 40px;"><img src="{{ URL ::asset('img/dyah/ic-customer.png')}}">Customer</span></a>
+            <a href="{{ url('/detail') }}"><span style="margin-left: 40px;"><img src="{{ URL::asset('img/dyah/settings.png')}}">Profile</span></a>
     </div>
 </div>
 <div class="bar-2">
@@ -29,7 +29,7 @@
             Make it easy.
         </h5>
         <div style="padding-bottom: 30px;">
-            <button class="btn btn-round" style="background-image: linear-gradient(90deg,#9932CC, #E672C3);font-size: 14px;">GO TO CUSTOMER LIST</button>
+           <a href="{{ url('/partner') }}"><button class="btn btn-round" style="background-image: linear-gradient(90deg,#9932CC, #E672C3);font-size: 14px;">GO TO CUSTOMER LIST</button></a> 
         </div>
         <br>
         <br>
