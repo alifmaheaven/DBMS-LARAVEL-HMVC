@@ -87,6 +87,8 @@
     $(function() {
         $('#data-table').DataTable({
             data: dataset,
+            dom: 'lBfrtip',
+         
             columns: [
             { data: 'indexing', name: 'indexing' },
             { data: 'id', name: 'id' },
@@ -94,7 +96,10 @@
             { data: 'street', name: 'street' },
             { data: 'action', name: 'action' },
             
-            ]
+            ],
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
     //    // stateSave: true
     //     processing: true,
     //     serverSide: true,

@@ -80,7 +80,44 @@ class PartnerController extends Controller
     public function test()
     {
        // return Excel::download(new PartnerAll, 'partner.xlsx');
-       return Excel::download(new Partnerraw(1), 'partner.xlsx');
+    //    return Excel::download(new Partnerraw(1), 'partner.xlsx');
+    // $data = Partner::select('id','name','street','street2')->get();
+    // $data2 = CompanyDetail::get();
+    
+    // $value = ['company_doe',
+    // 'id_businesstype', 'number_of_employee', 
+    // 'company_phone', 'company_website', 
+    // 'asset_value', 'company_annual_income', 
+    // 'company_email', 'product_sold_permonth', 
+    // 'company_revenue', 'company_competitor', 
+    // 'id_segment', 'company_history', 
+    // 'company_num_customer', 'company_culture', 
+    // 'company_workinghours', 'company_budget_permonth', 
+    // 'company_product_needs', 
+    // 'company_last_am', 'is_active',];
+
+   
+
+
+    // for ($a=0; $a < count($data) ; $a++) { 
+    //     for ($b=0; $b < count($value)  ; $b++) { 
+    //         $data[$a][$value[$b]] = ""  ;  
+    //     }
+    // }
+
+    // for ($i=0; $i < count($data) ; $i++) {
+    //     for ($j=0; $j < count($data2) ; $j++) { 
+    //        if ($data[$i]->id == $data2[$j]->id) {
+    //          for ($k=0; $k < count($value) ; $k++) {
+    //              $data[$i][$value[$k]] = $data2[$j][$value[$k]];
+    //          }
+
+    //        }
+    //     } 
+        
+    // }
+
+  
     }
 
     /**
