@@ -177,6 +177,9 @@ return [
         //Data Table
          Yajra\DataTables\DataTablesServiceProvider::class,
 
+         //excel
+         Maatwebsite\Excel\ExcelServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -244,6 +247,9 @@ return [
 
         //Datatable
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
+        //excel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

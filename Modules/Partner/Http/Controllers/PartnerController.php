@@ -4,7 +4,6 @@ namespace Modules\Partner\Http\Controllers;
 
 use Modules\Partner\Entities\Partner;
 use Modules\Partner\Entities\CompanyDetail;
-
 use Modules\Partner\Entities\CompanyBod;
 use Modules\Partner\Entities\CompanyBranch;
 use Modules\Partner\Entities\CompanyDivision;
@@ -20,6 +19,10 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use DataTables;
 use DB;
+
+use App\Exports\PartnerAll;
+use App\Exports\Partnerraw;
+use Excel;
 
 
 class PartnerController extends Controller
@@ -72,6 +75,12 @@ class PartnerController extends Controller
             })
         ->addIndexColumn()
         ->make(true);
+    }
+
+    public function test()
+    {
+       // return Excel::download(new PartnerAll, 'partner.xlsx');
+       return Excel::download(new Partnerraw(1), 'partner.xlsx');
     }
 
     /**

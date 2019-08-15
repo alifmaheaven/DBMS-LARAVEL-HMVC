@@ -16,4 +16,6 @@ Route::prefix('partner')->group(function() {
     Route::get('/update', 'PartnerController@getres_partner');
     Route::post('/update', 'PartnerController@add_datadetail');
     Route::get('/json', 'PartnerController@json');
+    Route::get('/coba', 'PartnerController@test');
+    
 });
