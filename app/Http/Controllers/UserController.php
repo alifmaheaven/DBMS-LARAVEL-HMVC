@@ -15,7 +15,7 @@ class UserController extends Controller
             return redirect('login')->with('alert','You must login first');
         }
         else{
-            return redirect('partner');
+            return redirect('partner/home');
         }
     }
 

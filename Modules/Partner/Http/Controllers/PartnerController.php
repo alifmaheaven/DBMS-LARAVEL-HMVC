@@ -4,7 +4,6 @@ namespace Modules\Partner\Http\Controllers;
 
 use Modules\Partner\Entities\Partner;
 use Modules\Partner\Entities\CompanyDetail;
-
 use Modules\Partner\Entities\CompanyBod;
 use Modules\Partner\Entities\CompanyBranch;
 use Modules\Partner\Entities\CompanyDivision;
@@ -20,6 +19,11 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use DataTables;
 use DB;
+
+
+// use App\Exports\PartnerAll;
+// use App\Exports\Partnerraw;
+ use Excel;
 
 
 class PartnerController extends Controller
@@ -42,13 +46,17 @@ class PartnerController extends Controller
             $data = Partner::select('id','name','street')->get();
             for ($i=0; $i < count($data) ; $i++) { 
                $data[$i]->indexing = $i+1;
-               $data[$i]->action = '<center>
+               $data[$i]->action = '
                <form action="'.url('/partner/update').'" method="get">
                   
                    <input align="center" type="hidden" name="id_partner" value="'.$data[$i]->id.'">
-                   <button style="margin-right: 40px;" class="btn btn-primary btn-round" >Edit</button>
+                   <button style="margin-right: 70px;" class="btn btn-primary btn-round" >Edit</button>
                </form>
-               </center>';
+               <form action="'.url('partner/download/partner/'.$data[$i]->id.'').'" method="get">
+               <button class="btn btn-round btn-sm" style="background-color: #006400;margin-top: -34px;"><i id="eye" class="fas fa-download"></i>&nbsp; Excel</button>
+                </form>
+              ';
+           
             }
     
             return view('partner::partner', compact('data'));
@@ -70,8 +78,552 @@ class PartnerController extends Controller
             </form>
             </center>';
             })
+        
         ->addIndexColumn()
         ->make(true);
+    }
+
+    public function exportcustomer(Request $request, $id)
+    {
+        $data = Partner::where('id', $id)->select('id','name','street','street2')->first();
+        $data2 = CompanyDetail::where('id', $id)->first();
+        
+        $Businesstypes = DB::table('p_businesstype')->get();
+        $Positions = DB::table('p_position')->get();
+        $Segments = DB::table('p_segment')->get();
+        $Sigmaproducts = DB::table('p_sigmaproduct')->get();
+        $Socmedtypes = DB::table('p_socmedtype')->get();
+
+        $value = ['company_doe',
+        'id_businesstype', 'number_of_employee', 
+        'company_phone', 'company_website', 
+        'asset_value', 'company_annual_income', 
+        'company_email', 'product_sold_permonth', 
+        'company_revenue', 'company_competitor', 
+        'id_segment', 'company_history', 
+        'company_num_customer', 'company_culture', 
+        'company_workinghours', 'company_budget_permonth', 
+        'company_product_needs', 
+        'company_last_am', 'is_active',];
+
+        $value2 = ['id','name','street','street2','company_doe',
+        'businesstype', 'number_of_employee', 
+        'company_phone', 'company_website', 
+        'asset_value', 'company_annual_income', 
+        'company_email', 'product_sold_permonth', 
+        'company_revenue', 'company_competitor', 
+        'segment_industry', 'company_history', 
+        'company_num_customer', 'company_culture', 
+        'company_workinghours', 'company_budget_permonth', 
+        'company_product_needs', 
+        'company_last_am', 'is_active',];
+
+        for ($i=0; $i < count($value) ; $i++) { 
+           $data[$value[$i]] = $data2[$value[$i]];
+           
+           if ($data->id_businesstype != null) {
+            
+            for ($bis=0; $bis < count($Businesstypes); $bis++) { 
+                if ($data->id_businesstype == $Businesstypes[$bis]->id_businesstype ) {
+                    $data->id_businesstype = $Businesstypes[$bis]->businesstype;
+                    $data->businesstype =  $data->id_businesstype;
+                    unset($data->id_businesstype);
+                }
+            }
+        }
+        if ($data->id_segment != null) {
+            
+            for ($seg=0; $seg < count($Segments); $seg++) { 
+                if ($data->id_segment == $Segments[$seg]->id_segment ) {
+                    $data->id_segment = $Segments[$seg]->segment_industry;
+                    $data->segment_industry = $data->id_segment;
+                    unset($data->id_segment);
+                }
+            }
+        }
+        }
+
+      
+        $namingvalue = ['data','value'];
+
+        for ($fixoutput=0; $fixoutput < count($value2); $fixoutput++) { 
+           
+            
+            $outputdata[$fixoutput] = array('data' => $value2[$fixoutput], 'value' => $data[$value2[$fixoutput]], );
+
+           
+
+        }
+
+        //tabsnya
+        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->first();
+
+        if (count($company_detal_id) > 0) {
+           //tabvalue
+         $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+         if (count($Bods)>0) {
+            $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)
+            ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active')
+            ->get();
+         }
+         $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active'];
+         if (!count($Bods) > 0) {
+             for ($bodfor=0; $bodfor < count($Bodsvalue) ; $bodfor++) { 
+                $Bods[0][$Bodsvalue[$bodfor]] = null;
+             }
+             
+          }
+
+        //  $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+         if (count($Branchs)>0) {
+            $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id->id_companydetail)
+            ->select('id_companybranch',  'companybranch', 'companybranch_addr', 'is_active')
+            ->get();
+         }
+         $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr', 'is_active'];
+         if (!count($Branchs) > 0) {
+             for ($branchfor=0; $branchfor < count($Branchsvalue) ; $branchfor++) { 
+                $Branchs[0][$Branchsvalue[$branchfor]] = null;
+             }
+             
+          }
+        //  $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        if (count($Divisions)>0) {
+           $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id->id_companydetail)
+           ->select('id_companydivision', 'companydivision_name', 'is_active')
+           ->get();
+        }
+        $Divisionsvalue = ['id_companydivision', 'companydivision_name', 'is_active'];
+        if (!count($Divisions) > 0) {
+            for ($Divisionsfor=0; $Divisionsfor < count($Divisionsvalue) ; $Partnersfor++) { 
+               $Divisions[0][$Divisionsvalue[$Divisionsfor]] = null;
+            }
+            
+         }
+        //  $Partners = CompanyPartner::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Partners = CompanyPartner::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        if (count($Partners)>0) {
+           $Partners = CompanyPartner::where('id_companydetail',$company_detal_id->id_companydetail)
+           ->select('id_companypartner', 'companypartner_name', 'is_active')
+           ->get();
+        }
+        $Partnersvalue = ['id_companypartner', 'companypartner_name', 'is_active'];
+        if (!count($Partners) > 0) {
+            for ($Partnersfor=0; $Partnersfor < count($Partnersvalue) ; $Partnersfor++) { 
+               $Partners[0][$Partnersvalue[$Partnersfor]] = null;
+            }
+            
+         }
+        //  $Products = CompanyProduct::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Products = CompanyProduct::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        if (count($Products)>0) {
+           $Products = CompanyProduct::where('id_companydetail',$company_detal_id->id_companydetail)
+           ->select('id_companyproduct', 'id_sigmaproduct', 'is_active')
+           ->get();
+        }
+        $Productsvalue = ['id_companyproduct', 'id_sigmaproduct', 'is_active'];
+        if (!count($Products) > 0) {
+            for ($Productsfor=0; $Productsfor < count($Productsvalue) ; $Productsfor++) { 
+               $Products[0][$Productsvalue[$Productsfor]] = null;
+            }
+            
+         }
+        //  $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        if (count($Socmeds)>0) {
+           $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id->id_companydetail)
+           ->select('id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active')
+           ->get();
+        }
+        $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active'];
+        if (!count($Socmeds) > 0) {
+            for ($Socmedsfor=0; $Socmedsfor < count($Socmedsvalue) ; $Socmedsfor++) { 
+               $Socmeds[0][$Socmedsvalue[$Socmedsfor]] = null;
+            }
+            
+         }
+        //  $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        if (count($Subsidiarys)>0) {
+           $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id->id_companydetail)
+           ->select('id_companysubsidiary', 'companysubsidiary_name', 'is_active')
+           ->get();
+        }
+        $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name', 'is_active'];
+        if (!count($Subsidiarys) > 0) {
+            for ($Subsidiarysfor=0; $Subsidiarysfor < count($Subsidiarysvalue) ; $Subsidiarysfor++) { 
+               $Subsidiarys[0][$Subsidiarysvalue[$Subsidiarysfor]] = null;
+            }
+            
+         }
+        //  $Hists = HistAm::where('id_companydetail',$company_detal_id->id_companydetail)->get();
+        $Hists = HistAm::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        if (count($Hists)>0) {
+           $Hists = HistAm::where('id_companydetail',$company_detal_id->id_companydetail)
+           ->select('id_hist_am', 'hist_am_name', 'is_active')
+           ->get();
+        }
+        $Histsvalue = ['id_hist_am', 'hist_am_name', 'is_active'];
+        if (!count($Hists) > 0) {
+            for ($Histsfor=0; $Histsfor < count($Histsvalue) ; $Histsfor++) { 
+               $Hists[0][$Histsvalue[$Histsfor]] = null;
+            }
+            
+         }
+
+
+
+         
+        
+         $Socmedtypes = DB::table('p_socmedtype')->get();
+ 
+         
+         for ($BODposision=0; $BODposision < count($Bods); $BODposision++) { 
+            for ($positionfor=0; $positionfor < count($Positions); $positionfor++) { 
+              if ($Bods[$BODposision]->id_position == $Positions[$positionfor]->id_position) {
+                $Bods[$BODposision]->id_position = $Positions[$positionfor]->position_name;
+               $Bods[$BODposision]->position_name =  $Bods[$BODposision]->id_position;
+                unset($Bods[$BODposision]->id_position);
+              }
+            }
+         }
+         for ($Productposision=0; $Productposision < count($Products); $Productposision++) { 
+            for ($Productfor=0; $Productfor < count($Sigmaproducts); $Productfor++) { 
+              if ($Products[$Productposision]->id_sigmaproduct == $Sigmaproducts[$Productfor]->id_sigmaproduct) {
+                $Products[$Productposision]->id_sigmaproduct = $Sigmaproducts[$Productfor]->sigmaproduct_name;
+               $Products[$Productposision]->sigmaproduct_name =  $Products[$Productposision]->id_sigmaproduct;
+                unset($Products[$Productposision]->id_sigmaproduct);
+              }
+            }
+         }
+         
+         for ($Socmedposision=0; $Socmedposision < count($Socmeds); $Socmedposision++) { 
+            for ($Socmedfor=0; $Socmedfor < count($Socmedtypes); $Socmedfor++) { 
+              if ($Socmeds[$Socmedposision]->id_socmedtype == $Socmedtypes[$Socmedfor]->id_socmedtype) {
+                $Socmeds[$Socmedposision]->id_socmedtype = $Socmedtypes[$Socmedfor]->socmedtype_name;
+               $Socmeds[$Socmedposision]->socmedtype_name =  $Socmeds[$Socmedposision]->id_socmedtype;
+                unset($Socmeds[$Socmedposision]->id_socmedtype);
+              }
+            }
+         }
+
+
+
+
+
+        }else {
+            $Bods = [];
+            $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active'];
+         if (!count($Bods) > 0) {
+             for ($bodfor=0; $bodfor < count($Bodsvalue) ; $bodfor++) { 
+                $Bods[0][$Bodsvalue[$bodfor]] = null;
+             }
+             
+          }
+            $Branchs = [];
+            $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr', 'is_active'];
+            if (!count($Branchs) > 0) {
+                for ($branchfor=0; $branchfor < count($Branchsvalue) ; $branchfor++) { 
+                   $Branchs[0][$Branchsvalue[$branchfor]] = null;
+                }
+                
+             }
+            $Divisions = [];
+            $Divisionsvalue = ['id_companydivision', 'companydivision_name', 'is_active'];
+            if (!count($Divisions) > 0) {
+                for ($Divisionsfor=0; $Divisionsfor < count($Divisionsvalue) ; $Divisionsfor++) { 
+                   $Divisions[0][$Divisionsvalue[$Divisionsfor]] = null;
+                }
+                
+             }
+            $Partners = [];
+            $Partnersvalue = ['id_companypartner', 'companypartner_name', 'is_active'];
+            if (!count($Partners) > 0) {
+                for ($Partnersfor=0; $Partnersfor < count($Partnersvalue) ; $Partnersfor++) { 
+                   $Partners[0][$Partnersvalue[$Partnersfor]] = null;
+                }
+                
+             }
+            $Products = [];
+            $Productsvalue = ['id_companyproduct', 'id_sigmaproduct', 'is_active'];
+            if (!count($Products) > 0) {
+                for ($Productsfor=0; $Productsfor < count($Productsvalue) ; $Productsfor++) { 
+                   $Products[0][$Productsvalue[$Productsfor]] = null;
+                }
+                
+             }
+            $Socmeds = [];
+            $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active'];
+            if (!count($Socmeds) > 0) {
+                for ($Socmedsfor=0; $Socmedsfor < count($Socmedsvalue) ; $Socmedsfor++) { 
+                   $Socmeds[0][$Socmedsvalue[$Socmedsfor]] = null;
+                }
+                
+             }
+            $Subsidiarys = [];
+            $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name', 'is_active'];
+            if (!count($Subsidiarys) > 0) {
+                for ($Subsidiarysfor=0; $Subsidiarysfor < count($Subsidiarysvalue) ; $Subsidiarysfor++) { 
+                   $Subsidiarys[0][$Subsidiarysvalue[$Subsidiarysfor]] = null;
+                }
+
+             }
+            $Hists = [];
+            $Histsvalue = ['id_hist_am', 'hist_am_name', 'is_active'];
+            if (!count($Hists) > 0) {
+                for ($Histsfor=0; $Histsfor < count($Histsvalue) ; $Histsfor++) { 
+                   $Hists[0][$Histsvalue[$Histsfor]] = null;
+                }
+                
+             }
+    
+        }
+
+        
+       
+
+
+       // return response()->json($Socmeds);
+
+
+        return Excel::create('DBMS-Detail-Customer:'.$id, function($excel) use ($outputdata, $Bods,$Branchs,$Divisions,$Partners,$Products,$Socmeds,$Subsidiarys,$Hists) {
+            
+           
+            $excel->sheet('DataPartner', function($sheet) use ($outputdata)
+            {
+                $sheet->fromArray($outputdata);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+
+            $excel->sheet('BOD', function($sheet) use ($Bods)
+            {
+                $sheet->fromArray($Bods);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+            $excel->sheet('Branch', function($sheet) use ($Branchs)
+            {
+                $sheet->fromArray($Branchs);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+
+            $excel->sheet('Division', function($sheet) use ($Divisions)
+            {
+                $sheet->fromArray($Divisions);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+
+            $excel->sheet('Partner', function($sheet) use ($Partners)
+            {
+                $sheet->fromArray($Partners);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+
+            $excel->sheet('Product', function($sheet) use ($Products)
+            {
+                $sheet->fromArray($Products);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+
+            $excel->sheet('Socmed', function($sheet) use ($Socmeds)
+            {
+                $sheet->fromArray($Socmeds);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+
+            $excel->sheet('Subsidiary', function($sheet) use ($Subsidiarys)
+            {
+                $sheet->fromArray($Subsidiarys);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+            
+            $excel->sheet('Hist', function($sheet) use ($Hists)
+            {
+                $sheet->fromArray($Hists);
+                $sheet->setPageMargin(0.25);
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#ffffccee');
+                    $row->setFont(array(
+                        'family'     => 'Calibri',
+                        'size'       => '12',
+                        'bold'       =>  true,
+                    ));
+                   
+                });
+            });
+            
+            
+    
+        })->download('xls');
+        
+
+        
+
+    }
+    
+    public function exportAllCustomer()
+    {
+    $data = Partner::select('id','name','street','street2')->get();
+    $data2 = CompanyDetail::get();
+
+    $Businesstypes = DB::table('p_businesstype')->get();
+    $Positions = DB::table('p_position')->get();
+    $Segments = DB::table('p_segment')->get();
+    $Sigmaproducts = DB::table('p_sigmaproduct')->get();
+    $Socmedtypes = DB::table('p_socmedtype')->get();
+    
+    $value = ['company_doe',
+    'id_businesstype', 'number_of_employee', 
+    'company_phone', 'company_website', 
+    'asset_value', 'company_annual_income', 
+    'company_email', 'product_sold_permonth', 
+    'company_revenue', 'company_competitor', 
+    'id_segment', 'company_history', 
+    'company_num_customer', 'company_culture', 
+    'company_workinghours', 'company_budget_permonth', 
+    'company_product_needs', 
+    'company_last_am', 'is_active',];
+
+    for ($a=0; $a < count($data) ; $a++) { 
+        for ($b=0; $b < count($value)  ; $b++) { 
+            $data[$a][$value[$b]] = ""  ;  
+        }
+    }
+
+    for ($i=0; $i < count($data) ; $i++) {
+        for ($j=0; $j < count($data2) ; $j++) { 
+           if ($data[$i]->id == $data2[$j]->id) {
+             for ($k=0; $k < count($value) ; $k++) {
+                 $data[$i][$value[$k]] = $data2[$j][$value[$k]];
+             }
+
+           }
+        } 
+
+        if ($data[$i]->id_businesstype != null) {
+            for ($bis=0; $bis < count($Businesstypes); $bis++) { 
+                if ($data[$i]->id_businesstype == $Businesstypes[$bis]->id_businesstype ) {
+                    $data[$i]->id_businesstype = $Businesstypes[$bis]->businesstype;
+                    $data[$i]->businesstype =  $data[$i]->id_businesstype;
+                    unset($data[$i]->id_businesstype);
+                }
+            }
+        }
+        if ($data[$i]->id_segment != null) {
+            
+            for ($seg=0; $seg < count($Segments); $seg++) { 
+                if ($data[$i]->id_segment == $Segments[$seg]->id_segment ) {
+                    $data[$i]->id_segment = $Segments[$seg]->segment_industry;
+                    $data[$i]->segment_industry = $data[$i]->id_segment;
+                    unset($data[$i]->id_segment);
+                }
+            }
+        }
+        
+    }
+
+    
+
+    return Excel::create('DBMS-detail-allcustomer', function($excel) use ($data) {
+        $excel->sheet('allData', function($sheet) use ($data)
+        {
+            $sheet->fromArray($data);
+            $sheet->setPageMargin(0.25);
+            $sheet->row(1, function($row) {
+                // call cell manipulation methods
+                $row->setBackground('#ffffccee');
+                $row->setFont(array(
+                    'family'     => 'Calibri',
+                    'size'       => '12',
+                    'bold'       =>  true,
+                ));
+               
+            });
+        });
+
+    })->download('xls');
     }
 
     /**

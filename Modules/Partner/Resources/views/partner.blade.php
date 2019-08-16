@@ -15,9 +15,9 @@
 
 <div class="containerku">
     <div class="bar-1">
-        <a href="#"><span><img src="{{ URL ::asset('img/dyah/home-icon-silhouette.png')}}">Home</span></a>
-        <a href="http://localhost:8000/partner"><span style="margin-left: 40px;"><img src="{{ URL ::asset('img/dyah/ic-customer.png')}}">Customer</span></a>
-        <a href="http://localhost:8000/detail"><span style="margin-left: 40px;"><img src="{{ URL::asset('img/dyah/settings.png')}}">Profile</span></a>
+        <a href="{{ url('/partner/home') }}"><span><img src="{{ URL ::asset('img/dyah/home-icon-silhouette.png')}}">Home</span></a>
+        <a href="{{ url('/partner') }}"><span style="margin-left: 40px;"><img src="{{ URL ::asset('img/dyah/ic-customer.png')}}">Customer</span></a>
+        <a href="{{ url('/detail') }}"><span style="margin-left: 40px;"><img src="{{ URL::asset('img/dyah/settings.png')}}">Profile</span></a>
     </div>
 
     <div class="bar-2">
@@ -27,12 +27,13 @@
     </div>
     <div class="sectionku">
     <div class="button group">
-        <button class="btn btn-round btn-sm" style="background-color: #006400; float: right;text-align: center;margin-right: 50px;margin-bottom: 10px;margin-top: 10px;"><i id="eye" class="fas fa-download"></i>&nbsp; Excel</button>
+    <a href="{{ url('partner/download/allpartner') }}"> <button class="btn btn-round btn-sm" style="background-color: #006400; float: right;text-align: center;margin-right: 50px;margin-bottom: 10px;margin-top: 10px;"><i id="eye" class="fas fa-download"></i>&nbsp; Excel</button></a>
     </div>   
         <div class="container container__customer">
             <div class="table-responsive">
                 <table class="table display" id="data-table">
                     <thead style="font-weight: bold">
+                        <tr>
                         <th style="width: 5%;">
                             No.
                         </th>
@@ -45,29 +46,15 @@
                         <th style="width: 40%;">
                             Address
                         </th>
-                        <th style="width: 15%;">
+                        <th  style="width: 15%;">
                             Action
                         </th>
+                    </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach($data as $index => $d)
-                            <tr>
-                                <td style="text-align: center;">{{ $index + 1}}</td>
-                                <td style="text-align: center;">{{ $d->id }}</td>
-                                <td>{{ $d->name }}</td>
-                                <td>{{ $d->street }}</td>
-                                <td>
-                                    <center>
-                                        <form action="{{ url('/partner/update') }}" method="get">
-
-                                            <input align="center" type="hidden" name="id_partner" value="{{$d->id}}">
-                                            <button style="margin-right: 15px;" class="btn btn-primary btn-round" >Edit</button>
-                                        </form>
-                                    </center>
-                                </td>
-                            </tr>
-
-                            @endforeach --}}
+                    <tr>
+                      
+                    </tr>                 
                         </tbody>
                     </table>
                 </div>
@@ -96,14 +83,28 @@
     $(function() {
         $('#data-table').DataTable({
             data: dataset,
+            columnDefs: [
+            {
+            targets: 1,
+            className: 'dt-body-center'
+                    }
+            ],
+         
             columns: [
             { data: 'indexing', name: 'indexing' },
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
             { data: 'street', name: 'street' },
             { data: 'action', name: 'action' },
-            
-            ]
+            //{ data: 'action2', name: 'action' },
+            ],
+    //         rowsGroup: [// Always the array (!) of the column-selectors in specified order to which rows groupping is applied
+	// 			// (column-selector could be any of specified in https://datatables.net/reference/type/column-selector)
+	// 	'second:name',
+	// 	0,
+	// 	2
+	// ],
+       
     //    // stateSave: true
     //     processing: true,
     //     serverSide: true,
