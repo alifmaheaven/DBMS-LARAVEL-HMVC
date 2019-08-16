@@ -160,7 +160,7 @@ class PartnerController extends Controller
 
         if (count($company_detal_id) > 0) {
            //tabvalue
-         $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+         $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
          if (count($Bods)>0) {
             $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)
             ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active')
@@ -175,7 +175,7 @@ class PartnerController extends Controller
           }
 
         //  $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
          if (count($Branchs)>0) {
             $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)
             ->select('id_companybranch',  'companybranch', 'companybranch_addr', 'is_active')
@@ -189,7 +189,7 @@ class PartnerController extends Controller
              
           }
         //  $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Divisions)>0) {
            $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companydivision', 'companydivision_name', 'is_active')
@@ -203,7 +203,7 @@ class PartnerController extends Controller
             
          }
         //  $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Partners)>0) {
            $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companypartner', 'companypartner_name', 'is_active')
@@ -217,7 +217,7 @@ class PartnerController extends Controller
             
          }
         //  $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Products)>0) {
            $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companyproduct', 'id_sigmaproduct', 'is_active')
@@ -231,7 +231,7 @@ class PartnerController extends Controller
             
          }
         //  $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Socmeds)>0) {
            $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active')
@@ -245,7 +245,7 @@ class PartnerController extends Controller
             
          }
         //  $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Subsidiarys)>0) {
            $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companysubsidiary', 'companysubsidiary_name', 'is_active')
@@ -259,7 +259,7 @@ class PartnerController extends Controller
             
          }
         //  $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
-        $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
+        $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Hists)>0) {
            $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_hist_am', 'hist_am_name', 'is_active')
