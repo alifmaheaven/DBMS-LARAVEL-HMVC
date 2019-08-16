@@ -156,13 +156,13 @@ class PartnerController extends Controller
         }
 
         //tabsnya
-        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->first();
+        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->get();
 
         if (count($company_detal_id) > 0) {
            //tabvalue
-         $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+         $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
          if (count($Bods)>0) {
-            $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)
+            $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)
             ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active')
             ->get();
          }
@@ -174,10 +174,10 @@ class PartnerController extends Controller
              
           }
 
-        //  $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
          if (count($Branchs)>0) {
-            $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id->id_companydetail)
+            $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)
             ->select('id_companybranch',  'companybranch', 'companybranch_addr', 'is_active')
             ->get();
          }
@@ -188,10 +188,10 @@ class PartnerController extends Controller
              }
              
           }
-        //  $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
         if (count($Divisions)>0) {
-           $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id->id_companydetail)
+           $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companydivision', 'companydivision_name', 'is_active')
            ->get();
         }
@@ -202,10 +202,10 @@ class PartnerController extends Controller
             }
             
          }
-        //  $Partners = CompanyPartner::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Partners = CompanyPartner::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
         if (count($Partners)>0) {
-           $Partners = CompanyPartner::where('id_companydetail',$company_detal_id->id_companydetail)
+           $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companypartner', 'companypartner_name', 'is_active')
            ->get();
         }
@@ -216,10 +216,10 @@ class PartnerController extends Controller
             }
             
          }
-        //  $Products = CompanyProduct::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Products = CompanyProduct::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
         if (count($Products)>0) {
-           $Products = CompanyProduct::where('id_companydetail',$company_detal_id->id_companydetail)
+           $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companyproduct', 'id_sigmaproduct', 'is_active')
            ->get();
         }
@@ -230,10 +230,10 @@ class PartnerController extends Controller
             }
             
          }
-        //  $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
         if (count($Socmeds)>0) {
-           $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id->id_companydetail)
+           $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active')
            ->get();
         }
@@ -244,10 +244,10 @@ class PartnerController extends Controller
             }
             
          }
-        //  $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
         if (count($Subsidiarys)>0) {
-           $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id->id_companydetail)
+           $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_companysubsidiary', 'companysubsidiary_name', 'is_active')
            ->get();
         }
@@ -258,10 +258,10 @@ class PartnerController extends Controller
             }
             
          }
-        //  $Hists = HistAm::where('id_companydetail',$company_detal_id->id_companydetail)->get();
-        $Hists = HistAm::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+        //  $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
+        $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)->first();
         if (count($Hists)>0) {
-           $Hists = HistAm::where('id_companydetail',$company_detal_id->id_companydetail)
+           $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)
            ->select('id_hist_am', 'hist_am_name', 'is_active')
            ->get();
         }
@@ -277,37 +277,37 @@ class PartnerController extends Controller
 
          
         
-         $Socmedtypes = DB::table('p_socmedtype')->get();
+         
  
          
-         for ($BODposision=0; $BODposision < count($Bods); $BODposision++) { 
-            for ($positionfor=0; $positionfor < count($Positions); $positionfor++) { 
-              if ($Bods[$BODposision]->id_position == $Positions[$positionfor]->id_position) {
-                $Bods[$BODposision]->id_position = $Positions[$positionfor]->position_name;
-               $Bods[$BODposision]->position_name =  $Bods[$BODposision]->id_position;
-                unset($Bods[$BODposision]->id_position);
-              }
-            }
-         }
-         for ($Productposision=0; $Productposision < count($Products); $Productposision++) { 
-            for ($Productfor=0; $Productfor < count($Sigmaproducts); $Productfor++) { 
-              if ($Products[$Productposision]->id_sigmaproduct == $Sigmaproducts[$Productfor]->id_sigmaproduct) {
-                $Products[$Productposision]->id_sigmaproduct = $Sigmaproducts[$Productfor]->sigmaproduct_name;
-               $Products[$Productposision]->sigmaproduct_name =  $Products[$Productposision]->id_sigmaproduct;
-                unset($Products[$Productposision]->id_sigmaproduct);
-              }
-            }
-         }
+        //  for ($BODposision=0; $BODposision < count($Bods); $BODposision++) { 
+        //     for ($positionfor=0; $positionfor < count($Positions); $positionfor++) { 
+        //       if ($Bods[$BODposision]->id_position == $Positions[$positionfor]->id_position) {
+        //         $Bods[$BODposision]->id_position = $Positions[$positionfor]->position_name;
+        //        $Bods[$BODposision]->position_name =  $Bods[$BODposision]->id_position;
+        //         unset($Bods[$BODposision]->id_position);
+        //       }
+        //     }
+        //  }
+        //  for ($Productposision=0; $Productposision < count($Products); $Productposision++) { 
+        //     for ($Productfor=0; $Productfor < count($Sigmaproducts); $Productfor++) { 
+        //       if ($Products[$Productposision]->id_sigmaproduct == $Sigmaproducts[$Productfor]->id_sigmaproduct) {
+        //         $Products[$Productposision]->id_sigmaproduct = $Sigmaproducts[$Productfor]->sigmaproduct_name;
+        //        $Products[$Productposision]->sigmaproduct_name =  $Products[$Productposision]->id_sigmaproduct;
+        //         unset($Products[$Productposision]->id_sigmaproduct);
+        //       }
+        //     }
+        //  }
          
-         for ($Socmedposision=0; $Socmedposision < count($Socmeds); $Socmedposision++) { 
-            for ($Socmedfor=0; $Socmedfor < count($Socmedtypes); $Socmedfor++) { 
-              if ($Socmeds[$Socmedposision]->id_socmedtype == $Socmedtypes[$Socmedfor]->id_socmedtype) {
-                $Socmeds[$Socmedposision]->id_socmedtype = $Socmedtypes[$Socmedfor]->socmedtype_name;
-               $Socmeds[$Socmedposision]->socmedtype_name =  $Socmeds[$Socmedposision]->id_socmedtype;
-                unset($Socmeds[$Socmedposision]->id_socmedtype);
-              }
-            }
-         }
+        //  for ($Socmedposision=0; $Socmedposision < count($Socmeds); $Socmedposision++) { 
+        //     for ($Socmedfor=0; $Socmedfor < count($Socmedtypes); $Socmedfor++) { 
+        //       if ($Socmeds[$Socmedposision]->id_socmedtype == $Socmedtypes[$Socmedfor]->id_socmedtype) {
+        //         $Socmeds[$Socmedposision]->id_socmedtype = $Socmedtypes[$Socmedfor]->socmedtype_name;
+        //        $Socmeds[$Socmedposision]->socmedtype_name =  $Socmeds[$Socmedposision]->id_socmedtype;
+        //         unset($Socmeds[$Socmedposision]->id_socmedtype);
+        //       }
+        //     }
+        //  }
 
 
 
