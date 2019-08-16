@@ -156,7 +156,7 @@ class PartnerController extends Controller
         }
 
         //tabsnya
-        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->get();
+        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->first();
 
         if (count($company_detal_id) > 0) {
            //tabvalue
