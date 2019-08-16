@@ -104,7 +104,7 @@ class PartnerController extends Controller
         'company_num_customer', 'company_culture', 
         'company_workinghours', 'company_budget_permonth', 
         'company_product_needs', 
-        'company_last_am', 'is_active',];
+        'company_last_am',];
 
         $value2 = ['id','name','street','street2','company_doe',
         'businesstype', 'number_of_employee', 
@@ -116,7 +116,7 @@ class PartnerController extends Controller
         'company_num_customer', 'company_culture', 
         'company_workinghours', 'company_budget_permonth', 
         'company_product_needs', 
-        'company_last_am', 'is_active',];
+        'company_last_am',];
 
         for ($i=0; $i < count($value) ; $i++) { 
            $data[$value[$i]] = $data2[$value[$i]];
@@ -163,10 +163,10 @@ class PartnerController extends Controller
          $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
          if (count($Bods)>0) {
             $Bods = CompanyBod::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-            ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active')
+            ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email')
             ->get();
          }
-         $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active'];
+         $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email'];
          if (!count($Bods) > 0) {
              for ($bodfor=0; $bodfor < count($Bodsvalue) ; $bodfor++) { 
                 $Bods[0][$Bodsvalue[$bodfor]] = null;
@@ -178,10 +178,10 @@ class PartnerController extends Controller
         $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
          if (count($Branchs)>0) {
             $Branchs = CompanyBranch::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-            ->select('id_companybranch',  'companybranch', 'companybranch_addr', 'is_active')
+            ->select('id_companybranch',  'companybranch', 'companybranch_addr')
             ->get();
          }
-         $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr', 'is_active'];
+         $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr'];
          if (!count($Branchs) > 0) {
              for ($branchfor=0; $branchfor < count($Branchsvalue) ; $branchfor++) { 
                 $Branchs[0][$Branchsvalue[$branchfor]] = null;
@@ -192,11 +192,12 @@ class PartnerController extends Controller
         $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Divisions)>0) {
            $Divisions = CompanyDivision::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-           ->select('id_companydivision', 'companydivision_name', 'is_active')
+           ->select('id_companydivision', 'companydivision_name')
            ->get();
         }
-        $Divisionsvalue = ['id_companydivision', 'companydivision_name', 'is_active'];
+        $Divisionsvalue = ['id_companydivision', 'companydivision_name'];
         if (!count($Divisions) > 0) {
+            $Divisions = array();
             for ($Divisionsfor=0; $Divisionsfor < count($Divisionsvalue) ; $Divisionsfor++) { 
                $Divisions[0][$Divisionsvalue[$Divisionsfor]] = null;
             }
@@ -206,11 +207,12 @@ class PartnerController extends Controller
         $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Partners)>0) {
            $Partners = CompanyPartner::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-           ->select('id_companypartner', 'companypartner_name', 'is_active')
+           ->select('id_companypartner', 'companypartner_name')
            ->get();
         }
-        $Partnersvalue = ['id_companypartner', 'companypartner_name', 'is_active'];
+        $Partnersvalue = ['id_companypartner', 'companypartner_name'];
         if (!count($Partners) > 0) {
+            $Partners = array();
             for ($Partnersfor=0; $Partnersfor < count($Partnersvalue) ; $Partnersfor++) { 
                $Partners[0][$Partnersvalue[$Partnersfor]] = null;
             }
@@ -220,11 +222,12 @@ class PartnerController extends Controller
         $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Products)>0) {
            $Products = CompanyProduct::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-           ->select('id_companyproduct', 'id_sigmaproduct', 'is_active')
+           ->select('id_companyproduct', 'id_sigmaproduct')
            ->get();
         }
-        $Productsvalue = ['id_companyproduct', 'id_sigmaproduct', 'is_active'];
+        $Productsvalue = ['id_companyproduct', 'id_sigmaproduct'];
         if (!count($Products) > 0) {
+            $Products = array();
             for ($Productsfor=0; $Productsfor < count($Productsvalue) ; $Productsfor++) { 
                $Products[0][$Productsvalue[$Productsfor]] = null;
             }
@@ -234,11 +237,12 @@ class PartnerController extends Controller
         $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Socmeds)>0) {
            $Socmeds = CompanySocmed::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-           ->select('id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active')
+           ->select('id_companysocmed', 'id_socmedtype', 'socmed_name')
            ->get();
         }
-        $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active'];
+        $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name'];
         if (!count($Socmeds) > 0) {
+            $Socmeds = array();
             for ($Socmedsfor=0; $Socmedsfor < count($Socmedsvalue) ; $Socmedsfor++) { 
                $Socmeds[0][$Socmedsvalue[$Socmedsfor]] = null;
             }
@@ -248,11 +252,12 @@ class PartnerController extends Controller
         $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Subsidiarys)>0) {
            $Subsidiarys = CompanySubsidiary::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-           ->select('id_companysubsidiary', 'companysubsidiary_name', 'is_active')
+           ->select('id_companysubsidiary', 'companysubsidiary_name')
            ->get();
         }
-        $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name', 'is_active'];
+        $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name'];
         if (!count($Subsidiarys) > 0) {
+            $Subsidiarys = array();
             for ($Subsidiarysfor=0; $Subsidiarysfor < count($Subsidiarysvalue) ; $Subsidiarysfor++) { 
                $Subsidiarys[0][$Subsidiarysvalue[$Subsidiarysfor]] = null;
             }
@@ -262,52 +267,46 @@ class PartnerController extends Controller
         $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)->get();
         if (count($Hists)>0) {
            $Hists = HistAm::where('id_companydetail',$company_detal_id[0]->id_companydetail)
-           ->select('id_hist_am', 'hist_am_name', 'is_active')
+           ->select('id_hist_am', 'hist_am_name')
            ->get();
         }
-        $Histsvalue = ['id_hist_am', 'hist_am_name', 'is_active'];
+        $Histsvalue = ['id_hist_am', 'hist_am_name'];
         if (!count($Hists) > 0) {
+            $Hists = array();
             for ($Histsfor=0; $Histsfor < count($Histsvalue) ; $Histsfor++) { 
                $Hists[0][$Histsvalue[$Histsfor]] = null;
             }
             
          }
 
-
-
+         for ($BODposision=0; $BODposision < count($Bods); $BODposision++) { 
+            for ($positionfor=0; $positionfor < count($Positions); $positionfor++) { 
+              if ($Bods[$BODposision]['id_position'] == $Positions[$positionfor]->id_position) {
+                $Bods[$BODposision]['id_position'] = $Positions[$positionfor]->position_name;
+               $Bods[$BODposision]->position_name =  $Bods[$BODposision]['id_position'];
+                unset($Bods[$BODposision]['id_position']);
+              }
+            }
+         }
+         for ($Productposision=0; $Productposision < count($Products); $Productposision++) { 
+            for ($Productfor=0; $Productfor < count($Sigmaproducts); $Productfor++) { 
+              if ($Products[$Productposision]['id_sigmaproduct'] == $Sigmaproducts[$Productfor]->id_sigmaproduct) {
+                $Products[$Productposision]['id_sigmaproduct'] = $Sigmaproducts[$Productfor]->sigmaproduct_name;
+               $Products[$Productposision]->sigmaproduct_name =  $Products[$Productposision]['id_sigmaproduct'];
+                unset($Products[$Productposision]['id_sigmaproduct']);
+              }
+            }
+         }
          
-        
-         
- 
-         
-        //  for ($BODposision=0; $BODposision < count($Bods); $BODposision++) { 
-        //     for ($positionfor=0; $positionfor < count($Positions); $positionfor++) { 
-        //       if ($Bods[$BODposision]->id_position == $Positions[$positionfor]->id_position) {
-        //         $Bods[$BODposision]->id_position = $Positions[$positionfor]->position_name;
-        //        $Bods[$BODposision]->position_name =  $Bods[$BODposision]->id_position;
-        //         unset($Bods[$BODposision]->id_position);
-        //       }
-        //     }
-        //  }
-        //  for ($Productposision=0; $Productposision < count($Products); $Productposision++) { 
-        //     for ($Productfor=0; $Productfor < count($Sigmaproducts); $Productfor++) { 
-        //       if ($Products[$Productposision]->id_sigmaproduct == $Sigmaproducts[$Productfor]->id_sigmaproduct) {
-        //         $Products[$Productposision]->id_sigmaproduct = $Sigmaproducts[$Productfor]->sigmaproduct_name;
-        //        $Products[$Productposision]->sigmaproduct_name =  $Products[$Productposision]->id_sigmaproduct;
-        //         unset($Products[$Productposision]->id_sigmaproduct);
-        //       }
-        //     }
-        //  }
-         
-        //  for ($Socmedposision=0; $Socmedposision < count($Socmeds); $Socmedposision++) { 
-        //     for ($Socmedfor=0; $Socmedfor < count($Socmedtypes); $Socmedfor++) { 
-        //       if ($Socmeds[$Socmedposision]->id_socmedtype == $Socmedtypes[$Socmedfor]->id_socmedtype) {
-        //         $Socmeds[$Socmedposision]->id_socmedtype = $Socmedtypes[$Socmedfor]->socmedtype_name;
-        //        $Socmeds[$Socmedposision]->socmedtype_name =  $Socmeds[$Socmedposision]->id_socmedtype;
-        //         unset($Socmeds[$Socmedposision]->id_socmedtype);
-        //       }
-        //     }
-        //  }
+         for ($Socmedposision=0; $Socmedposision < count($Socmeds); $Socmedposision++) { 
+            for ($Socmedfor=0; $Socmedfor < count($Socmedtypes); $Socmedfor++) { 
+              if ($Socmeds[$Socmedposision]['id_socmedtype'] == $Socmedtypes[$Socmedfor]->id_socmedtype) {
+                $Socmeds[$Socmedposision]['id_socmedtype'] = $Socmedtypes[$Socmedfor]->socmedtype_name;
+               $Socmeds[$Socmedposision]->socmedtype_name =  $Socmeds[$Socmedposision]->id_socmedtype;
+                unset($Socmeds[$Socmedposision]['id_socmedtype']);
+              }
+            }
+         }
 
 
 
@@ -315,7 +314,7 @@ class PartnerController extends Controller
 
         }else {
             $Bods = [];
-            $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active'];
+            $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email'];
          if (!count($Bods) > 0) {
              for ($bodfor=0; $bodfor < count($Bodsvalue) ; $bodfor++) { 
                 $Bods[0][$Bodsvalue[$bodfor]] = null;
@@ -323,7 +322,7 @@ class PartnerController extends Controller
              
           }
             $Branchs = [];
-            $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr', 'is_active'];
+            $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr'];
             if (!count($Branchs) > 0) {
                 for ($branchfor=0; $branchfor < count($Branchsvalue) ; $branchfor++) { 
                    $Branchs[0][$Branchsvalue[$branchfor]] = null;
@@ -331,7 +330,7 @@ class PartnerController extends Controller
                 
              }
             $Divisions = [];
-            $Divisionsvalue = ['id_companydivision', 'companydivision_name', 'is_active'];
+            $Divisionsvalue = ['id_companydivision', 'companydivision_name'];
             if (!count($Divisions) > 0) {
                 for ($Divisionsfor=0; $Divisionsfor < count($Divisionsvalue) ; $Divisionsfor++) { 
                    $Divisions[0][$Divisionsvalue[$Divisionsfor]] = null;
@@ -339,7 +338,7 @@ class PartnerController extends Controller
                 
              }
             $Partners = [];
-            $Partnersvalue = ['id_companypartner', 'companypartner_name', 'is_active'];
+            $Partnersvalue = ['id_companypartner', 'companypartner_name'];
             if (!count($Partners) > 0) {
                 for ($Partnersfor=0; $Partnersfor < count($Partnersvalue) ; $Partnersfor++) { 
                    $Partners[0][$Partnersvalue[$Partnersfor]] = null;
@@ -347,7 +346,7 @@ class PartnerController extends Controller
                 
              }
             $Products = [];
-            $Productsvalue = ['id_companyproduct', 'id_sigmaproduct', 'is_active'];
+            $Productsvalue = ['id_companyproduct', 'id_sigmaproduct'];
             if (!count($Products) > 0) {
                 for ($Productsfor=0; $Productsfor < count($Productsvalue) ; $Productsfor++) { 
                    $Products[0][$Productsvalue[$Productsfor]] = null;
@@ -355,7 +354,7 @@ class PartnerController extends Controller
                 
              }
             $Socmeds = [];
-            $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name', 'is_active'];
+            $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name'];
             if (!count($Socmeds) > 0) {
                 for ($Socmedsfor=0; $Socmedsfor < count($Socmedsvalue) ; $Socmedsfor++) { 
                    $Socmeds[0][$Socmedsvalue[$Socmedsfor]] = null;
@@ -363,7 +362,7 @@ class PartnerController extends Controller
                 
              }
             $Subsidiarys = [];
-            $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name', 'is_active'];
+            $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name'];
             if (!count($Subsidiarys) > 0) {
                 for ($Subsidiarysfor=0; $Subsidiarysfor < count($Subsidiarysvalue) ; $Subsidiarysfor++) { 
                    $Subsidiarys[0][$Subsidiarysvalue[$Subsidiarysfor]] = null;
@@ -371,7 +370,7 @@ class PartnerController extends Controller
 
              }
             $Hists = [];
-            $Histsvalue = ['id_hist_am', 'hist_am_name', 'is_active'];
+            $Histsvalue = ['id_hist_am', 'hist_am_name'];
             if (!count($Hists) > 0) {
                 for ($Histsfor=0; $Histsfor < count($Histsvalue) ; $Histsfor++) { 
                    $Hists[0][$Histsvalue[$Histsfor]] = null;
@@ -394,6 +393,15 @@ class PartnerController extends Controller
             $excel->sheet('DataPartner', function($sheet) use ($outputdata)
             {
                 $sheet->fromArray($outputdata);
+                $styleArray = array(
+                    'borders' => array(
+                      'allborders' => array(
+                        'style' => PHPExcel_Style_Border::BORDER_THIN
+                      )
+                    )
+                  );
+                  
+                $sheet->getStyle('A1:B2')->applyFromArray($styleArray);
                 $sheet->setPageMargin(0.25);
                 $sheet->row(1, function($row) {
                     // call cell manipulation methods
@@ -405,6 +413,7 @@ class PartnerController extends Controller
                     ));
                    
                 });
+               
             });
 
             $excel->sheet('BOD', function($sheet) use ($Bods)
@@ -500,6 +509,10 @@ class PartnerController extends Controller
                     ));
                    
                 });
+
+
+                
+
             });
 
             $excel->sheet('Subsidiary', function($sheet) use ($Subsidiarys)
@@ -564,7 +577,7 @@ class PartnerController extends Controller
     'company_num_customer', 'company_culture', 
     'company_workinghours', 'company_budget_permonth', 
     'company_product_needs', 
-    'company_last_am', 'is_active',];
+    'company_last_am',];
 
     for ($a=0; $a < count($data) ; $a++) { 
         for ($b=0; $b < count($value)  ; $b++) { 
@@ -1209,6 +1222,6 @@ class PartnerController extends Controller
         
     }
 
+   
       
-  
 }
