@@ -156,11 +156,11 @@ class PartnerController extends Controller
         }
 
         //tabsnya
-        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->first();
+        $company_detal_id = CompanyDetail::where('id', $id)->select('id_companydetail')->get();
 
         if (count($company_detal_id) > 0) {
            //tabvalue
-         $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)->first();
+         $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)->get();
          if (count($Bods)>0) {
             $Bods = CompanyBod::where('id_companydetail',$company_detal_id->id_companydetail)
             ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email', 'is_active')
@@ -197,7 +197,7 @@ class PartnerController extends Controller
         }
         $Divisionsvalue = ['id_companydivision', 'companydivision_name', 'is_active'];
         if (!count($Divisions) > 0) {
-            for ($Divisionsfor=0; $Divisionsfor < count($Divisionsvalue) ; $Partnersfor++) { 
+            for ($Divisionsfor=0; $Divisionsfor < count($Divisionsvalue) ; $Divisionsfor++) { 
                $Divisions[0][$Divisionsvalue[$Divisionsfor]] = null;
             }
             
