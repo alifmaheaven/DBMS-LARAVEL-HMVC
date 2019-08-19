@@ -101,7 +101,8 @@
             'columnDefs': [ {
             'targets': [4], /* column index */
             'orderable': false, /* true or false */
-            }]
+            }],
+           
 
     //         rowsGroup: [// Always the array (!) of the column-selectors in specified order to which rows groupping is applied
 	// 			// (column-selector could be any of specified in https://datatables.net/reference/type/column-selector)
