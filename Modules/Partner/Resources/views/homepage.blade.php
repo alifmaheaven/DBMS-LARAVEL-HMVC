@@ -25,7 +25,7 @@
         <h1 style="margin-top: 80px;font-weight: 900 ;font-size: 50px;color: #590D7A;font-family: arial;">WELCOME</h1>
         <h5 style="padding-top: 20px;padding-bottom: 10px;"> 
             Application to manage customer data Telkomsigma.<br>
-            If there's data that doesn't match? You can modify the data in this application.<br>
+            If the data doesn't match? You can modify the data in this application.<br>
             Make it easy.
         </h5>
         <div style="padding-bottom: 30px;">
