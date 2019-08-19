@@ -122,11 +122,7 @@ function formatangka($angka){
                 </div>
                 <input id="inputan_company_revenue"  class="form-control uang" type="text" name="" value="{{rupiah($Detail->company_revenue)}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" onkeypress="return isNumber(event)" maxlength="20" >
 
-                <div style="float: left;">
-                    <img src="{{ URL::asset('img/dyah/005-user.png')}}"><span>Company Competitor</span>
-                </div>
-                <input id="inputan_company_competitor" class="form-control" type="text" name="" value="{{$Detail->company_competitor}}" style="margin-bottom: 15px;width: 340px;border-radius: 3px;" maxlength="200">
-
+                
                 <div style="float: left;">
                     <img src="{{ URL::asset('img/dyah/controls.png')}}"><span>ID Segment</span>
                 </div>
@@ -193,7 +189,7 @@ function formatangka($angka){
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu5" role="tab" aria-controls="nav-profile" aria-selected="false">Socmed</a></li>
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu6" role="tab" aria-controls="nav-profile" aria-selected="false">Subsidiary</a></li>
     <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu7" role="tab" aria-controls="nav-profile" aria-selected="false">History</a></li>
-
+    <li><a class=" nav-item nav-link" data-toggle="tab" href="#menu8" role="tab" aria-controls="nav-profile" aria-selected="false">Competitor</a></li>
 </ul>
 
 <div class="tab-content" id="nav-tabContent">
@@ -1164,6 +1160,117 @@ function formatangka($angka){
 </script>
 <script src="{{ URL::asset('js/function/histam.js') }}"></script>
 
+
+{{-- competitor --}}
+
+<div class="tab-pane fade" id="menu8" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+    <div style="padding: 0px 40px 10px 40px;">
+        <div style="text-align: right;">
+            <button data-toggle="modal" data-target="#addCompetitors" class="btn btn-primary btn-round" >Add</button>
+                </div>
+<br>
+<table class="table border" cellspacing="0" id="Competitorsstableid">
+<thead>
+    <tr>
+        <th style="width:5%;">No.</th>
+        <th style="width:80%;">Competitor Name</th>
+        
+        <th style="width:15%;" colspan="2">Action</th>
+    </tr>
+</thead>
+<tbody>
+
+</tbody>
+</table>
+</div>
+</div>
+
+
+{{-- Add Data Competitors --}}
+<div class="modal" id="addCompetitors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Add Competitor</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+    <div id="allertCompetitorsadd"></div>
+
+
+<form id="form-Competitors">
+<div class="form-group">
+  <label style="color: black;font-weight: bold;"> Competitor Name</label>
+  <div class="input-group">
+
+    <input type="text" maxlenght="50" class="form-control" id="add_Competitorsname" placeholder="Masukan Nama" name="add_Competitorsname" style="margin-bottom: 15px;">
+</div>
+</div>
+
+
+
+</form>
+
+</div>
+<div class="modal-footer">
+
+<button id="addCompetitorsbutton" form="form-daftar" type="button" class="btn btn-primary">Add</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+{{-- edit Data Competitors --}}
+<div class="modal" id="editCompetitors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Competitor</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+        <div id="allertCompetitorsedit"></div>
+
+      <form id="form-Competitors">
+          <div class="form-group">
+              <input type="hidden" class="form-control" id="edit_Competitorsarray" >
+              <label style="color: black;font-weight: bold;"> Competitor Name</label>
+              <div class="input-group">
+                  <input type="text" maxlenght="50" class="form-control" id="edit_Competitorsname" placeholder="Masukan Nama" name="edit_Competitorsname" style="margin-bottom: 15px;">
+              </div>
+          </div>
+
+
+       
+
+      </form>
+      
+  </div>
+  <div class="modal-footer">
+
+      <button id="editCompetitorsbutton" form="form-daftar" type="button" class="btn btn-primary">Edit</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+<script> 
+var Competitorsstable = @JSON($Competitors);
+var remCompetitorsstable = [];
+var position = @JSON($Positions);   
+</script>
+<script src="{{ URL::asset('js/function/companycompetitor.js') }}"></script>
+
+
+
 </div>              
 </div>
 </div>
@@ -1229,7 +1336,8 @@ function formatangka($angka){
         data.remSubsidiarystable = remSubsidiarystable
         data.Histsstable = Histsstable
         data.remHistsstable = remHistsstable     
-
+        data.Competitorsstable = Competitorsstable
+        data.remCompetitorsstable = remCompetitorsstable   
 
         $.ajaxSetup({
           headers: {
