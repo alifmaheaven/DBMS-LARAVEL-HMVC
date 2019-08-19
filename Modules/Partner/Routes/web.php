@@ -15,6 +15,7 @@ Route::prefix('partner')->group(function() {
     Route::get('/', 'PartnerController@index');
     Route::get('/update', 'PartnerController@getres_partner');
     Route::post('/update', 'PartnerController@add_datadetail');
+    Route::get('/detail', 'PartnerController@getdetailres_partner');
     Route::get('/json', 'PartnerController@json');
     Route::get('/download/allpartner', 'PartnerController@exportAllCustomer');
     Route::get('/download/partner/{id}', 'PartnerController@exportcustomer');

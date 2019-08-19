@@ -52,8 +52,9 @@ class PartnerController extends Controller
                    <input align="center" type="hidden" name="id_partner" value="'.$data[$i]->id.'">
                    <button style="margin-right: 70px;" class="btn btn-primary btn-round" >Edit</button>
                </form>
-               <form action="'.url('partner/download/partner/'.$data[$i]->id.'').'" method="get">
-               <button class="btn btn-round btn-sm" style="background-color: #006400;margin-top: -34px;"><i id="eye" class="fas fa-download"></i>&nbsp; Excel</button>
+               <form action="'.url('/partner/detail').'" method="get">
+               <input align="center" type="hidden" name="id_partner" value="'.$data[$i]->id.'">
+               <button class="btn btn-round btn-sm" style="background-color: #0345fc;margin-top: -34px;">Detail</button>
                 </form>
               ';
            
@@ -1222,6 +1223,82 @@ class PartnerController extends Controller
         
     }
 
+    public function getdetailres_partner(Request $request){
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','you must login first!!!');
+        }
+        else{
+
+        $id_partner = $request->id_partner;
+        
+        $getData= CompanyDetail::where('id',$id_partner)->get();
+
+        if (count($getData) > 0) {
+
+            // when data there is
+            $Detail = CompanyDetail::join('res_partner','res_partner.id','=','t_companydetail.id')
+            ->where('res_partner.id',$id_partner)
+            ->first();
+
+           
+             //dropdown
+             $Businesstypes = DB::table('p_businesstype')->get();
+             $Positions = DB::table('p_position')->get();
+             $Segments = DB::table('p_segment')->get();
+             $Sigmaproducts = DB::table('p_sigmaproduct')->get();
+             $Socmedtypes = DB::table('p_socmedtype')->get();
+ 
+             //tabvalue
+            $Bods = CompanyBod::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Branchs = CompanyBranch::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Divisions = CompanyDivision::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Partners = CompanyPartner::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Products = CompanyProduct::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Socmeds = CompanySocmed::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Subsidiarys = CompanySubsidiary::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Hists = HistAm::where('id_companydetail',$Detail->id_companydetail)->get();
+
+
+            return view('partner::detailpartner', compact('Detail','Businesstypes',
+                                                        'Positions','Segments',
+                                                        'Sigmaproducts','Socmedtypes',
+                                                        'Bods','Branchs','Divisions','Partners',
+                                                        'Products','Socmeds','Subsidiarys','Hists'));
+        } else {
+
+            // when data is nothing
+            $Detail = Partner::where('id',$id_partner)->first();
+            
+            //dropdown
+            $Businesstypes = DB::table('p_businesstype')->get();
+            $Positions = DB::table('p_position')->get();
+            $Segments = DB::table('p_segment')->get();
+            $Sigmaproducts = DB::table('p_sigmaproduct')->get();
+            $Socmedtypes = DB::table('p_socmedtype')->get();
+
+            //tabvalue
+            $Bods = [];
+            $Branchs = [];
+            $Divisions = [];
+            $Partners = [];
+            $Products = [];
+            $Socmeds = [];
+            $Subsidiarys = [];
+            $Hists = [];
+            
+
+
+            return view('partner::detailpartner', compact('Detail','Businesstypes',
+                                                        'Positions','Segments',
+                                                        'Sigmaproducts','Socmedtypes',
+                                                        'Bods','Branchs','Divisions','Partners',
+                                                        'Products','Socmeds','Subsidiarys','Hists'));
+        }
+        
+
+    }
+        
+    }
    
       
 }
