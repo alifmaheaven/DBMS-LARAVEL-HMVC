@@ -395,15 +395,9 @@ class PartnerController extends Controller
             $excel->sheet('DataPartner', function($sheet) use ($outputdata)
             {
                 $sheet->fromArray($outputdata);
-                $styleArray = array(
-                    'borders' => array(
-                      'allborders' => array(
-                        'style' => PHPExcel_Style_Border::BORDER_THIN
-                      )
-                    )
-                  );
+               
                   
-                $sheet->getStyle('A1:B2')->applyFromArray($styleArray);
+               
                 $sheet->setPageMargin(0.25);
                 $sheet->row(1, function($row) {
                     // call cell manipulation methods
