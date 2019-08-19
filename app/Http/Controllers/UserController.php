@@ -25,6 +25,8 @@ class UserController extends Controller
                 $user = Auth::user(); 
                 Session::put('user_name',$user->user_name);
                 Session::put('user_nik',$user->user_nik);
+                session::put('user_email',$user->user_email);
+                session::put('user_pass',$user->user_pass);
 
                 Session::put('id_user',$user->id_user);
                 Session::put('id_profile',$user->id_profile);
