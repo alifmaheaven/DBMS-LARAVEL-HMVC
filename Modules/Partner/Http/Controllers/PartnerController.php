@@ -168,6 +168,7 @@ class PartnerController extends Controller
             ->select('id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email')
             ->get();
          }
+         $Bods = array();
          $Bodsvalue = ['id_companybod', 'companybod_name', 'id_position', 'companybod_birthday', 'companybod_phone', 'companybod_email'];
          if (!count($Bods) > 0) {
              for ($bodfor=0; $bodfor < count($Bodsvalue) ; $bodfor++) { 
@@ -183,6 +184,7 @@ class PartnerController extends Controller
             ->select('id_companybranch',  'companybranch', 'companybranch_addr')
             ->get();
          }
+         $Branchs = array();
          $Branchsvalue = ['id_companybranch', 'companybranch', 'companybranch_addr'];
          if (!count($Branchs) > 0) {
              for ($branchfor=0; $branchfor < count($Branchsvalue) ; $branchfor++) { 
@@ -197,6 +199,7 @@ class PartnerController extends Controller
            ->select('id_companydivision', 'companydivision_name')
            ->get();
         }
+        $Divisions = array();
         $Divisionsvalue = ['id_companydivision', 'companydivision_name'];
         if (!count($Divisions) > 0) {
             $Divisions = array();
@@ -212,6 +215,7 @@ class PartnerController extends Controller
            ->select('id_companypartner', 'companypartner_name')
            ->get();
         }
+        $Partners = array();
         $Partnersvalue = ['id_companypartner', 'companypartner_name'];
         if (!count($Partners) > 0) {
             $Partners = array();
@@ -227,6 +231,7 @@ class PartnerController extends Controller
            ->select('id_companyproduct', 'id_sigmaproduct')
            ->get();
         }
+        $Products = array();
         $Productsvalue = ['id_companyproduct', 'id_sigmaproduct'];
         if (!count($Products) > 0) {
             $Products = array();
@@ -242,6 +247,7 @@ class PartnerController extends Controller
            ->select('id_companysocmed', 'id_socmedtype', 'socmed_name')
            ->get();
         }
+        $Socmeds = array();
         $Socmedsvalue = ['id_companysocmed', 'id_socmedtype', 'socmed_name'];
         if (!count($Socmeds) > 0) {
             $Socmeds = array();
@@ -257,6 +263,7 @@ class PartnerController extends Controller
            ->select('id_companysubsidiary', 'companysubsidiary_name')
            ->get();
         }
+        $Subsidiarys = array();
         $Subsidiarysvalue = ['id_companysubsidiary', 'companysubsidiary_name'];
         if (!count($Subsidiarys) > 0) {
             $Subsidiarys = array();
@@ -272,6 +279,7 @@ class PartnerController extends Controller
            ->select('id_hist_am', 'hist_am_name')
            ->get();
         }
+        $Hists = array();
         $Histsvalue = ['id_hist_am', 'hist_am_name'];
         if (!count($Hists) > 0) {
             $Hists = array();
