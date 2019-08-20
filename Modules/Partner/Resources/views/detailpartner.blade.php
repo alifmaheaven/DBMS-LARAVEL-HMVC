@@ -31,7 +31,7 @@ function formatangka($angka){
         <a href="{{ url('/detail') }}"><span style="margin-left: 40px;"><img src="{{ URL::asset('img/dyah/settings.png')}}">Profile</span></a>
     </div>
     <div class="bar-2">
-        <b><a style="color:white;" href="{{ url('/partner') }}">Customer List</a> > Edit Customer</b>
+        <b><a style="color:white;" href="{{ url('/partner') }}">Customer List</a> > Detail Customer</b>
     </div>
 
     <div class="sectionku">
