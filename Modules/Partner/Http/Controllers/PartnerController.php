@@ -12,6 +12,7 @@ use Modules\Partner\Entities\CompanyProduct;
 use Modules\Partner\Entities\CompanySocmed;
 use Modules\Partner\Entities\CompanySubsidiary;
 use Modules\Partner\Entities\HistAm;
+use Modules\Partner\Entities\CompanyCompetitor;
 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -394,15 +395,9 @@ class PartnerController extends Controller
             $excel->sheet('DataPartner', function($sheet) use ($outputdata)
             {
                 $sheet->fromArray($outputdata);
-                $styleArray = array(
-                    'borders' => array(
-                      'allborders' => array(
-                        'style' => PHPExcel_Style_Border::BORDER_THIN
-                      )
-                    )
-                  );
+               
                   
-                $sheet->getStyle('A1:B2')->applyFromArray($styleArray);
+               
                 $sheet->setPageMargin(0.25);
                 $sheet->row(1, function($row) {
                     // call cell manipulation methods
@@ -623,11 +618,28 @@ class PartnerController extends Controller
     return Excel::create('DBMS-detail-allcustomer', function($excel) use ($data) {
         $excel->sheet('allData', function($sheet) use ($data)
         {
-            $sheet->fromArray($data);
-            $sheet->setPageMargin(0.25);
+            $sheet->fromArray($data, null, 'A1', false, false);
+            $sheet->prependRow(1, array(
+                'id','name','street','street2',
+                'company_doe',
+                'id_businesstype', 'number_of_employee', 
+                'company_phone', 'company_website', 
+                'asset_value', 'company_annual_income', 
+                'company_email', 'product_sold_permonth', 
+                'company_revenue', 'company_competitor', 
+                'id_segment', 'company_history', 
+                'company_num_customer', 'company_culture', 
+                'company_workinghours', 'company_budget_permonth', 
+                'company_product_needs', 
+                'company_last_am',
+            ));
+           
+
+            //$sheet->setPageMargin(0.25);
             $sheet->row(1, function($row) {
-                // call cell manipulation methods
-                $row->setBackground('#ffffccee');
+               // call cell manipulation methods
+               $row->setBackground('#ffffccee');
+               //$row->setBorder
                 $row->setFont(array(
                     'family'     => 'Calibri',
                     'size'       => '12',
@@ -635,9 +647,17 @@ class PartnerController extends Controller
                 ));
                
             });
+
+           
+            $sheet->setBorder('A1:W22', 'thin', 'thin', 'thin', 'thin');
+           
+          
+            
+
         });
 
     })->download('xls');
+    
     }
 
     /**
@@ -725,7 +745,7 @@ class PartnerController extends Controller
 
     public function add_datadetail(Request $request)
     {
-         $input = $request->except('Bodstable','remBodstable','Branchstable','remBranchstable','Divisionstable','remDivisionstable','Partnerstable','remPartnerstable','Productstable','remProductstable','Socmedstable','remSocmedstable','Subsidiarystable','remSubsidiarystable','Histsstable','remHistsstable');
+         $input = $request->except('Bodstable','remBodstable','Branchstable','remBranchstable','Divisionstable','remDivisionstable','Partnerstable','remPartnerstable','Productstable','remProductstable','Socmedstable','remSocmedstable','Subsidiarystable','remSubsidiarystable','Histsstable','remHistsstable','Competitorsstable','remCompetitorsstable');
         
         $formatchanging=['asset_value','company_annual_income','company_budget_permonth','company_num_customer','company_revenue','number_of_employee','product_sold_permonth'];
 
@@ -928,6 +948,32 @@ class PartnerController extends Controller
                         $companyHistAm = HistAm::where('id_hist_am', $inputHistAms[$i]["id_hist_am"])->update($inputHistAms[$i]); 
                     }
                  }
+
+                //--------------CompanyCompetitors----------------------
+                //apa bila ada yang diremove
+                $removeCompetitors = $request->remCompetitorsstable;
+                for ($j=0; $j < count($removeCompetitors) ; $j++) { 
+                    if ($removeCompetitors[$j] !== null) {
+                        CompanyCompetitor::where('id_companycompetitor', $removeCompetitors[$j])->delete();
+                        
+                    }
+                }
+
+                //apa bila ingin update ataupun delete
+                $getCompanyDetail= CompanyDetail::where('id',$input["id"])->first();
+                $inputCompetitors = $request->Competitorsstable;
+                 for ($i=0; $i < count($inputCompetitors) ; $i++) {
+                     
+                    if ( $inputCompetitors[$i]["id_companydetail"] == null) {
+                        $inputCompetitors[$i]["id_companydetail"] =  $getCompanyDetail->id_companydetail;
+                        $companyCompetitor = CompanyCompetitor::create($inputCompetitors[$i]); 
+                    } else{
+                        $companyCompetitor = CompanyCompetitor::where('id_companycompetitor', $inputCompetitors[$i]["id_companycompetitor"])->update($inputCompetitors[$i]); 
+                    }
+                 }
+
+
+
 
                  return response()->json([
                     "status" => true,
@@ -1180,13 +1226,14 @@ class PartnerController extends Controller
             $Socmeds = CompanySocmed::where('id_companydetail',$Detail->id_companydetail)->get();
             $Subsidiarys = CompanySubsidiary::where('id_companydetail',$Detail->id_companydetail)->get();
             $Hists = HistAm::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Competitors = CompanyCompetitor::where('id_companydetail',$Detail->id_companydetail)->get();
 
 
             return view('partner::editpartner', compact('Detail','Businesstypes',
                                                         'Positions','Segments',
                                                         'Sigmaproducts','Socmedtypes',
                                                         'Bods','Branchs','Divisions','Partners',
-                                                        'Products','Socmeds','Subsidiarys','Hists'));
+                                                        'Products','Socmeds','Subsidiarys','Hists','Competitors'));
         } else {
 
             // when data is nothing
@@ -1207,7 +1254,8 @@ class PartnerController extends Controller
             $Products = [];
             $Socmeds = [];
             $Subsidiarys = [];
-            $Hists = [];
+            $Hists=[];
+            $Competitors = [];
             
 
 
@@ -1215,7 +1263,7 @@ class PartnerController extends Controller
                                                         'Positions','Segments',
                                                         'Sigmaproducts','Socmedtypes',
                                                         'Bods','Branchs','Divisions','Partners',
-                                                        'Products','Socmeds','Subsidiarys','Hists'));
+                                                        'Products','Socmeds','Subsidiarys','Hists','Competitors'));
         }
         
 
@@ -1257,13 +1305,14 @@ class PartnerController extends Controller
             $Socmeds = CompanySocmed::where('id_companydetail',$Detail->id_companydetail)->get();
             $Subsidiarys = CompanySubsidiary::where('id_companydetail',$Detail->id_companydetail)->get();
             $Hists = HistAm::where('id_companydetail',$Detail->id_companydetail)->get();
+            $Competitors = CompanyCompetitor::where('id_companydetail',$Detail->id_companydetail)->get();
 
 
             return view('partner::detailpartner', compact('Detail','Businesstypes',
                                                         'Positions','Segments',
                                                         'Sigmaproducts','Socmedtypes',
                                                         'Bods','Branchs','Divisions','Partners',
-                                                        'Products','Socmeds','Subsidiarys','Hists'));
+                                                        'Products','Socmeds','Subsidiarys','Hists','Competitors'));
         } else {
 
             // when data is nothing
@@ -1285,6 +1334,7 @@ class PartnerController extends Controller
             $Socmeds = [];
             $Subsidiarys = [];
             $Hists = [];
+            $Competitors = [];
             
 
 
@@ -1292,7 +1342,7 @@ class PartnerController extends Controller
                                                         'Positions','Segments',
                                                         'Sigmaproducts','Socmedtypes',
                                                         'Bods','Branchs','Divisions','Partners',
-                                                        'Products','Socmeds','Subsidiarys','Hists'));
+                                                        'Products','Socmeds','Subsidiarys','Hists','Competitors'));
         }
         
 

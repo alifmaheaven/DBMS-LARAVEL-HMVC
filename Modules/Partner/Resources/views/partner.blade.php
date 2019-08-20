@@ -34,10 +34,10 @@
                 <table class="table display" id="data-table">
                     <thead style="font-weight: bold">
                         <tr>
-                        <th style="width: 5%;">
+                        <th style="width: 7%;">
                             No.
                         </th>
-                        <th style="width: 15%;">
+                        <th style="width: 13%;">
                             Customer ID
                         </th>
                         <th style="width: 30%;">
@@ -98,6 +98,12 @@
             { data: 'action', name: 'action' },
             //{ data: 'action2', name: 'action' },
             ],
+            'columnDefs': [ {
+            'targets': [4], /* column index */
+            'orderable': false, /* true or false */
+            }],
+           
+
     //         rowsGroup: [// Always the array (!) of the column-selectors in specified order to which rows groupping is applied
 	// 			// (column-selector could be any of specified in https://datatables.net/reference/type/column-selector)
 	// 	'second:name',
