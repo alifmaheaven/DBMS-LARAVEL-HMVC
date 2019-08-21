@@ -175,7 +175,7 @@ return [
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
         //Data Table
-         Yajra\DataTables\DataTablesServiceProvider::class,
+        // Yajra\DataTables\DataTablesServiceProvider::class,
          //Yajra\DataTables\ButtonsServiceProvider::class,
 
          //excel
@@ -249,7 +249,7 @@ return [
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
         //Datatable
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        //'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
         //excel
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,

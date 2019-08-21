@@ -98,6 +98,11 @@
             { data: 'action', name: 'action' },
             //{ data: 'action2', name: 'action' },
             ],
+            buttons: [
+        'colvis',
+        'excel',
+        'print'
+    ],
             'columnDefs': [ {
             'targets': [4], /* column index */
             'orderable': false, /* true or false */
